@@ -7,7 +7,7 @@ import { Sidebar } from "../layout/sidebar/sidebar";
   selector: 'app-dashboard',
   imports: [RouterOutlet, Header, Sidebar],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
+  styleUrl: './dashboard.scss',
 })
 export class Dashboard {
 
