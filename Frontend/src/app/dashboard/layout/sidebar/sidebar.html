@@ -3,8 +3,10 @@
 
 
     @for (item of sideBarItems; track $index) {
-    <li>
-        <button class="sidebar-item" [class]="item.isHeader ? 'header-item' : 'menu-item'" aria-label="Go to Cost Tracker Dashboard">
+    <li class="mb-2">
+        <button class="sidebar-item" [class]="item.isHeader ? 'header-item' : 'menu-item'"
+            aria-label="Go to Cost Tracker Dashboard" [routerLink]="item.route" routerLinkActive="active-route"
+            [routerLinkActiveOptions]="{exact: true}">
             <lucide-angular [img]="item.icon" color="#374151" [size]="item.size" class="my-icon" role="img"
                 aria-hidden="true"></lucide-angular>
 
@@ -15,7 +17,8 @@
             @if(item.isHeader) {
             <button class="expand-icon absolute right-[-10px] cursor-pointer ">
                 <lucide-angular [img]="expandedState() ? chevronLeft : chevronRight" color="#374151" size="22"
-                    class="my-icon" role="img" aria-hidden="true" (click)="handleExpandCollapse()"></lucide-angular>
+                    class="my-icon" role="img" aria-hidden="true"
+                    (click)="handleExpandCollapse($event)"></lucide-angular>
             </button>
             }
 
