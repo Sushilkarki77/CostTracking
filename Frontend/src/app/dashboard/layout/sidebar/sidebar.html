@@ -1,5 +1,25 @@
+<ul class="w-full p-2 sidebar-wrapper relative"
+    [ngClass]=" {'expanded' : expandedState(), 'collapsed' : !expandedState()} ">
 
 
-<div class="flex items-center justify-center p-2.5">
-<img src="logo.png" width="75" alt="logo">
-</div>
+    @for (item of sideBarItems; track $index) {
+    <li>
+        <button class="sidebar-item" [class]="item.isHeader ? 'header-item' : 'menu-item'" aria-label="Go to Cost Tracker Dashboard">
+            <lucide-angular [img]="item.icon" color="#374151" [size]="item.size" class="my-icon" role="img"
+                aria-hidden="true"></lucide-angular>
+
+            @if(item.text) {
+            <span class="sidebar-label text-gray-600">{{item.text}}</span>
+            }
+
+            @if(item.isHeader) {
+            <button class="expand-icon absolute right-[-10px] cursor-pointer ">
+                <lucide-angular [img]="expandedState() ? chevronLeft : chevronRight" color="#374151" size="22"
+                    class="my-icon" role="img" aria-hidden="true" (click)="handleExpandCollapse()"></lucide-angular>
+            </button>
+            }
+
+        </button>
+    </li>
+    }
+</ul>
