@@ -1,0 +1,57 @@
+@use "globals" as *;
+
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: $bg-card;
+  border: 1px solid $border-default;
+  box-shadow: $shadow-heavy;
+}
+
+.input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid $border-default;
+  background-color: $white;
+  color: $gray-500;
+  box-shadow: $shadow-light;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $primary-200;
+  }
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: $btn-primary-text;
+  background-image: linear-gradient(to right, $btn-primary-bg, $primary-600);
+  box-shadow: $shadow-light;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $primary-200;
+  }
+}
