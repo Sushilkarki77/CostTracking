@@ -1,27 +1,66 @@
 <section class="card">
-    <form aria-label="Login Form">
+    <form aria-label="Login Form" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
         <div class="mb-1 flex flex-col gap-2">
+            @let email_Control = emailControl;
             <label for="email" class="text-sm font-medium text-[color:var(--text-secondary)]">
                 Email
             </label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" class="input" required
-                aria-required="true" />
+            <input formControlName="email" id="email" name="email" type="email"
+                [ngClass]="{ 'input-danger': email_Control?.touched && email_Control?.errors }"
+                placeholder="you@example.com" class="input" required aria-required="true" />
+
+
+            @if(email_Control && email_Control.touched && email_Control.errors){
+            @if(email_Control.errors['required']){
+            <span class="text-danger">Email is required</span>
+            }
+            @if(email_Control.errors['email']){
+            <span class="text-danger">Not a valid email</span>
+            }
+            }
         </div>
 
         <div class="mb-1 flex flex-col gap-2">
             <label for="password" class="text-sm font-medium text-[color:var(--text-secondary)]">
                 Password
             </label>
-            <input id="password" name="password" type="password" placeholder="••••••••" class="input" required
-                aria-required="true" />
+            @let password_Control = passwordControl;
+            <input [ngClass]="{'input-danger' : password_Control?.touched && password_Control?.errors}"
+                formControlName="password" id="password" name="password" type="password" placeholder="••••••••"
+                class="input" required aria-required="true" />
+
+
+            @if(password_Control && password_Control.touched && password_Control.errors){
+            @if(password_Control.errors['required']){
+            <span class="text-danger">Password is required</span>
+            }
+
+            @if(password_Control.errors['minlength']){
+            <span class="text-danger">Password should be at least 6</span>
+            }
+            }
         </div>
 
-         <div class="mb-1 flex flex-col gap-2">
+        <div class="mb-1 flex flex-col gap-2">
             <label for="password-confirm" class="text-sm font-medium text-[color:var(--text-secondary)]">
                 Confirm Password
             </label>
-            <input id="password-confirm" name="Confirm Password" type="password" placeholder="••••••••" class="input" required
-                aria-required="true" />
+            @let confirmPassword_Control = confirmPasswordControl;
+            <input [ngClass]="{'input-danger' : confirmPassword_Control?.touched && confirmPassword_Control?.errors}"
+                formControlName="confirmPassword" id="password-confirm" name="Confirm Password" type="password"
+                placeholder="••••••••" class="input" required aria-required="true" />
+
+
+
+            @if(confirmPassword_Control && confirmPassword_Control.touched && confirmPassword_Control.errors){
+            @if(confirmPassword_Control.errors['required']){
+            <span class="text-danger">Confirm Password is required</span>
+            }
+
+            @if(confirmPassword_Control.errors['mismatch']){
+            <span class="text-danger">Password should match</span>
+            }
+            }
         </div>
 
         <button type="submit" class="btn-primary w-full">
