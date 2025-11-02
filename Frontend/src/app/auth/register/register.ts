@@ -4,6 +4,8 @@ import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Va
 import { Router } from '@angular/router';
 import { ArrowLeft, ArrowRight } from 'lucide-angular';
 import { ChevronLeft, LucideAngularModule } from 'lucide-angular/src/icons';
+import { AuthService } from '../auth-service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -17,8 +19,10 @@ export class Register {
 
   private router = inject(Router);
   private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
 
-  registerForm = this.fb.group({
+  registerForm = this.fb.nonNullable.group({
+    fullname: ["", [Validators.required]],
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required, Validators.minLength(6)]],
     confirmPassword: ["", [Validators.required]]
@@ -28,6 +32,7 @@ export class Register {
   get emailControl() { return this.registerForm.get('email'); }
   get passwordControl() { return this.registerForm.get('password'); }
   get confirmPasswordControl() { return this.registerForm.get('confirmPassword'); }
+  get fullnameControl() { return this.registerForm.get('fullname'); }
 
 
   navigateToLogin() {
@@ -36,6 +41,14 @@ export class Register {
 
   handleSubmit() {
     if (!this.registerForm.valid) return;
+    const { fullname = '', email = '', password = '' } = this.registerForm.value;
+    this.authService.register({ fullname, email, password }).subscribe({
+      next: () => {
+        window.alert("Registration successful!")
+        this.navigateToLogin()
+      },
+      error: (e: HttpErrorResponse) => { window.alert(e.message) }
+    })
   }
 }
 

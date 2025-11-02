@@ -3,6 +3,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArrowRight } from 'lucide-angular';
 import { LucideAngularModule } from 'lucide-angular/src/icons';
+import { AuthService } from '../auth-service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +17,10 @@ export class Login {
   readonly chevronRight = ArrowRight;
 
   private router = inject(Router);
-
   private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
 
-  loginForm = this.fb.group({
+  loginForm = this.fb.nonNullable.group({
     email: ["",[ Validators.required, Validators.email]],
     password: ["", [Validators.required]]
   });
@@ -34,10 +36,17 @@ export class Login {
 
   handleLoginSubmit(){
     if(!this.loginForm.valid) return;
-    
-     console.log(this.loginForm.value)
+
+    const { email = '', password = ''} = this.loginForm.value;
+
+    this.authService.login({email, password}).subscribe({
+      next: () => {
+        window.alert("Login successful!")
+        this.router.navigate(['dashboard']);
+      },
+      error: (e: HttpErrorResponse) => {
+         window.alert(e.message);
+      }
+    });
   }
-
-  
-
 }
