@@ -21,8 +21,21 @@
                     (click)="handleExpandCollapse($event)"></lucide-angular>
             </button>
             }
-
         </button>
     </li>
     }
+</ul>
+
+<ul class="w-full p-2 sidebar-wrapper mt-auto"  [ngClass]=" {'expanded' : expandedState(), 'collapsed' : !expandedState()} ">
+    <li class="mb-2">
+        <button class="sidebar-item footer-item" (click)="handleLogout()" aria-label="Go to Cost Tracker Dashboard"
+            routerLinkActive="active-route">
+            <lucide-angular [img]="logoutItem.icon" color="#374151" [size]="logoutItem.size" class="my-icon" role="img"
+                aria-hidden="true"></lucide-angular>
+
+            @if(logoutItem.text) {
+            <span class="sidebar-label text-gray-600">{{logoutItem.text}}</span>
+            }
+        </button>
+    </li>
 </ul>
