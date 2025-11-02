@@ -1,21 +1,20 @@
-import express, {Request, Response} from 'express'
-import connectDB from '../config/db.config';
+import express, { Request, Response } from 'express'
+import connectDB from './config/db.config';
 import dotenv from 'dotenv';
-
+import morgan from 'morgan';
+import cors from 'cors';
+import router from './routes/app.routes';
 
 
 dotenv.config();
+const app = express();
 
+connectDB();
 
-const app  = express();
-
-
-connectDB()
-
-
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Hello World!');
-});
+app.use(morgan('dev'));
+app.use(cors());
+app.use(express.json());
+app.use(router);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running at http://localhost:${process.env.PORT}`);
