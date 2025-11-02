@@ -21,12 +21,12 @@ export class Login {
   private authService = inject(AuthService);
 
   loginForm = this.fb.nonNullable.group({
-    email: ["",[ Validators.required, Validators.email]],
+    email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required]]
   });
 
 
-  formControl(control: 'email' | 'password'){
+  formControl(control: 'email' | 'password') {
     return this.loginForm.controls[control]
   }
 
@@ -34,18 +34,20 @@ export class Login {
     this.router.navigate(['/auth/register']);
   }
 
-  handleLoginSubmit(){
-    if(!this.loginForm.valid) return;
+  handleLoginSubmit() {
+    if (!this.loginForm.valid) return;
 
-    const { email = '', password = ''} = this.loginForm.value;
+    const { email = '', password = '' } = this.loginForm.value;
 
-    this.authService.login({email, password}).subscribe({
-      next: () => {
+    this.authService.login({ email, password }).subscribe({
+      next: (res) => {
+        const { accessToken, refreshToken } = res.data;
+        this.authService.setTokens(accessToken, refreshToken);
         window.alert("Login successful!")
         this.router.navigate(['dashboard']);
       },
       error: (e: HttpErrorResponse) => {
-         window.alert(e.message);
+        window.alert(e.message);
       }
     });
   }
