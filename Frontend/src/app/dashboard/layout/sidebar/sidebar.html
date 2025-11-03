@@ -15,10 +15,10 @@
             }
 
             @if(item.isHeader) {
-            <button class="expand-icon absolute right-[-10px] cursor-pointer ">
+            <button class="expand-icon absolute right-[-10px] cursor-pointer " (click)="handleExpandCollapse($event)">
                 <lucide-angular [img]="expandedState() ? chevronLeft : chevronRight" color="#374151" size="22"
                     class="my-icon" role="img" aria-hidden="true"
-                    (click)="handleExpandCollapse($event)"></lucide-angular>
+                    ></lucide-angular>
             </button>
             }
         </button>

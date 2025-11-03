@@ -2,7 +2,7 @@
 export interface ResponseItem<T> {
   message?: string;
   status?: boolean;
-  data: T;
+  data?: T;
 }
 
 export class ErrorWithStatus extends Error {
