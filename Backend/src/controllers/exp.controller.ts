@@ -9,18 +9,18 @@ export const getExpenseListByUserId: RequestHandler<unknown, ResponseItem<ExpDoc
         const expList: ExpDocument[] = (await findExplistByuserId(user._id)) ?? [];
         res.status(200).json({ data: expList });
     } catch (error) {
-        return next(error);
+        next(error);
     }
 };
 
-export const createExpense: RequestHandler<unknown, ResponseItem<ExpDocument>, ExpDocument> = async (req, res, next) => {
+export const createExpense: RequestHandler<unknown, ResponseItem<ExpDocument>, Omit<ExpDocument, 'category'>> = async (req, res, next) => {
     try {
         const user = req.user;
         const expObj = req.body;
         const createdItem: ExpDocument = await createExp({ ...expObj, userId: user._id });
         res.status(200).json({ data: createdItem });
     } catch (error) {
-        return next(error);
+        next(error);
     }
 };
 
@@ -33,7 +33,7 @@ export const updateExpense: RequestHandler<{ id: string }, ResponseItem<{ update
         if (!updatedItem) res.status(404).json({ message: "Item does not exist" });
         res.status(200).json({ message: "Expense deleted successfully", data: { updatedItem } });
     } catch (error) {
-        return next(error);
+        next(error);
     }
 };
 
@@ -47,6 +47,6 @@ export const deleteExpense: RequestHandler<{ id: string }, ResponseItem<{ delete
         if (!deletedItem) res.status(404).json({ message: "Item does not exist" });
         res.status(200).json({ message: "Expense deleted successfully", data: { deletedItem } });
     } catch (error) {
-        return next(error);
+        next(error);
     }
 };

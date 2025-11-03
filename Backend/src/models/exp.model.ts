@@ -1,8 +1,7 @@
-import { InferSchemaType, model, Schema } from "mongoose";
+import mongoose, { InferSchemaType, model, Schema } from "mongoose";
 
 const expSchema = new Schema(
     {
-        // _id: { type: String },
         userId: { type: String, required: true },
         name: { type: String, required: true },
         paymentMethod: { type: String, required: true },
@@ -12,7 +11,10 @@ const expSchema = new Schema(
                 name: { type: String, required: true },
                 price: { type: Number, required: true },
                 currency: { type: String, required: true },
-                category: { type: String, required: true }
+                category: {
+                    _id: { type: String },
+                    name: { type: String }
+                }
             }
         ]
     },
