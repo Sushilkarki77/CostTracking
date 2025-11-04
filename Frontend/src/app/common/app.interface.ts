@@ -22,3 +22,11 @@ export interface ResponseItem<T> {
 export interface TokenRes {
   accessToken: string, refreshToken: string
 }
+
+export interface Category {
+  _id: string
+  name: string
+  userId: string
+  createdAt: string
+  updatedAt: string
+}

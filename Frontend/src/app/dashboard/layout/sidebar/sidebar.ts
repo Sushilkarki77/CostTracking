@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, model, ModelSignal, signal } from '@angular/core';
 import { LucideAngularModule, ChevronLeft, ChevronRight, DollarSign, ChartBar, LayoutDashboard, BanknoteArrowDown, LogOut, ListCollapse } from 'lucide-angular';
 import { RouterLink, RouterLinkActive } from "@angular/router";
-import { AuthService } from '../../../auth/auth-service';
 import { CategoryListComponent } from '../../category/category-list-component/category-list-component';
+import { AuthService } from '../../../common/auth-service';
 
 @Component({
   selector: 'dashboard-sidebar',

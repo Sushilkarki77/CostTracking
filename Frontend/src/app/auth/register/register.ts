@@ -4,8 +4,8 @@ import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Va
 import { Router } from '@angular/router';
 import { ArrowLeft, ArrowRight } from 'lucide-angular';
 import { ChevronLeft, LucideAngularModule } from 'lucide-angular/src/icons';
-import { AuthService } from '../auth-service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../../common/auth-service';
 
 @Component({
   selector: 'app-register',

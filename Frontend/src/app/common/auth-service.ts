@@ -16,6 +16,15 @@ export class AuthService {
   private accessToken = signal<string | null>(null);
   private refreshToken = signal<string | null>(null);
 
+
+  get accessTokenVal() {
+    return this.accessToken();
+  }
+
+  get refreshTokenVal() {
+    return this.refreshToken()
+  }
+
   accessTokenEffect = effect(() => {
     const updatedToken = this.accessToken();
     if (updatedToken) {
@@ -24,6 +33,8 @@ export class AuthService {
       localStorage.removeItem('accessToken');
     }
   });
+
+
 
   refreshTokenEffect = effect(() => {
     const updatedToken = this.refreshToken();

@@ -3,8 +3,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArrowRight } from 'lucide-angular';
 import { LucideAngularModule } from 'lucide-angular/src/icons';
-import { AuthService } from '../auth-service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../../common/auth-service';
 
 @Component({
   selector: 'app-login',
