@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 import { ResponseItem } from "../types/interfaces";
 import { CategoryDocument, createCategory, deleteCategory, updateCategory, findAllCategories, findCategoryById } from "../models/category.model";
+import { ObjectId } from 'mongodb';
 
 
 export const getAllCategories: RequestHandler<unknown, ResponseItem<CategoryDocument[]>> = async (req, res, next) => {
@@ -56,7 +57,7 @@ export const deleteCategoryById: RequestHandler<{ id: string }, ResponseItem<{ d
     try {
         const { id } = req.params;
         const user = req.user;
-        const deletedItem: CategoryDocument | null = await deleteCategory(id, user._id);
+        const deletedItem: CategoryDocument | null = await deleteCategory(new ObjectId(id), user._id);
         if (!deletedItem) res.status(404).json({ message: "Category does not exist" });
         res.status(200).json({ message: "Category deleted successfully", data: { deletedItem } });
     } catch (error) {

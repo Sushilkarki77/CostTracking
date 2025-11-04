@@ -6,13 +6,21 @@ import { environment } from "../../environments/environment";
 
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class CategoryService {
     httpClient = inject(HttpClient);
     API_URL = `${environment.API_URL}cat`;
 
     getAll(): Observable<Category[]> {
         return this.httpClient.get<ResponseItem<Category[]>>(this.API_URL).pipe(map(res => res.data));
+    }
+
+    add(name: string): Observable<Category> {
+        return this.httpClient.post<ResponseItem<Category>>(this.API_URL, { name }).pipe(map(res => res.data));
+    }
+
+    delete(_id: string): Observable<Category> {
+        return this.httpClient.delete<Category>(`${this.API_URL}/${_id}`)
     }
 
 }

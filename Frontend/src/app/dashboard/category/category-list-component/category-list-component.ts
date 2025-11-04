@@ -1,23 +1,65 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { loadCategories } from '../../../store/category.actions';
+import { createCategory, deleteCategory, loadCategories } from '../../../store/category.actions';
 import { selectAllCategories } from '../../../store/category.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
+import { Category } from '../../../common/app.interface';
+import { FormBuilder, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
+
+interface Field {
+  name: keyof Category;
+  label: string;
+  type: string
+}
 
 
 @Component({
   selector: 'app-category-list-component',
-  imports: [AsyncPipe, DatePipe],
+  imports: [AsyncPipe, DatePipe, FormsModule, ReactiveFormsModule],
   templateUrl: './category-list-component.html',
   styleUrl: './category-list-component.scss',
 })
 export class CategoryListComponent {
   private store = inject(Store);
-   categories$ = this.store.select(selectAllCategories);
+  categories$ = this.store.select(selectAllCategories);
 
-  constructor(){
+
+  catForm = inject(FormBuilder).nonNullable.group({
+    name: ["", Validators.required]
+  })
+
+  fields: Field[] = [
+    { label: "Name", name: "name", type: "string" },
+    { label: "Created", name: "createdAt", type: "date" },
+  ]
+
+  fieldNames = this.fields.map(x => x.name);
+
+  actions = [
+    {
+      name: "delete",
+      label: "Delete",
+      function: (_id: string) => this.handleDelete(_id)
+    }
+  ]
+
+  handleDelete(id: string) {
+    this.store.dispatch(deleteCategory({ id }))
+  }
+
+  handleAddCategory() {
+
+    if (!this.catForm.valid) return;
+
+    const { name = "" } = this.catForm.value
+
+    this.catForm.reset();
+    this.store.dispatch(createCategory({ name }))
+  }
+
+  constructor() {
     this.store.dispatch(loadCategories())
   }
-   
+
 
 }

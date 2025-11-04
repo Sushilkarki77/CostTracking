@@ -23,7 +23,7 @@ export const updateCategory = async (_id: string, userId: string, category: Cate
 };
 
 
-export const deleteCategory = async (_id: string, userId: string): Promise<CategoryDocument | null> => {
+export const deleteCategory = async (_id:  mongoose.Types.ObjectId, userId: string): Promise<CategoryDocument | null> => {
     return await CategoryModel.findOneAndDelete({ _id, userId });
 };
 
