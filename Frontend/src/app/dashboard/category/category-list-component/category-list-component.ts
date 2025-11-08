@@ -51,7 +51,7 @@ export class CategoryListComponent {
 
     if (!this.catForm.valid) return;
 
-    const { name = "" } = this.catForm.value
+    const { name = "" } = this.catForm.value;
 
     this.catForm.reset();
     this.store.dispatch(createCategory({ name }))

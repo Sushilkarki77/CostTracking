@@ -3,19 +3,19 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { initializerFunction } from './common/app.utils';
-import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { appStoreProviders } from './store/app.store';
 import { authInterceptor } from './common/auth-interceptor';
+import { retryInterceptor } from './common/retry-interceptor-interceptor';
+import { authErrorInterceptor } from './common/auth-error-interceptor-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([authInterceptor])),
+    provideHttpClient(withInterceptors([authInterceptor, retryInterceptor, authErrorInterceptor])),
     provideAppInitializer(initializerFunction),
     appStoreProviders,
-    provideEffects([])
-]
+  ]
 };
