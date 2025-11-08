@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { effect, inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { ResponseItem, TokenRes } from '../common/app.interface';
+
 import { Router } from '@angular/router';
-import { verifyToken } from '../common/app.utils';
+import { environment } from '../../../environments/environment.development';
+import { verifyToken } from '../app.utils';
+import { ResponseItem, TokenRes } from '../interfaces/app.interface';
 
 @Injectable({
   providedIn: 'root',

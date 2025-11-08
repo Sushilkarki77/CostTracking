@@ -5,9 +5,9 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { initializerFunction } from './common/app.utils';
 import { provideEffects } from '@ngrx/effects';
 import { appStoreProviders } from './store/app.store';
-import { authInterceptor } from './common/auth-interceptor';
-import { retryInterceptor } from './common/retry-interceptor-interceptor';
-import { authErrorInterceptor } from './common/auth-error-interceptor-interceptor';
+import { authInterceptor } from './common/interceptors/auth-interceptor';
+import { retryInterceptor } from './common/interceptors/retry-interceptor-interceptor';
+import { authErrorInterceptor } from './common/interceptors/auth-error-interceptor-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [

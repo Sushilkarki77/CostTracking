@@ -2,7 +2,7 @@
 
 import { createReducer, on } from '@ngrx/store';
 import * as CategoryActions from './category.actions';
-import { Category } from '../common/app.interface';
+import { Category } from '../common/interfaces/app.interface';
 
 
 export interface CategoryState {

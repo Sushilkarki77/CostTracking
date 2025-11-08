@@ -133,9 +133,9 @@ export const refreshToken: RequestHandler<
 const getAccessToken = (
     tokenPayload: { _id: string; fullname: string; email: string },
     secret: string
-) => jwt.sign(tokenPayload, secret, { expiresIn: '1m' });
+) => jwt.sign(tokenPayload, secret, { expiresIn: '1h' });
 
 const getRefreshToken = (
     tokenPayload: { _id: string; fullname: string; email: string },
     secret: string
-) => jwt.sign(tokenPayload, secret, { expiresIn: '1m' });
+) => jwt.sign(tokenPayload, secret, { expiresIn: '1d' });

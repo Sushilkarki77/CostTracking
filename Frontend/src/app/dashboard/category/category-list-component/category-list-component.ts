@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { createCategory, deleteCategory, loadCategories } from '../../../store/category.actions';
 import { selectAllCategories } from '../../../store/category.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { Category } from '../../../common/app.interface';
+import { Category } from '../../../common/interfaces/app.interface';
 import { FormBuilder, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 
 interface Field {
@@ -44,7 +44,10 @@ export class CategoryListComponent {
   ]
 
   handleDelete(id: string) {
-    this.store.dispatch(deleteCategory({ id }))
+
+    const confirmed = window.confirm('Are you sure you want to delete this item?');
+    if (confirmed) this.store.dispatch(deleteCategory({ id }));
+
   }
 
   handleAddCategory() {

@@ -3,7 +3,7 @@ import { Component, inject, model, ModelSignal, signal } from '@angular/core';
 import { LucideAngularModule, ChevronLeft, ChevronRight, DollarSign, ChartBar, LayoutDashboard, BanknoteArrowDown, LogOut, ListCollapse } from 'lucide-angular';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { CategoryListComponent } from '../../category/category-list-component/category-list-component';
-import { AuthService } from '../../../common/auth-service';
+import { AuthService } from '../../../common/services/auth-service';
 
 @Component({
   selector: 'dashboard-sidebar',
