@@ -2,10 +2,9 @@
 
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-
 import * as CategoryActions from './category.actions';
-import { catchError, ConnectableObservable, EMPTY, exhaustMap, map, mergeMap, of, tap } from 'rxjs';
-import { CategoryService } from '../common/services/category.service';
+import { catchError, EMPTY, exhaustMap, map, mergeMap, of, tap } from 'rxjs';
+import { CategoryService } from '../../common/services/category.service';
 
 @Injectable()
 export class CategoryEffects {

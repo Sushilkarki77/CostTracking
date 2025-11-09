@@ -19,6 +19,8 @@ export const authErrorInterceptor: HttpInterceptorFn = (req, next) => {
           return throwError(() => error);
         }
 
+        console.log(refreshAttempt, "refreshAttempt");
+
         refreshAttempt++;
 
         authService.refresh(refreshToken).subscribe({

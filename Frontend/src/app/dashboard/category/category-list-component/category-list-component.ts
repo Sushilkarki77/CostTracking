@@ -1,7 +1,7 @@
 import { Component, inject, model } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { createCategory, deleteCategory, loadCategories } from '../../../store/category.actions';
-import { selectAllCategories } from '../../../store/category.selectors';
+import { createCategory, deleteCategory, loadCategories } from '../../../store/category/category.actions';
+import { selectAllCategories } from '../../../store/category/category.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { Category } from '../../../common/interfaces/app.interface';
 import { FormBuilder, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';

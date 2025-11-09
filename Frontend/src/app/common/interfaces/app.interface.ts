@@ -30,3 +30,23 @@ export interface Category {
   createdAt: string
   updatedAt: string
 }
+
+
+export interface Expense {
+  _id: string
+  userId: string
+  name: string
+  paymentMethod: string
+  note: string
+  items: Item[]
+  createdAt: string
+  updatedAt: string
+}
+
+export interface Item {
+  category: any
+  name: string
+  price: number
+  currency: string
+  _id: string
+}
