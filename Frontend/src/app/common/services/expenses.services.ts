@@ -1,10 +1,10 @@
 import { HttpClient } from "@angular/common/http";
-import { inject } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
 import { Expense, ResponseItem } from "../interfaces/app.interface";
 import { map, Observable } from "rxjs";
 
-
+@Injectable({providedIn: "root"})
 export class ExpensesService {
     private httpClient = inject(HttpClient);
     private API_URL = `${environment.API_URL}exp`;
