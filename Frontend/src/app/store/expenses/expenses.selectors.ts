@@ -31,6 +31,12 @@ export const selectExpenseLoading = createSelector(
   state => state.loading
 );
 
+
+export const selectExpenseItem = (_id: string) => createSelector(
+  selectExpenseState,
+  state => state.list.find(x => x._id === _id)
+);
+
 export const selectExpenseInitialized= createSelector(
   selectExpenseState,
   state => state.initialized

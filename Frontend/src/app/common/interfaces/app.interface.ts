@@ -41,17 +41,18 @@ export interface Expense {
   items: Item[]
   createdAt: string
   updatedAt: string
+    currency: string
 }
 
 export interface Item {
-  category: string
+  category: { _id: string, name: string }
   name: string
   price: number
-  currency: string
+
   _id: string
 }
 
-export type ExpenseSummary = Omit<Expense, 'items'> & {total: number};
+export type ExpenseSummary = Omit<Expense, 'items'> & { total: number };
 
 
 

@@ -1,79 +1,99 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal, TemplateRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { filteredExpensesSummary, selectAllExpenses, selectExpenseError, selectExpenseInitialized, selectExpenseLoading, selectExpensesSummary } from '../../../store/expenses/expenses.selectors';
-import { loadExpenses } from '../../../store/expenses/expenses.actions';
-import { Expense, ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
-import { AsyncPipe, CurrencyPipe, DatePipe, JsonPipe } from '@angular/common';
+import { filteredExpensesSummary, selectExpenseError, selectExpenseInitialized, selectExpenseItem, selectExpenseLoading, selectExpensesSummary } from '../../../store/expenses/expenses.selectors';
+import { deleteExpense, loadExpenses } from '../../../store/expenses/expenses.actions';
+import {  ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
+import { AsyncPipe, CurrencyPipe, DatePipe,  JsonPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { PaginationComponent } from '../../../common/components/pagination-component/pagination-component';
+import { OverlayComponent } from '../../../common/components/overlay-component/overlay-component';
+import { ExpenseDetails } from '../expense-details/expense-details';
+import { Subject, takeUntil } from 'rxjs';
 
+const Fields: Field<ExpenseSummary>[] = [
+  { label: "Name", name: "name", type: "string" },
+  { label: "Created", name: "createdAt", type: "date" },
+  { label: "Method", name: "paymentMethod", type: "string" },
+  { label: "Total", name: "total", type: "curency" }
+]
 
 @Component({
   selector: 'app-list',
-  imports: [AsyncPipe, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe],
+  imports: [AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
 export class List {
+  private componentDestroyed$ = new Subject<boolean>();
 
   currentPage = signal<number>(0);
   pageSize = 20;
   private store = inject(Store);
+
   expenses$ = computed(() =>
     this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize))
   );
+
+  fields: Field<ExpenseSummary>[] = Fields;
+  fieldNames: Omit<(keyof ExpenseSummary)[], 'items'> = this.fields.map(x => x.name);
+
 
   loading$ = this.store.select(selectExpenseLoading);
   error$ = this.store.select(selectExpenseError);
   private router = inject(Router);
 
 
-  fields: Field<ExpenseSummary>[] = [
-    { label: "Name", name: "name", type: "string" },
-    { label: "Created", name: "createdAt", type: "date" },
-    { label: "Method", name: "paymentMethod", type: "string" },
-    { label: "Total", name: "total", type: "curency" }
-  ]
+  @ViewChild('transactionTemplate', { static: true })
+  transactionTemplate!: TemplateRef<void>;
 
-  fieldNames: Omit<(keyof ExpenseSummary)[], 'items'> = this.fields.map(x => x.name);
+  overlayVisibility = signal<boolean>(false);
+
+  selectedItem = signal<ExpenseSummary | null>(null);
+
+  handleClose = () => this.overlayVisibility.update(prev => !prev);
+
+  expenseItemSelected$ = computed(() => {
+    const selectedItem = this.selectedItem();
+    if (!selectedItem) return null;
+    return this.store.select(selectExpenseItem(selectedItem._id))
+  })
 
   actions = [
     {
       name: "delete",
       label: "Delete",
-      function: (_id: string) => this.handleDelete(_id)
+      function: (exp: ExpenseSummary) => this.handleDelete(exp)
     },
     {
       name: "details",
       label: "View",
-      function: (_id: string) => this.handleDelete(_id)
+      function: (exp: ExpenseSummary) => this.handleView(exp)
     }
   ]
 
   constructor() {
-
-    this.store.select(selectExpenseInitialized).subscribe(loaded => {
-      if (!loaded) {
-        this.store.dispatch(loadExpenses())
-      }
+    this.store.select(selectExpenseInitialized).pipe(takeUntil(this.componentDestroyed$)).subscribe(loaded => {
+      if (!loaded) this.store.dispatch(loadExpenses())
     })
-
   }
 
-  isString(val: unknown) {
-    return typeof val === 'string';
+  handleDelete = (exp: ExpenseSummary) => {
+    const confirmed = window.confirm('Are you sure you want to delete this expense?');
+    if (confirmed) {
+      this.store.dispatch(deleteExpense({ id: exp._id }));
+    }
   }
 
-
-  handleDelete = (id: string) => {
-
+  handleView = (exp: ExpenseSummary) => {
+    this.selectedItem.set(exp)
+    this.overlayVisibility.update(prev => !prev);
   }
 
-  handleAddExpense = () => {
-    this.router.navigate(['/dashboard/expenses/add'])
-  }
+  handleAddExpense = () => this.router.navigate(['/dashboard/expenses/add'])
 
-  setCurrentPage(page: number) {
-    this.currentPage.set(page);
+  setCurrentPage = (page: number) => this.currentPage.set(page);
+
+  ngOnDestroy(): void {
+    this.componentDestroyed$.next(true);
   }
 }
