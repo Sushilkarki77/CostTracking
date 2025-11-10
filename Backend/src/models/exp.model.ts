@@ -6,11 +6,11 @@ const expSchema = new Schema(
         name: { type: String, required: true },
         paymentMethod: { type: String, required: true },
         note: { type: String },
+        currency: { type: String, required: true },
         items: [
             {
                 name: { type: String, required: true },
                 price: { type: Number, required: true },
-                currency: { type: String, required: true },
                 category: {
                     _id: { type: String },
                     name: { type: String }
@@ -28,6 +28,11 @@ export const ExpModel = model<ExpDocument>('exp', expSchema);
 export const createExp = async (exp: ExpDocument): Promise<ExpDocument> => {
     const expModel = new ExpModel({ ...exp });
     return await expModel.save();
+};
+
+
+export const seedExp = async (exps: ExpDocument[]): Promise<ExpDocument[]> => {
+    return await ExpModel.insertMany(exps)
 };
 
 export const updateExp = async (userId: string, _id: string, exp: ExpDocument): Promise<ExpDocument | null> => {

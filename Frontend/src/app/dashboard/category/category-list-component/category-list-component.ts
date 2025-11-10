@@ -1,7 +1,7 @@
 import { Component, inject, model } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { createCategory, deleteCategory, loadCategories } from '../../../store/category/category.actions';
-import { selectAllCategories } from '../../../store/category/category.selectors';
+import { selectAllCategories, selectCategoryInitialized } from '../../../store/category/category.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { Category } from '../../../common/interfaces/app.interface';
 import { FormBuilder, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +22,7 @@ interface Field {
 export class CategoryListComponent {
   private store = inject(Store);
   categories$ = this.store.select(selectAllCategories);
+  categoriesInitialized$ = this.store.select(selectCategoryInitialized);
 
 
   catForm = inject(FormBuilder).nonNullable.group({
@@ -61,8 +62,7 @@ export class CategoryListComponent {
   }
 
   constructor() {
-    this.store.dispatch(loadCategories())
+    this.categoriesInitialized$.subscribe(loaded => { if (!loaded) { this.store.dispatch(loadCategories()) } });
   }
-
 
 }

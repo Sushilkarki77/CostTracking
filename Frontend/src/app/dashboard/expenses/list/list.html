@@ -2,11 +2,89 @@
     <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-semibold text-gray-800">Expenses</h2>
 
-        <button type="submit"
-            class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            Add
-        </button>
+
+
+        <div>
+            <button type="submit" (click)="handleAddExpense()"
+                        class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        Add
+            </button>
+        </div>
+       
     </div>
 
 
+    <div class="overflow-x-auto">
+        @if(error$ | async; as error) {
+           <div>{{error | json}}</div>
+        } @else {
+            @if (expenses$() | async; as expenses) {
+            @let loading = loading$ | async;
+                @switch(loading) {
+                    @case (false) {
+                       
+                    <div class="flex justify-end">
+                        Total: {{expenses.totalItems}}
+                    </div>
+                        
+                    <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                @for (item of fields; track $index) {
+                                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                                    {{ item.label }}
+                                </th>
+                                }
+
+                                @if (actions.length > 0) {
+                                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                                    Actions
+                                </th>
+                                }
+                            </tr>
+                        </thead>
+
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            @for (exp of expenses.data; track exp._id) {
+                            <tr>
+                                @for (property of fields; track property.name) {
+                                @let fieldName = property.name;
+
+                                @if (property.type == 'date' ) {
+                                <td class="px-4 py-2">{{ exp[fieldName] | date }}</td>
+
+                                } @else if(property.type == 'curency'){
+
+                                <td class="px-4 py-2">{{ exp[fieldName] | currency }}</td>
+
+                                }@else {
+                                <td class="px-4 py-2">{{ exp[fieldName] }}</td>
+                                }
+                                }
+                                <td class="px-4 py-2">
+                                    @for (action of actions; track action.name) {
+
+                                    <button type="button"
+                                        class="bg-red-500 text-white px-2 py-1 mx-1 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
+                                        (click)="action.function(exp._id)" [attr.aria-label]="action.label + ' for ' + exp.name">
+                                        {{ action.label }}
+                                    </button>
+
+                                    }
+                                </td>
+                            </tr>
+
+                            }
+
+
+                        </tbody>
+                    </table>
+                    <app-pagination-component [totalItems]="expenses.totalItems" [currentPage]="currentPage()" [numbersPerPage]="20" (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
+                    } @case (true) {
+                        Loading...
+                    }
+                }
+            }
+        }
+    </div>
 </div>

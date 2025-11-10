@@ -1,0 +1,22 @@
+<div class="flex items-center justify-center space-x-2 mt-4">
+    <!-- Previous button -->
+    <button class="px-2 py-2 bg-white border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100"
+        [disabled]="currentPage() == 0" (click)="setCurrentPage.emit(currentPage() -1)">
+        <lucide-angular [img]="left" color="#374151" [size]="size" class="my-icon" role="img"
+            aria-hidden="true"></lucide-angular>
+    </button>
+
+    <!-- Page numbers -->
+    @for (item of pages(); track $index) {
+
+    <button class="px-3 py-1 border rounded-md " [ngClass]="currentPage() == item ? 'active-page': 'default-page' "
+        (click)="setCurrentPage.emit(item)">{{item + 1}}</button>
+    }
+
+    <!-- Next button -->
+    <button class="px-2 py-2 bg-white border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100"
+        [disabled]="currentPage() == pages().length - 1" (click)="setCurrentPage.emit(currentPage()  +1)">
+        <lucide-angular [img]="right" color="#374151" [size]="size" class="my-icon" role="img"
+            aria-hidden="true"></lucide-angular>
+    </button>
+</div>

@@ -27,15 +27,15 @@ export const expSchema = z.object({
   name: z.string(),
   paymentMethod: z.string(),
   note: z.string().optional(),
+  currency: z.string(),
   items: z.array(
     z.object({
       name: z.string(),
       price: z.number(),
       category: z.object({
         name: z.string(),
-        _id:  z.string()
+        _id: z.string()
       }),
-      currency: z.string(),
     })
   )
 });

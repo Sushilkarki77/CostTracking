@@ -6,7 +6,7 @@
     <li class="mb-2">
         <button class="sidebar-item" [class]="item.isHeader ? 'header-item' : 'menu-item'"
             aria-label="Go to Cost Tracker Dashboard" [routerLink]="item.route" routerLinkActive="active-route"
-            [routerLinkActiveOptions]="{exact: true}">
+            [routerLinkActiveOptions]="{exact: item.isHeader ? true: false}">
             <lucide-angular [img]="item.icon" color="#374151" [size]="item.size" class="my-icon" role="img"
                 aria-hidden="true"></lucide-angular>
 

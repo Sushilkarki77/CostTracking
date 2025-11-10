@@ -44,9 +44,19 @@ export interface Expense {
 }
 
 export interface Item {
-  category: any
+  category: string
   name: string
   price: number
   currency: string
   _id: string
+}
+
+export type ExpenseSummary = Omit<Expense, 'items'> & {total: number};
+
+
+
+export interface Field<T> {
+  name: keyof T;
+  label: string;
+  type: string
 }

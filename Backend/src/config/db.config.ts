@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async (): Promise<void> => {
   try {
-    await mongoose.connect(process.env.MONGO_URI as string, {
+    await mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://sushilkarki352_db_user:eEXARPRzlM1AvexW@cluster0.vizjrin.mongodb.net/?appName=Cluster0' as string, {
       serverSelectionTimeoutMS: 5000,
     });
     console.log('MongoDB connected successfully');

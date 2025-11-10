@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpInterceptorFn } from '@angular/common/http';
+import { retryInterceptor } from './retry-interceptor-interceptor';
 
-import { retryInterceptorInterceptor } from './retry-interceptor-interceptor';
 
 describe('retryInterceptorInterceptor', () => {
   const interceptor: HttpInterceptorFn = (req, next) => 
-    TestBed.runInInjectionContext(() => retryInterceptorInterceptor(req, next));
+    TestBed.runInInjectionContext(() => retryInterceptor(req, next));
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

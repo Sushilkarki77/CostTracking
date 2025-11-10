@@ -13,3 +13,9 @@ export const selectCategoryLoading = createSelector(
   selectCategoryState,
   state => state.loading
 );
+
+
+export const selectCategoryInitialized = createSelector(
+  selectCategoryState,
+  state => state.initialized
+);

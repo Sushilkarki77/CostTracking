@@ -8,12 +8,14 @@ import { Category } from '../../common/interfaces/app.interface';
 export interface CategoryState {
     list: Category[];
     loading: boolean;
+    initialized: boolean;
     error?: any;
 }
 
 export const initialState: CategoryState = {
     list: [],
     loading: false,
+    initialized: false
 };
 
 export const categoryReducer = createReducer(
@@ -25,6 +27,7 @@ export const categoryReducer = createReducer(
         ...state,
         list: categories,
         loading: false,
+        initialized: true
     })),
     on(CategoryActions.loadCategoriesFailure, (state, { error }) => ({
         ...state,

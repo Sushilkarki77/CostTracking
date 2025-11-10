@@ -1,0 +1,1702 @@
+[
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 1",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 1",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 1",
+        "price": 10.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 2",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 2",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 2",
+        "price": 10.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 3",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 3",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 3",
+        "price": 11.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 4",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 4",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 4",
+        "price": 11.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 5",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 5",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 5",
+        "price": 12.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 6",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 6",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 6",
+        "price": 12.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 7",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 7",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 7",
+        "price": 13.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 8",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 8",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 8",
+        "price": 13.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 9",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 9",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 9",
+        "price": 14.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 10",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 10",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 10",
+        "price": 14.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 11",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 11",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 11",
+        "price": 15.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 12",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 12",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 12",
+        "price": 15.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 13",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 13",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 13",
+        "price": 16.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 14",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 14",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 14",
+        "price": 16.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 15",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 15",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 15",
+        "price": 17.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 16",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 16",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 16",
+        "price": 17.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 17",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 17",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 17",
+        "price": 18.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 18",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 18",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 18",
+        "price": 18.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 19",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 19",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 19",
+        "price": 19.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 20",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 20",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 20",
+        "price": 19.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 21",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 21",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 21",
+        "price": 20.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 22",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 22",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 22",
+        "price": 20.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 23",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 23",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 23",
+        "price": 21.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 24",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 24",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 24",
+        "price": 21.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 25",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 25",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 25",
+        "price": 22.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 26",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 26",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 26",
+        "price": 22.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 27",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 27",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 27",
+        "price": 23.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 28",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 28",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 28",
+        "price": 23.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 29",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 29",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 29",
+        "price": 24.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 30",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 30",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 30",
+        "price": 24.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 31",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 31",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 31",
+        "price": 25.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 32",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 32",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 32",
+        "price": 25.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 33",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 33",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 33",
+        "price": 26.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 34",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 34",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 34",
+        "price": 26.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 35",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 35",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 35",
+        "price": 27.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 36",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 36",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 36",
+        "price": 27.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 37",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 37",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 37",
+        "price": 28.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 38",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 38",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 38",
+        "price": 28.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 39",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 39",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 39",
+        "price": 29.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 40",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 40",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 40",
+        "price": 29.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 41",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 41",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 41",
+        "price": 30.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 42",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 42",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 42",
+        "price": 30.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 43",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 43",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 43",
+        "price": 31.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 44",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 44",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 44",
+        "price": 31.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 45",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 45",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 45",
+        "price": 32.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 46",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 46",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 46",
+        "price": 32.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 47",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 47",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 47",
+        "price": 33.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 48",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 48",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 48",
+        "price": 33.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 49",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 49",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 49",
+        "price": 34.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 50",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 50",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 50",
+        "price": 34.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 51",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 51",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 51",
+        "price": 35.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 52",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 52",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 52",
+        "price": 35.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 53",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 53",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 53",
+        "price": 36.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 54",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 54",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 54",
+        "price": 36.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 55",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 55",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 55",
+        "price": 37.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 56",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 56",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 56",
+        "price": 37.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 57",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 57",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 57",
+        "price": 38.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 58",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 58",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 58",
+        "price": 38.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 59",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 59",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 59",
+        "price": 39.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 60",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 60",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 60",
+        "price": 39.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 61",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 61",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 61",
+        "price": 40.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 62",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 62",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 62",
+        "price": 40.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 63",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 63",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 63",
+        "price": 41.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 64",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 64",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 64",
+        "price": 41.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 65",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 65",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 65",
+        "price": 42.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 66",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 66",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 66",
+        "price": 42.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 67",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 67",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 67",
+        "price": 43.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 68",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 68",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 68",
+        "price": 43.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 69",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 69",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 69",
+        "price": 44.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 70",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 70",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 70",
+        "price": 44.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 71",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 71",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 71",
+        "price": 45.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 72",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 72",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 72",
+        "price": 45.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 73",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 73",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 73",
+        "price": 46.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 74",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 74",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 74",
+        "price": 46.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 75",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 75",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 75",
+        "price": 47.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 76",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 76",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 76",
+        "price": 47.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 77",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 77",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 77",
+        "price": 48.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 78",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 78",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 78",
+        "price": 48.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 79",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 79",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 79",
+        "price": 49.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 80",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 80",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 80",
+        "price": 49.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 81",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 81",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 81",
+        "price": 50.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 82",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 82",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 82",
+        "price": 50.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 83",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 83",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 83",
+        "price": 51.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 84",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 84",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 84",
+        "price": 51.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 85",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 85",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 85",
+        "price": 52.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 86",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 86",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 86",
+        "price": 52.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 87",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 87",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 87",
+        "price": 53.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 88",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 88",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 88",
+        "price": 53.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 89",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 89",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 89",
+        "price": 54.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 90",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 90",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 90",
+        "price": 54.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 91",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 91",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 91",
+        "price": 55.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 92",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 92",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 92",
+        "price": 55.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 93",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 93",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 93",
+        "price": 56.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 94",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 94",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 94",
+        "price": 56.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 95",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 95",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 95",
+        "price": 57.0,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 96",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 96",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 96",
+        "price": 57.5,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 97",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 97",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 97",
+        "price": 58.0,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 98",
+    "paymentMethod": "paypal",
+    "note": "Sample note for expense 98",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 98",
+        "price": 58.5,
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 99",
+    "paymentMethod": "debit card",
+    "note": "Sample note for expense 99",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 99",
+        "price": 59.0,
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports"
+        }
+      }
+    ]
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Sample Expense 100",
+    "paymentMethod": "credit card",
+    "note": "Sample note for expense 100",
+    "currency": "usd",
+    "items": [
+      {
+        "name": "Item 100",
+        "price": 59.5,
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education"
+        }
+      }
+    ]
+  }
+]
