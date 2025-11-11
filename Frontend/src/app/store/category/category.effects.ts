@@ -3,17 +3,22 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as CategoryActions from './category.actions';
-import { catchError, EMPTY, exhaustMap, map, mergeMap, of, tap } from 'rxjs';
+import { catchError, EMPTY, exhaustMap, filter, map, mergeMap, of, tap, withLatestFrom } from 'rxjs';
 import { CategoryService } from '../../common/services/category.service';
+import { select, Store } from '@ngrx/store';
+import { selectCategoryInitialized } from './category.selectors';
 
 @Injectable()
 export class CategoryEffects {
     private actions$ = inject(Actions);
     private categoryService = inject(CategoryService);
+    private store = inject(Store);
 
     loadCategories$ = createEffect(() =>
         this.actions$.pipe(
             ofType(CategoryActions.loadCategories),
+            withLatestFrom(this.store.pipe(select(selectCategoryInitialized))),
+            filter(([action, loaded]) => !loaded),
             mergeMap(() =>
                 this.categoryService.getAll().pipe(
                     map(categories => CategoryActions.loadCategoriesSuccess({ categories })),
