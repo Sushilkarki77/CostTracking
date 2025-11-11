@@ -26,10 +26,12 @@ export const documentSchema = z.object({
 export const expSchema = z.object({
   name: z.string(),
   paymentMethod: z.string(),
+  date: z.string(),
   note: z.string().optional(),
-  currency: z.string(),
+ 
   items: z.array(
     z.object({
+       currency: z.string(),
       name: z.string(),
       price: z.number(),
       category: z.object({

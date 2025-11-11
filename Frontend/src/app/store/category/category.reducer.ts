@@ -20,7 +20,7 @@ export const initialState: CategoryState = {
 
 export const categoryReducer = createReducer(
     initialState,
-    on(CategoryActions.loadCategories, state => ({ ...state, loading: true })),
+    on(CategoryActions.loadCategoriesStarted, state => ({ ...state, loading: true })),
     on(CategoryActions.addCategory, (state, { category }) => ({ ...state, list: [...state.list, category] })),
     on(CategoryActions.deleteCategory, (state, { id }) => ({ ...state, list: state.list.filter(x => x._id != id) })),
     on(CategoryActions.loadCategoriesSuccess, (state, { categories }) => ({

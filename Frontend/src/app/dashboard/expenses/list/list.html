@@ -20,65 +20,13 @@
         @let loading = loading$ | async;
         @switch(loading) {
         @case (false) {
+        @let totalCount =expenses.totalItems;
 
-        <div class="flex justify-end">
-            Total: {{expenses.totalItems}}
-        </div>
-
-        <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
-            <thead class="bg-gray-100">
-                <tr>
-                    @for (item of fields; track $index) {
-                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                        {{ item.label }}
-                    </th>
-                    }
-
-                    @if (actions.length > 0) {
-                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                        Actions
-                    </th>
-                    }
-                </tr>
-            </thead>
-
-            <tbody class="bg-white divide-y divide-gray-200">
-                @for (exp of expenses.data; track exp._id) {
-                <tr>
-                    @for (property of fields; track property.name) {
-                    @let fieldName = property.name;
-
-                    @if (property.type == 'date' ) {
-                    <td class="px-4 py-2">{{ exp[fieldName] | date }}</td>
-
-                    } @else if(property.type == 'curency'){
-
-                    <td class="px-4 py-2">{{ exp[fieldName] | currency }}</td>
-
-                    }@else {
-                    <td class="px-4 py-2">{{ exp[fieldName] }}</td>
-                    }
-                    }
-                    <td class="px-4 py-2">
-                        @for (action of actions; track action.name) {
-
-                        <button type="button"
-                            class="bg-red-500 text-white px-2 py-1 mx-1 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400"
-                            (click)="action.function(exp)" [attr.aria-label]="action.label + ' for ' + exp.name">
-                            {{ action.label }}
-                        </button>
-
-                        }
-                    </td>
-                </tr>
-
-                }
-
-
-            </tbody>
-        </table>
-        <app-pagination-component [totalItems]="expenses.totalItems" [currentPage]="currentPage()" [numbersPerPage]="20"
-            (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
+        @if(totalCount === 0) {
+        <h3 class="text-center">No Items</h3>
+        } @else {
+        <ng-container *ngTemplateOutlet="ExpenseList; context: {totalCount, expenses}"></ng-container>
+        }
         } @case (true) {
         Loading...
         }
@@ -96,11 +44,75 @@
 </div>
 
 
+
+
+
+
 <ng-template #transactionTemplate>
     @let selectedItemSummary = selectedItem();
     @if(selectedItemSummary){
-        @if(expenseItemSelected$() | async; as exp){
-            <app-expense-details [expenseItem$]="exp" [expSummary$]="selectedItemSummary"></app-expense-details>
-        }
+    @if(expenseItemSelected$() | async; as exp){
+    <app-expense-details [expenseItem$]="exp" [expSummary$]="selectedItemSummary"></app-expense-details>
     }
+    }
+</ng-template>
+
+<ng-template #ExpenseList let-totalCount="totalCount" let-expenses="expenses">
+    <div class="flex justify-end">
+        Total: {{totalCount}}
+    </div>
+
+    <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
+        <thead class="bg-gray-100">
+            <tr>
+                @for (item of fields; track $index) {
+                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    {{ item.label }}
+                </th>
+                }
+
+                @if (actions.length > 0) {
+                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    Actions
+                </th>
+                }
+            </tr>
+        </thead>
+
+        <tbody class="bg-white divide-y divide-gray-200">
+            @for (exp of expenses.data; track exp._id) {
+            <tr>
+                @for (property of fields; track property.name) {
+                @let fieldName = property.name;
+
+                @if (property.type == 'date' ) {
+                <td class="px-4 py-2">{{ exp[fieldName] | date }}</td>
+
+                } @else if(property.type == 'curency'){
+
+                <td class="px-4 py-2">{{ exp[fieldName] | currency }}</td>
+
+                }@else {
+                <td class="px-4 py-2">{{ exp[fieldName] }}</td>
+                }
+                }
+                <td class="px-4 py-2 flex">
+                    @for (action of actions; track action.name) {
+
+                    <button type="button" [class]="action.class" (click)="action.function(exp)"
+                        [attr.aria-label]="action.label + ' for ' + exp.name">
+                        {{ action.label }}
+                    </button>
+
+                    }
+                </td>
+            </tr>
+
+            }
+
+
+        </tbody>
+    </table>
+    <app-pagination-component [totalItems]="expenses.totalItems" [currentPage]="currentPage()" [numbersPerPage]="20"
+        (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
 </ng-template>

@@ -2,26 +2,39 @@ import { inject } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ExpensesService } from "../../common/services/expenses.services";
 import * as ExpensesActions from "./expenses.actions"
-import { catchError, exhaustMap, map, mergeMap, of, tap } from "rxjs";
+import { catchError, concat, exhaustMap, filter, map, mergeMap, of, tap, withLatestFrom } from "rxjs";
+import { select, Store } from "@ngrx/store";
+import { selectExpenseInitialized } from "./expenses.selectors";
 
 
 export class ExpensesEffects {
     private actions$ = inject(Actions);
     private expensesService = inject(ExpensesService);
+    private store = inject(Store);
 
-    loadEffects$ = createEffect(() => {
-        return this.actions$.pipe(
+
+    loadExpensesStart$ = createEffect(() =>
+        this.actions$.pipe(
             ofType(ExpensesActions.loadExpenses),
+            withLatestFrom(this.store.pipe(select(selectExpenseInitialized))),
+            filter(([_, loaded]) => !loaded),
+            map(() => ExpensesActions.loadExpensesStarted())
+        )
+    );
+
+    loadExpensesApi$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ExpensesActions.loadExpensesStarted),
             mergeMap(() =>
                 this.expensesService.getAll().pipe(
                     map(expenses => ExpensesActions.loadExpensesSuccess({ expenses })),
                     catchError(error => of(ExpensesActions.loadExpensesFailure({ error })))
-                ),
+                )
             )
         )
-    });
+    );
 
-    addExpense$ = createEffect(() =>
+    createExpense$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ExpensesActions.createExpense),
             exhaustMap(action =>

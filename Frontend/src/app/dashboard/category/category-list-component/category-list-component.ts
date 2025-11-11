@@ -62,7 +62,7 @@ export class CategoryListComponent {
   }
 
   constructor() {
-    this.categoriesInitialized$.subscribe(loaded => { if (!loaded) { this.store.dispatch(loadCategories()) } });
+   this.store.dispatch(loadCategories())
   }
 
 }

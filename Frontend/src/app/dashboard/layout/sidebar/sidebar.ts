@@ -4,6 +4,8 @@ import { LucideAngularModule, ChevronLeft, ChevronRight, DollarSign, ChartBar, L
 import { RouterLink, RouterLinkActive } from "@angular/router";
 import { CategoryListComponent } from '../../category/category-list-component/category-list-component';
 import { AuthService } from '../../../common/services/auth-service';
+import { Store } from '@ngrx/store';
+import { logoutAction } from '../../../store/clear-state.metareducer';
 
 @Component({
   selector: 'dashboard-sidebar',
@@ -17,6 +19,7 @@ export class Sidebar {
   readonly chevronRight = ChevronRight;
 
   private authService = inject(AuthService);
+  private store = inject(Store);
 
   sideBarItems = [
     { label: 'Dashboard', icon: LayoutDashboard, size: 36, text: '', isHeader: true, route: '' },
@@ -38,6 +41,7 @@ export class Sidebar {
 
   handleLogout() {
     this.authService.logout();
+    this.store.dispatch(logoutAction())
   }
 
 }

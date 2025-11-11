@@ -1,126 +1,107 @@
-<form class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-md space-y-6" [formGroup]="expenseForm"
-    (ngSubmit)="handleSubmit()">
+<section class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-md space-y-6"> <ng-content
+        select="[title]"></ng-content>
+    <form [formGroup]="expenseForm" (ngSubmit)="handleSubmit()" aria-labelledby="expenseFormTitle">
+        <fieldset class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <legend id="expenseFormTitle" class="sr-only">Expense Transaction Form</legend>
+            <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Transaction Name</label>
+                <input type="text" id="name" name="name" formControlName="name" placeholder="Transaction name"
+                    class="w-full input" required />
+            </div>
 
+            <div>
+                <label for="transactionDate" class="block text-sm font-medium text-gray-700 mb-1">Transaction
+                    Date</label>
+                <input type="date" id="transactionDate" name="transactionDate" formControlName="date"
+                    class="w-full input" required />
+            </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Transaction Name</label>
-            <input type="text" id="name" name="name" formControlName="name" placeholder="Transaction name"
-                class="w-full input" />
-        </div>
+            <div>
+                <label for="paymentMethod" class="block text-sm font-medium text-gray-700 mb-1">Payment Method</label>
+                <select id="paymentMethod" name="paymentMethod" formControlName="paymentMethod" class="w-full input"
+                    required>
+                    <option value="" disabled selected>Select</option>
+                    @for (opt of paymentOptions; track opt.value) {
+                    <option [value]="opt.value">{{ opt.name }}</option>
+                    }
+                </select>
+            </div>
 
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="transactionDate">Transaction Date</label>
-            <input type="date" id="transactionDate" name="transactionDate" formControlName="transactionDate"
-                placeholder="Transaction date" class="w-full input" />
-        </div>
+            <div class="md:col-span-2">
+                <label for="note" class="block text-sm font-medium text-gray-700 mb-1">Note</label>
+                <textarea id="note" name="note" rows="3" formControlName="note" placeholder="Add some notes"
+                    class="w-full input">Bought essentials for the month</textarea>
+            </div>
+        </fieldset>
 
-        <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="paymentMethod">Payment Method</label>
-            <select id="paymentMethod" name="paymentMethod" formControlName="method" placeholder="Payment Method"
-                class="w-full input">
-
-                <option value="selected" selected disabled>Select</option>
-                @for (opt of paymentOptions; track opt.value){
-                <option [value]="opt.value">{{opt.name}}</option>
-                }
-            </select>
-        </div>
-
-        <div class="sm:col-span-2">
-            <label class="block text-sm font-medium text-gray-700 mb-1" for="note">Note</label>
-            <textarea id="note" name="note" rows="3" formControlName="note" placeholder="Add some notes"
-                class="w-full input">Bought essentials for the month</textarea>
-        </div>
-    </div>
-
-
-    <div formArrayName="items">
-
-        @let itemControls = items.controls;
-
-        @if(itemControls.length > 0){
-        <h3 class="text-md font-semibold text-gray-800 mb-3">Items</h3>
-        }
-
-        <div class="space-y-4">
-
+        <fieldset formArrayName="items" class="space-y-4">
+            @let itemControls = items.controls;
+            @if(itemControls.length > 0) {
+            <legend class="text-md font-semibold text-gray-800 mb-3">Items</legend>
+            }
 
             <div *ngFor="let item of itemControls; let i = index" [formGroupName]="i"
-                class="grid grid-cols-1 sm:grid-cols-4 gap-4 items-end">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="itemName1">Item
-                        Name</label>
-                    <input type="text" id="itemName1" name="itemName1" formControlName="itemName"
-                        placeholder="Item name" class="w-full input" />
+                class="grid grid-cols-1 md:grid-cols-7 gap-4 items-end">
+                <div class="md:col-span-2">
+                    <label for="itemName{{i}}" class="block text-sm font-medium text-gray-700 mb-1">Item Name</label>
+                    <input type="text" id="itemName{{i}}" name="itemName{{i}}" formControlName="name"
+                        placeholder="Item name" class="w-full input" required />
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="category1">Category</label>
 
-
-                    <select id="category1" name="category1" formControlName="category" placeholder="Select Category"
-                        class="w-full input">
-
-                        <option value="selected" selected disabled>Select</option>
-                        @for (opt of categories(); track opt._id){
-                        <option [value]="opt.name">{{opt.name}}</option>
+                <div class="md:col-span-2">
+                    <label for="category{{i}}" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                    <select id="category{{i}}" name="category{{i}}" formControlName="category" class="w-full input"
+                        required>
+                        <option value="" disabled selected>Select</option>
+                        @for (opt of categories(); track opt._id) {
+                        <option [value]="opt._id">{{ opt.name }}</option>
                         }
                     </select>
                 </div>
+
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1" for="price1">Price</label>
-                    <input type="number" id="price1" name="price1" step="0.01" formControlName="price"
-                        placeholder="Price" class="w-full input" />
+                    <label for="price{{i}}" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                    <input type="number" id="price{{i}}" name="price{{i}}" step="0.01" formControlName="price"
+                        placeholder="Price" class="w-full input" required />
                 </div>
 
-                <div class="flex align-center gap-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1" for="currency1">Currency</label>
-
-                        <select id="currency1" name="currency1" formControlName="currency" placeholder="Select Currency"
-                            class="w-full input">
-
-                            <option value="selected" selected disabled>Select</option>
-                            @for (opt of currencies; track opt){
-                            <option [value]="opt">{{opt}}</option>
-                            }
-                        </select>
-                    </div>
-
-                    <div class="m-auto">
-                        <button class="cursor-pointer mt-5 border border-gray-300 rounded-md p-1 hover:border-blue-500"
-                            (click)="removeItem(i)">
-                            <lucide-angular id="navigator-icon" [img]="minus" color="#374151" size="22"
-                                class="hover:color-primary-[color:var(--primary-600)]" role="img"
-                                aria-hidden="true"></lucide-angular>
-                        </button>
-
-                    </div>
-
+                <div class="md:col-span-1">
+                    <label for="currency{{i}}" class="block text-sm font-medium text-gray-700 mb-1">Currency</label>
+                    <select id="currency{{i}}" name="currency{{i}}" formControlName="currency" class="w-full input"
+                        required>
+                        <option value="" disabled selected>Select</option>
+                        @for (opt of currencies; track opt) {
+                        <option [value]="opt">{{ opt }}</option>
+                        }
+                    </select>
                 </div>
 
-
+                <div class="md:col-span-1">
+                    <button type="button"
+                        class="cursor-pointer mt-5 border border-gray-300 rounded-md p-1 hover:border-blue-500"
+                        (click)="removeItem(i)" [disabled]="i === 0">
+                        <lucide-angular id="navigator-icon" [img]="minus" color="#374151" size="22"
+                            aria-hidden="true"></lucide-angular>
+                    </button>
+                </div>
             </div>
-
 
             <div class="m-auto flex justify-center">
-                <button class="cursor-pointer mt-5 border border-gray-300 rounded-md p-1 hover:border-blue-500"
+                <button type="button"
+                    class="cursor-pointer mt-5 border border-gray-300 rounded-md p-1 hover:border-blue-500"
                     (click)="addItem()">
                     <lucide-angular id="navigator-icon" [img]="add" color="#374151" size="22"
-                        class="hover:color-primary-[color:var(--primary-600)]" role="img"
                         aria-hidden="true"></lucide-angular>
                 </button>
-
             </div>
+        </fieldset>
+
+        <div class="flex justify-end">
+            <button type="submit" [disabled]="!expenseForm.valid"
+                class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed">
+                Save
+            </button>
         </div>
-    </div>
 
-    <!-- Submit Button -->
-    <div class="flex justify-end">
-        <button type="submit" [disabled]="!expenseForm.valid"
-            class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed">
-            Save
-        </button>
-    </div>
-
-</form>
+    </form>
+</section>

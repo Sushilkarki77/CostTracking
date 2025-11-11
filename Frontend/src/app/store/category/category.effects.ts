@@ -3,7 +3,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as CategoryActions from './category.actions';
-import { catchError, EMPTY, exhaustMap, filter, map, mergeMap, of, tap, withLatestFrom } from 'rxjs';
+import { catchError, concat, exhaustMap, filter, map, mergeMap, of, tap, withLatestFrom } from 'rxjs';
 import { CategoryService } from '../../common/services/category.service';
 import { select, Store } from '@ngrx/store';
 import { selectCategoryInitialized } from './category.selectors';
@@ -18,7 +18,16 @@ export class CategoryEffects {
         this.actions$.pipe(
             ofType(CategoryActions.loadCategories),
             withLatestFrom(this.store.pipe(select(selectCategoryInitialized))),
-            filter(([action, loaded]) => !loaded),
+            filter(([_, loaded]) => !loaded),
+            mergeMap(() => [
+                CategoryActions.loadCategoriesStarted()
+            ])
+        )
+    );
+
+    loadCategoriesApi$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(CategoryActions.loadCategoriesStarted),
             mergeMap(() =>
                 this.categoryService.getAll().pipe(
                     map(categories => CategoryActions.loadCategoriesSuccess({ categories })),

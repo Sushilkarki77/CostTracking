@@ -1,17 +1,18 @@
 <div class="p-4">
-    <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-semibold text-gray-800">Add Expenses</h2>
-        <div>
-            <button type="submit" (click)="handleBack()"
-                class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                Back
-            </button>
-        </div>
-
-    </div>
     @let categories = categories$ | async;
     @if(categories){
-    <app-expense-form [categories]="categories"></app-expense-form>
+    <app-expense-form [categories]="categories" (formSubmitted)="handleFormSubmitted($event)">
+        <ng-container title>
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Add Expenses</h2>
+                <div>
+                    <button type="submit" (click)="handleBack()"
+                        class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        Back
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+    </app-expense-form>
     }
-
 </div>

@@ -38,6 +38,7 @@ export interface Expense {
   name: string
   paymentMethod: string
   note: string
+  date: string
   items: Item[]
   createdAt: string
   updatedAt: string
@@ -49,7 +50,7 @@ export interface Item {
   name: string
   price: number
 
-  _id: string
+  _id?: string
 }
 
 export type ExpenseSummary = Omit<Expense, 'items'> & { total: number };

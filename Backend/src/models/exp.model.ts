@@ -4,11 +4,13 @@ const expSchema = new Schema(
     {
         userId: { type: String, required: true },
         name: { type: String, required: true },
+        date: { type: String, required: true },
         paymentMethod: { type: String, required: true },
         note: { type: String },
-        currency: { type: String, required: true },
+
         items: [
             {
+                currency: { type: String, required: true },
                 name: { type: String, required: true },
                 price: { type: Number, required: true },
                 category: {
@@ -44,5 +46,5 @@ export const deleteExp = async (_id: string, userId: string): Promise<ExpDocumen
 };
 
 export const findExplistByuserId = async (userId: string): Promise<ExpDocument[]> => {
-    return await ExpModel.find({ userId });
+    return await ExpModel.find({ userId }).sort({ createdAt: -1 });
 };

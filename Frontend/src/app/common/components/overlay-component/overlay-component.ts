@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, Input, TemplateRef } from '@angular/core';
+import { Component, input,  TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-overlay-component',

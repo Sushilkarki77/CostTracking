@@ -5,7 +5,7 @@ import { Sidebar } from "../layout/sidebar/sidebar";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterOutlet, Header, Sidebar],
+  imports: [RouterOutlet,  Sidebar],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

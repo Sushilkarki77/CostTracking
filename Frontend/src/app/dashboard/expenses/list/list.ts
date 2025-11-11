@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { filteredExpensesSummary, selectExpenseError, selectExpenseInitialized, selectExpenseItem, selectExpenseLoading, selectExpensesSummary } from '../../../store/expenses/expenses.selectors';
 import { deleteExpense, loadExpenses } from '../../../store/expenses/expenses.actions';
 import {  ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
-import { AsyncPipe, CurrencyPipe, DatePipe,  JsonPipe } from '@angular/common';
+import { AsyncPipe, CurrencyPipe, DatePipe, JsonPipe, NgTemplateOutlet } from '@angular/common';
 import { Router } from '@angular/router';
 import { PaginationComponent } from '../../../common/components/pagination-component/pagination-component';
 import { OverlayComponent } from '../../../common/components/overlay-component/overlay-component';
@@ -19,7 +19,7 @@ const Fields: Field<ExpenseSummary>[] = [
 
 @Component({
   selector: 'app-list',
-  imports: [AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent],
+  imports: [AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent, NgTemplateOutlet],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
@@ -31,7 +31,9 @@ export class List {
   private store = inject(Store);
 
   expenses$ = computed(() =>
-    this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize))
+  
+  this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize))
+    
   );
 
   fields: Field<ExpenseSummary>[] = Fields;
@@ -61,20 +63,20 @@ export class List {
   actions = [
     {
       name: "delete",
-      label: "Delete",
+      class: "btn-danger",
+      label: '✖',
       function: (exp: ExpenseSummary) => this.handleDelete(exp)
     },
     {
       name: "details",
-      label: "View",
+      class: 'btn-outlined',
+      label: '👁‍🗨',
       function: (exp: ExpenseSummary) => this.handleView(exp)
     }
   ]
 
   constructor() {
-    this.store.select(selectExpenseInitialized).pipe(takeUntil(this.componentDestroyed$)).subscribe(loaded => {
-      if (!loaded) this.store.dispatch(loadExpenses())
-    })
+     this.store.dispatch(loadExpenses())
   }
 
   handleDelete = (exp: ExpenseSummary) => {

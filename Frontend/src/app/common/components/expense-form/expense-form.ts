@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, input } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject, input, output } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Plus, Minus, LucideAngularModule } from 'lucide-angular';
-import { Category } from '../../interfaces/app.interface';
+import { Category, Expense } from '../../interfaces/app.interface';
 
 const paymentOptions = [
   { name: 'Credit Card', value: 'credit-card' },
@@ -11,7 +11,19 @@ const paymentOptions = [
   { name: 'PayPal', value: 'PayPal' },
 ]
 
-const Currencies = ['USD']
+const Currencies = ['USD'];
+interface ExpenseFormModel {
+  name: FormControl<string>;
+  date: FormControl<string>;
+  paymentMethod: FormControl<string>;
+  note: FormControl<string>;
+  items: FormArray<FormGroup<{
+    name: FormControl<string>;
+    category: FormControl<string>;
+    price: FormControl<string>;
+    currency: FormControl<string>;
+  }>>}
+  
 
 @Component({
   selector: 'app-expense-form',
@@ -22,22 +34,41 @@ const Currencies = ['USD']
 export class ExpenseForm {
 
   paymentOptions = paymentOptions;
-  private fb = inject(FormBuilder);
+  private fb = inject(NonNullableFormBuilder);
   add = Plus;
   minus = Minus;
 
   currencies = Currencies;
+  categories = input.required<Category[]>();
+  formSubmitted = output<Partial<Expense>>();
 
-  categories = input<Category[]>();
+
+  expenseForm!: FormGroup<ExpenseFormModel>;
+
+  constructor() {
+    this.expenseForm = this.fb.group({
+      name: this.fb.control('', Validators.required),
+      date: this.fb.control('', Validators.required),
+      paymentMethod: this.fb.control('', Validators.required),
+      note: this.fb.control('', Validators.required),
+      items: this.fb.array([this.createItem()])
+    });
+  }
 
 
-  expenseForm = this.fb.nonNullable.group({
-    name: ['', Validators.required],
-    transactionDate: ['', Validators.required],
-    method: ['selected', Validators.required],
-    note: ['', Validators.required],
-    items: this.fb.array([this.createItem()])
-  });
+   createItem(): FormGroup<{
+    name: FormControl<string>;
+    category: FormControl<string>;
+    price: FormControl<string>;
+    currency: FormControl<string>;
+  }> {
+    return this.fb.group({
+      name: this.fb.control('', Validators.required),
+      category: this.fb.control('', Validators.required),
+      price: this.fb.control('', Validators.required),
+      currency: this.fb.control(this.currencies[0], Validators.required)
+    });
+  }
 
 
   get items(): FormArray {
@@ -48,27 +79,17 @@ export class ExpenseForm {
     this.items?.push(this.createItem());
   }
 
-  createItem(): FormGroup {
-    return this.fb.group({
-      itemName: ['', Validators.required],
-      category: ['selected', Validators.required],
-      price: ['', Validators.required],
-      // quantity: [0, Validators.required],
-      currency: [this.currencies[0], Validators.required]
-    });
-  }
 
   removeItem(index: number): void {
     this.items.removeAt(index);
   }
 
   handleSubmit() {
-    console.log(this.expenseForm)
-  }
-
-
-  constructor() {
-
+    if(!this.expenseForm.value) return;
+    const expenseFormValue = { ...this.expenseForm.value };
+    const expenseItem = { ...expenseFormValue, items: expenseFormValue?.items?.map(x => ({ ...x, category: this.categories().find(y => y._id === x.category) })) } as Partial<Expense>;
+    this.formSubmitted.emit(expenseItem);
+    this.expenseForm.reset();
   }
 
 }
