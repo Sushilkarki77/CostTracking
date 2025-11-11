@@ -37,7 +37,7 @@ A full-stack web application to track and manage your incomes and expenses, buil
 ### Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/Sushilkarki77/CostTracking)
 cd cost-tracking-app
 ```
 
