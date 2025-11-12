@@ -19,9 +19,10 @@ export const selectExpensesSummary = createSelector(
   })
 )
 
-export const filteredExpensesSummary = (page: number, pageSize: number, filterState?: Partial<FilterState>) => createSelector(
+export const filteredExpensesSummary = (page: number, pageSize: number, filterState?: Partial<FilterState>, sortState?: Record<keyof ExpenseSummary, '-1' | '0'> | {}) => createSelector(
   selectExpensesSummary,
   (state): { totalItems: number, data: ExpenseSummary[] } => {
+
 
     const filteredData = state.filter(x =>
       (filterState?.name ? x.name.toLocaleLowerCase().includes(filterState.name.toLocaleLowerCase()) : true) &&
@@ -31,10 +32,25 @@ export const filteredExpensesSummary = (page: number, pageSize: number, filterSt
       (filterState?.endDate ? new Date(filterState.endDate) >= new Date(x.date) : true)
     );
 
+  
+    let sortedData = filteredData.sort((a, b) => {
+      if (!sortState) return 0;
+
+      for (const [field, direction] of Object.entries(sortState) as [keyof ExpenseSummary, '1' | '-1'][]) {
+        const dir = direction === '1' ? 1 : -1;
+        if (a[field] > b[field]) return 1 * dir;
+        if (a[field] < b[field]) return -1 * dir;
+      }
+
+      return 0;
+    });
+
+
+
     return {
       totalItems: filteredData.length,
-      data: filteredData.slice(page * pageSize, ((page * pageSize) + pageSize))
-   }
+      data: sortedData.slice(page * pageSize, ((page * pageSize) + pageSize))
+    }
   }
 )
 

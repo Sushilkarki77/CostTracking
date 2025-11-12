@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal, TemplateRef, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { filteredExpensesSummary, selectExpenseError, selectExpenseInitialized, selectExpenseItem, selectExpenseLoading, selectExpensesSummary } from '../../../store/expenses/expenses.selectors';
+import { filteredExpensesSummary, selectExpenseError, selectExpenseItem, selectExpenseLoading } from '../../../store/expenses/expenses.selectors';
 import { deleteExpense, loadExpenses } from '../../../store/expenses/expenses.actions';
 import { ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
 import { AsyncPipe, CurrencyPipe, DatePipe, JsonPipe, NgTemplateOutlet } from '@angular/common';
@@ -10,17 +10,19 @@ import { OverlayComponent } from '../../../common/components/overlay-component/o
 import { ExpenseDetails } from '../expense-details/expense-details';
 import { ExpensesFilter } from '../expenses-filter/expenses-filter';
 import { FilterState } from '../expenses.interfaces';
+import { ArrowDown, ArrowUp, LucideAngularModule } from 'lucide-angular';
+import { IsItemActive } from '../../../common/directives/is-item-active';
 
 const Fields: Field<ExpenseSummary>[] = [
   { label: "Name", name: "name", type: "string" },
-  { label: "Created", name: "createdAt", type: "date" },
+  { label: "Created", name: "createdAt", type: "date", sortable: true },
   { label: "Method", name: "paymentMethod", type: "string" },
-  { label: "Total", name: "total", type: "curency" }
+  { label: "Total", name: "total", type: "curency", sortable: true }
 ]
 
 @Component({
   selector: 'app-list',
-  imports: [AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent, NgTemplateOutlet, ExpensesFilter],
+  imports: [LucideAngularModule, AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent, NgTemplateOutlet, ExpensesFilter, IsItemActive],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
@@ -30,7 +32,10 @@ export class List {
   private store = inject(Store);
 
   private filterState = signal<Partial<FilterState>>({ name: '', startDate: '', endDate: '' });
-  expenses$ = computed(() => this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize, this.filterState())));
+   sortState = signal<Record<keyof ExpenseSummary, '-1' | '1'> | {}>({});
+  expenses$ = computed(() => this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize, this.filterState(), this.sortState())));
+  protected arrowUp = ArrowUp;
+  protected arrowDown = ArrowDown;
 
   fields: Field<ExpenseSummary>[] = Fields;
   fieldNames: Omit<(keyof ExpenseSummary)[], 'items'> = this.fields.map(x => x.name);
@@ -86,9 +91,13 @@ export class List {
 
   setCurrentPage = (page: number) => this.currentPage.set(page);
 
-
   filterChanged = (filterState: Partial<FilterState>) => {
     this.currentPage.update(_ => 0);
     this.filterState.update(prev => filterState);
+  }
+
+  updateSortState = (key: keyof ExpenseSummary, value: '1' | '-1') => {
+    const newSortState = {[key]: value}
+    this.sortState.update(prev => newSortState)
   }
 }

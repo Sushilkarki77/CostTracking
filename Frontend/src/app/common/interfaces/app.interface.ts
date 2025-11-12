@@ -61,4 +61,5 @@ export interface Field<T> {
   name: keyof T;
   label: string;
   type: string
+  sortable?: boolean
 }

@@ -20,7 +20,7 @@ export class PaginationComponent {
   pages = computed(() => {
     let totalPages = [];
     let pagesNumbers = Math.round(this.totalItems() / this.numbersPerPage());
-    for (let i = 0; i < pagesNumbers; i++) {
+    for (let i = 0; i <= pagesNumbers; i++) {
       totalPages.push(i);
     }
     return totalPages;

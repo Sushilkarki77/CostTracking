@@ -69,9 +69,24 @@
     <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
         <thead class="bg-gray-100">
             <tr>
+                 <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    SN.
+                </th>
+
                 @for (item of fields; track $index) {
                 <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
                     {{ item.label }}
+                      @if(item.sortable){
+                        <button  type="button" [aria-label]="item.label + 'Sort Ascending'" (click)="updateSortState(item.name, '1')"   >
+                            <lucide-angular [img]="arrowUp" color="#374151" [size]="18" class="my-icon" role="img" appIsItemActive [current]="item.name" [target]="sortState()" class="active-sort" direction="1"
+                                        aria-hidden="true"></lucide-angular>
+                        </button>
+
+                        <button  type="button" [aria-label]="item.label + 'Sort Descending'" (click)="updateSortState(item.name, '-1')">
+                             <lucide-angular [img]="arrowDown" color="#374151" [size]="18" class="my-icon" role="img"  appIsItemActive [current]="item.name" [target]="sortState()" class="active-sort"  direction="-1"
+                                        aria-hidden="true"></lucide-angular>
+                        </button>
+                     }
                 </th>
                 }
 
@@ -84,8 +99,10 @@
         </thead>
 
         <tbody class="bg-white divide-y divide-gray-200">
-            @for (exp of expenses.data; track exp._id) {
+            @for (exp of expenses.data; let i = $index; track exp._id) {
             <tr>
+                <td class="w-10 px-4 py-2">{{ (currentPage() * pageSize) + i + 1 }}</td>
+
                 @for (property of fields; track property.name) {
                 @let fieldName = property.name;
 
