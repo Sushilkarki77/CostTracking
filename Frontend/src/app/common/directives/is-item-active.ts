@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, inject, input, Renderer2, SimpleChanges } from '@angular/core';
+import { Directive, effect, ElementRef, HostBinding, inject, input, Renderer2, SimpleChanges } from '@angular/core';
 import { ExpenseSummary } from '../interfaces/app.interface';
 
 @Directive({
@@ -12,10 +12,8 @@ export class IsItemActive {
   class = input.required<string>();
   el = inject(ElementRef);
   renderer = inject(Renderer2);
-
-  constructor() { }
-
-  ngOnChanges(changes: SimpleChanges) {
+  
+  e = effect(() => {
     const isActive = Object.entries(this.target()).some(
       ([key, value]) => key === this.current() && value === this.direction()
     );
@@ -25,6 +23,6 @@ export class IsItemActive {
     } else {
       this.renderer.removeClass(this.el.nativeElement, this.class());
     }
-  }
+  })
 
 }
