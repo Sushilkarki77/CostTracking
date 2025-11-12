@@ -13,6 +13,7 @@ import { FilterState } from '../expenses.interfaces';
 import { ArrowDown, ArrowUp, LucideAngularModule } from 'lucide-angular';
 import { IsItemActive } from '../../../common/directives/is-item-active';
 
+type SortValues = '-1' | '1';
 const Fields: Field<ExpenseSummary>[] = [
   { label: "Name", name: "name", type: "string" },
   { label: "Created", name: "createdAt", type: "date", sortable: true },
@@ -32,7 +33,7 @@ export class List {
   private store = inject(Store);
 
   private filterState = signal<Partial<FilterState>>({ name: '', startDate: '', endDate: '' });
-   sortState = signal<Record<keyof ExpenseSummary, '-1' | '1'> | {}>({});
+  sortState = signal<Partial<Record<keyof ExpenseSummary, SortValues>>>({ date: '-1' });
   expenses$ = computed(() => this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize, this.filterState(), this.sortState())));
   protected arrowUp = ArrowUp;
   protected arrowDown = ArrowDown;
@@ -49,6 +50,8 @@ export class List {
   overlayVisibility = signal<boolean>(false);
 
   selectedItem = signal<ExpenseSummary | null>(null);
+
+  constructor() { this.store.dispatch(loadExpenses()) }
 
   handleClose = () => this.overlayVisibility.update(prev => !prev);
 
@@ -73,8 +76,6 @@ export class List {
     }
   ]
 
-  constructor() { this.store.dispatch(loadExpenses()) }
-
   handleDelete = (exp: ExpenseSummary) => {
     const confirmed = window.confirm('Are you sure you want to delete this expense?');
     if (confirmed) {
@@ -93,11 +94,11 @@ export class List {
 
   filterChanged = (filterState: Partial<FilterState>) => {
     this.currentPage.update(_ => 0);
-    this.filterState.update(prev => filterState);
+    this.filterState.update(_ => filterState);
   }
 
   updateSortState = (key: keyof ExpenseSummary, value: '1' | '-1') => {
-    const newSortState = {[key]: value}
-    this.sortState.update(prev => newSortState)
+    const newSortState = { [key]: value }
+    this.sortState.update(_ => newSortState)
   }
 }
