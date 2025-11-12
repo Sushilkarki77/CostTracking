@@ -2,13 +2,14 @@ import { Component, computed, inject, signal, TemplateRef, ViewChild } from '@an
 import { Store } from '@ngrx/store';
 import { filteredExpensesSummary, selectExpenseError, selectExpenseInitialized, selectExpenseItem, selectExpenseLoading, selectExpensesSummary } from '../../../store/expenses/expenses.selectors';
 import { deleteExpense, loadExpenses } from '../../../store/expenses/expenses.actions';
-import {  ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
+import { ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
 import { AsyncPipe, CurrencyPipe, DatePipe, JsonPipe, NgTemplateOutlet } from '@angular/common';
 import { Router } from '@angular/router';
 import { PaginationComponent } from '../../../common/components/pagination-component/pagination-component';
 import { OverlayComponent } from '../../../common/components/overlay-component/overlay-component';
 import { ExpenseDetails } from '../expense-details/expense-details';
-import { Subject, takeUntil } from 'rxjs';
+import { ExpensesFilter } from '../expenses-filter/expenses-filter';
+import { FilterState } from '../expenses.interfaces';
 
 const Fields: Field<ExpenseSummary>[] = [
   { label: "Name", name: "name", type: "string" },
@@ -19,34 +20,26 @@ const Fields: Field<ExpenseSummary>[] = [
 
 @Component({
   selector: 'app-list',
-  imports: [AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent, NgTemplateOutlet],
+  imports: [AsyncPipe, ExpenseDetails, DatePipe, CurrencyPipe, PaginationComponent, JsonPipe, OverlayComponent, NgTemplateOutlet, ExpensesFilter],
   templateUrl: './list.html',
   styleUrl: './list.css',
 })
 export class List {
-  private componentDestroyed$ = new Subject<boolean>();
-
   currentPage = signal<number>(0);
   pageSize = 20;
   private store = inject(Store);
 
-  expenses$ = computed(() =>
-  
-  this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize))
-    
-  );
+  private filterState = signal<Partial<FilterState>>({ name: '', startDate: '', endDate: '' });
+  expenses$ = computed(() => this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize, this.filterState())));
 
   fields: Field<ExpenseSummary>[] = Fields;
   fieldNames: Omit<(keyof ExpenseSummary)[], 'items'> = this.fields.map(x => x.name);
-
 
   loading$ = this.store.select(selectExpenseLoading);
   error$ = this.store.select(selectExpenseError);
   private router = inject(Router);
 
-
-  @ViewChild('transactionTemplate', { static: true })
-  transactionTemplate!: TemplateRef<void>;
+  @ViewChild('transactionTemplate', { static: true }) transactionTemplate!: TemplateRef<void>;
 
   overlayVisibility = signal<boolean>(false);
 
@@ -75,9 +68,7 @@ export class List {
     }
   ]
 
-  constructor() {
-     this.store.dispatch(loadExpenses())
-  }
+  constructor() { this.store.dispatch(loadExpenses()) }
 
   handleDelete = (exp: ExpenseSummary) => {
     const confirmed = window.confirm('Are you sure you want to delete this expense?');
@@ -91,11 +82,13 @@ export class List {
     this.overlayVisibility.update(prev => !prev);
   }
 
-  handleAddExpense = () => this.router.navigate(['/dashboard/expenses/add'])
+  handleAddExpense = () => this.router.navigate(['/dashboard/expenses/add']);
 
   setCurrentPage = (page: number) => this.currentPage.set(page);
 
-  ngOnDestroy(): void {
-    this.componentDestroyed$.next(true);
+
+  filterChanged = (filterState: Partial<FilterState>) => {
+    this.currentPage.update(_ => 0);
+    this.filterState.update(prev => filterState);
   }
 }

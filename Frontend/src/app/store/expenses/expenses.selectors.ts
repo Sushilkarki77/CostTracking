@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { ExpenseState } from "./expenses.reducer";
 import { Expense, ExpenseSummary } from "../../common/interfaces/app.interface";
+import { FilterState } from "../../dashboard/expenses/expenses.interfaces";
 
 export const selectExpenseState = createFeatureSelector<ExpenseState>('expenses');
 
@@ -9,7 +10,7 @@ export const selectAllExpenses = createSelector(
   state => state.list
 );
 
-export const selectExpensesSummary =  createSelector(
+export const selectExpensesSummary = createSelector(
   selectAllExpenses,
   state => state.map(x => {
     const { items, ...expense } = x;
@@ -18,12 +19,23 @@ export const selectExpensesSummary =  createSelector(
   })
 )
 
-export const filteredExpensesSummary = (page: number, pageSize: number) => createSelector(
+export const filteredExpensesSummary = (page: number, pageSize: number, filterState?: Partial<FilterState>) => createSelector(
   selectExpensesSummary,
-  (state): {totalItems: number, data: ExpenseSummary[]} => ({
-   totalItems: state.length,
-   data: state.slice(page * pageSize, ((page * pageSize) + pageSize))}
-  )
+  (state): { totalItems: number, data: ExpenseSummary[] } => {
+
+    const filteredData = state.filter(x =>
+      (filterState?.name ? x.name.toLocaleLowerCase().includes(filterState.name.toLocaleLowerCase()) : true) &&
+
+      (filterState?.startDate ? new Date(filterState.startDate) <= new Date(x.date) : true) &&
+
+      (filterState?.endDate ? new Date(filterState.endDate) >= new Date(x.date) : true)
+    );
+
+    return {
+      totalItems: filteredData.length,
+      data: filteredData.slice(page * pageSize, ((page * pageSize) + pageSize))
+   }
+  }
 )
 
 export const selectExpenseLoading = createSelector(
@@ -37,7 +49,7 @@ export const selectExpenseItem = (_id: string) => createSelector(
   state => state.list.find(x => x._id === _id)
 );
 
-export const selectExpenseInitialized= createSelector(
+export const selectExpenseInitialized = createSelector(
   selectExpenseState,
   state => state.initialized
 );

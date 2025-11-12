@@ -13,25 +13,37 @@
 
 
     <div class="overflow-x-auto">
-        @if(error$ | async; as error) {
-        <div>{{error | json}}</div>
-        } @else {
-        @if (expenses$() | async; as expenses) {
-        @let loading = loading$ | async;
-        @switch(loading) {
-        @case (false) {
-        @let totalCount =expenses.totalItems;
+        @if (error$ | async; as error) {
+            <div>{{ error | json }}</div>
 
-        @if(totalCount === 0) {
-        <h3 class="text-center">No Items</h3>
         } @else {
-        <ng-container *ngTemplateOutlet="ExpenseList; context: {totalCount, expenses}"></ng-container>
-        }
-        } @case (true) {
-        Loading...
-        }
-        }
-        }
+
+            @if (expenses$() | async; as expenses) {
+            @let loading = loading$ | async;
+
+            @switch (loading) {
+
+                @case (false) {
+                @let totalCount = expenses.totalItems;
+
+                <ng-container
+                    *ngTemplateOutlet="ExpenseHeaderWithFilter; context: { totalCount }">
+                </ng-container>
+
+                @if (totalCount === 0) {
+                    <h3 class="text-center">No Items</h3>
+                } @else {
+                    <ng-container
+                    *ngTemplateOutlet="ExpenseList; context: { totalCount, expenses }">
+                    </ng-container>
+                }
+                }
+
+                @case (true) {
+                Loading...
+                }
+            }
+            }
         }
     </div>
 
@@ -44,10 +56,6 @@
 </div>
 
 
-
-
-
-
 <ng-template #transactionTemplate>
     @let selectedItemSummary = selectedItem();
     @if(selectedItemSummary){
@@ -58,10 +66,6 @@
 </ng-template>
 
 <ng-template #ExpenseList let-totalCount="totalCount" let-expenses="expenses">
-    <div class="flex justify-end">
-        Total: {{totalCount}}
-    </div>
-
     <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
         <thead class="bg-gray-100">
             <tr>
@@ -109,10 +113,17 @@
             </tr>
 
             }
-
-
         </tbody>
     </table>
     <app-pagination-component [totalItems]="expenses.totalItems" [currentPage]="currentPage()" [numbersPerPage]="20"
         (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
+</ng-template>
+
+<ng-template #ExpenseHeaderWithFilter let-totalCount="totalCount">
+    <section class="flex flex-1 flex-wrap justify-between items-center gap-4 p-4 rounded-lg">
+        <app-expenses-filter (filterStateChanged)="filterChanged($event)"></app-expenses-filter>
+        <output class="flex justify-end">
+            Total: {{ totalCount }}
+        </output>
+    </section>
 </ng-template>
