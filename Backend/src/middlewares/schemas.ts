@@ -43,6 +43,15 @@ export const expSchema = z.object({
 });
 
 
+export const incomeSchema = z.object({
+    name: z.string(),
+    amount: z.string(),
+    currency: z.string(),
+    date: z.string(),
+    note: z.string().optional()
+});
+
+
 
 export const categorySchema = z.object({
   name: z.string().min(1, "Category name is required")
