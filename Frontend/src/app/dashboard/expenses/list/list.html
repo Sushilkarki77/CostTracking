@@ -117,7 +117,7 @@
                 <td class="px-4 py-2">{{ exp[fieldName] }}</td>
                 }
                 }
-                <td class="px-4 py-2 flex">
+                <td class="px-4 py-2 flex gap-2">
                     @for (action of actions; track action.name) {
 
                     <button type="button" [class]="action.class" (click)="action.function(exp)"

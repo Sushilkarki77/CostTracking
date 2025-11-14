@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, input, output } from '@angular/core';
+import { Component, effect, inject, input, output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Plus, Minus, LucideAngularModule } from 'lucide-angular';
-import { Category, Expense } from '../../interfaces/app.interface';
+import { Category, Expense, Item } from '../../interfaces/app.interface';
 
 const paymentOptions = [
   { name: 'Credit Card', value: 'credit-card' },
@@ -22,8 +22,9 @@ interface ExpenseFormModel {
     category: FormControl<string>;
     price: FormControl<string>;
     currency: FormControl<string>;
-  }>>}
-  
+  }>>
+}
+
 
 @Component({
   selector: 'app-expense-form',
@@ -32,6 +33,18 @@ interface ExpenseFormModel {
   styleUrl: './expense-form.scss',
 })
 export class ExpenseForm {
+
+  expenseItem = input<Expense>();
+
+  e = effect(() => {
+    let expenseItem = this.expenseItem()
+    if (expenseItem != undefined) {
+      const { name, date, paymentMethod, note, items } = expenseItem;
+      this.expenseForm.patchValue({ name, date, paymentMethod, note });
+       this.expenseForm.controls.items.clear();
+      items.forEach(x => this.expenseForm.controls.items.push(this.createItem(x)))
+    }
+  })
 
   paymentOptions = paymentOptions;
   private fb = inject(NonNullableFormBuilder);
@@ -56,16 +69,16 @@ export class ExpenseForm {
   }
 
 
-   createItem(): FormGroup<{
+  createItem(item?: Item): FormGroup<{
     name: FormControl<string>;
     category: FormControl<string>;
     price: FormControl<string>;
     currency: FormControl<string>;
   }> {
     return this.fb.group({
-      name: this.fb.control('', Validators.required),
-      category: this.fb.control('', Validators.required),
-      price: this.fb.control('', Validators.required),
+      name: this.fb.control(item?.name || '', Validators.required),
+      category: this.fb.control(item?.category._id || '', Validators.required),
+      price: this.fb.control(item?.price.toString() || '', Validators.required),
       currency: this.fb.control(this.currencies[0], Validators.required)
     });
   }
@@ -85,7 +98,7 @@ export class ExpenseForm {
   }
 
   handleSubmit() {
-    if(!this.expenseForm.value) return;
+    if (!this.expenseForm.value) return;
     const expenseFormValue = { ...this.expenseForm.value };
     const expenseItem = { ...expenseFormValue, items: expenseFormValue?.items?.map(x => ({ ...x, category: this.categories().find(y => y._id === x.category) })) } as Partial<Expense>;
     this.formSubmitted.emit(expenseItem);

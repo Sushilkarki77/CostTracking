@@ -73,8 +73,17 @@ export class List {
       class: 'btn-outlined',
       label: '👁‍🗨',
       function: (exp: ExpenseSummary) => this.handleView(exp)
+    },
+     {
+      name: "edit",
+      class: 'btn-outlined',
+      label: '✏️',
+      function: (exp: ExpenseSummary) => this.handleEdit(exp)
     }
   ]
+
+   
+
 
   handleDelete = (exp: ExpenseSummary) => {
     const confirmed = window.confirm('Are you sure you want to delete this expense?');
@@ -87,6 +96,8 @@ export class List {
     this.selectedItem.set(exp)
     this.overlayVisibility.update(prev => !prev);
   }
+
+  handleEdit = (exp: ExpenseSummary) => this.router.navigate([`/dashboard/expenses/edit/${exp._id}`]);
 
   handleAddExpense = () => this.router.navigate(['/dashboard/expenses/add']);
 

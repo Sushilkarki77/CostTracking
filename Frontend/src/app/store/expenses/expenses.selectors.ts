@@ -14,7 +14,7 @@ export const selectExpensesSummary = createSelector(
   selectAllExpenses,
   state => state.map(x => {
     const { items, ...expense } = x;
-    const total = items.reduce((acc, curr) => acc + curr.price, 0);
+    const total = items?.reduce((acc, curr) => acc + curr.price, 0);
     return { ...expense, total }
   })
 )

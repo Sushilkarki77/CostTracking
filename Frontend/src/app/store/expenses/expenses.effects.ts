@@ -46,6 +46,18 @@ export class ExpensesEffects {
         )
     )
 
+     updateExpense$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ExpensesActions.updateExpense),
+            exhaustMap(action =>
+                this.expensesService.update(action._id, action.expense).pipe(
+                    map(expense => ExpensesActions.updateExpenseSuccess({_id: action._id, expense })),
+                    catchError(error => of(ExpensesActions.loadExpensesFailure({ error })))
+                )
+            )
+        )
+    )
+
     deleteExpense$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ExpensesActions.deleteExpense),

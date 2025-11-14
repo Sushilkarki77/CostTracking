@@ -31,6 +31,6 @@ export class AddExpenses {
   
   handleFormSubmitted(expense: Partial<Expense>) {
     this.store.dispatch(createExpense({ expense }));
-    this. handleBack();
+    this.handleBack();
   }
 }

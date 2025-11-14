@@ -17,6 +17,10 @@ export class ExpensesService {
         return this.httpClient.post<ResponseItem<Expense>>(this.API_URL, expense).pipe(map(res => res.data));
     }
 
+    update(id: string, expense: Partial<Expense>): Observable<Expense> {
+        return this.httpClient.put<ResponseItem<Expense>>(`${this.API_URL}/${id}`, expense).pipe(map(res => res.data));
+    }
+
     delete(_id: string): Observable<Expense> {
         return this.httpClient.delete<Expense>(`${this.API_URL}/${_id}`)
     }

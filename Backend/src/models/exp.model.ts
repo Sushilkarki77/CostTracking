@@ -38,7 +38,7 @@ export const seedExp = async (exps: ExpDocument[]): Promise<ExpDocument[]> => {
 };
 
 export const updateExp = async (userId: string, _id: string, exp: ExpDocument): Promise<ExpDocument | null> => {
-    return await ExpModel.findOneAndUpdate({ userId, _id }, { $set: exp });
+    return await ExpModel.findOneAndUpdate({ userId, _id }, { $set: exp }, {new: true, lean: true});
 };
 
 export const deleteExp = async (_id: string, userId: string): Promise<ExpDocument | null> => {
