@@ -1,7 +1,7 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xsm" [class]="visible() ? '': 'hidden'">
     <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full mx-4">
         <div class="p-6">
-            <h2 class="text-xl font-semibold mb-2"><ng-content select="[card-header]"></ng-content></h2>
+            <ng-content select="[card-header]"></ng-content>
             
               <ng-container *ngTemplateOutlet="template()"></ng-container>
 

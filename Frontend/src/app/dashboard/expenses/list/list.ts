@@ -10,7 +10,7 @@ import { OverlayComponent } from '../../../common/components/overlay-component/o
 import { ExpenseDetails } from '../expense-details/expense-details';
 import { ExpensesFilter } from '../expenses-filter/expenses-filter';
 import { FilterState } from '../expenses.interfaces';
-import { ArrowDown, ArrowUp, LucideAngularModule } from 'lucide-angular';
+import { ArrowDown, ArrowUp, CircleX, Cross, LucideAngularModule, X } from 'lucide-angular';
 import { IsItemActive } from '../../../common/directives/is-item-active';
 
 type SortValues = '-1' | '1';
@@ -37,6 +37,7 @@ export class List {
   expenses$ = computed(() => this.store.select(filteredExpensesSummary(this.currentPage(), this.pageSize, this.filterState(), this.sortState())));
   protected arrowUp = ArrowUp;
   protected arrowDown = ArrowDown;
+  protected cross = X;
 
   fields: Field<ExpenseSummary>[] = Fields;
   fieldNames: Omit<(keyof ExpenseSummary)[], 'items'> = this.fields.map(x => x.name);

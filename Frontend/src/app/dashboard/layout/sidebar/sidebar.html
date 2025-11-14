@@ -1,4 +1,4 @@
-<ul class="w-full p-2 sidebar-wrapper relative"
+<ul class="w-full p-2 sidebar-wrapper relative text-sm"
     [ngClass]=" {'expanded' : expandedState(), 'collapsed' : !expandedState()} ">
 
 
@@ -26,7 +26,7 @@
     }
 </ul>
 
-<ul class="w-full p-2 sidebar-wrapper mt-auto"  [ngClass]=" {'expanded' : expandedState(), 'collapsed' : !expandedState()} ">
+<ul class="w-full p-2 sidebar-wrapper mt-auto text-sm"  [ngClass]=" {'expanded' : expandedState(), 'collapsed' : !expandedState()} ">
     <li class="mb-2">
         <button class="sidebar-item footer-item" (click)="handleLogout()" aria-label="Go to Cost Tracker Dashboard"
             routerLinkActive="active-route">

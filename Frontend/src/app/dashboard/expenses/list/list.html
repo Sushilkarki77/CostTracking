@@ -48,8 +48,13 @@
     </div>
 
     <app-overlay-component [visible]="overlayVisibility()" [template]="transactionTemplate">
-        <ng-container card-footer>
-            <button class="px-4 py-2 bg-blue-600 text-white rounded" (click)="handleClose()">Close</button>
+        <ng-container card-header>
+           <section class="flex justify-end mb-2">
+                 <button class="cursor-pointer  border border-gray-300 rounded-md p-1 hover:border-blue-500" (click)="handleClose()">
+                    <lucide-angular [img]="cross" color="#374151" [size]="18" class="my-icon" role="img"  
+                                        aria-hidden="true"></lucide-angular>
+                 </button>
+           </section>
         </ng-container>
     </app-overlay-component>
 
@@ -66,72 +71,75 @@
 </ng-template>
 
 <ng-template #ExpenseList let-totalCount="totalCount" let-expenses="expenses">
-    <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
-        <thead class="bg-gray-100">
-            <tr>
-                 <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
-                    SN.
-                </th>
+    <figure>
+         <table class="min-w-full text-sm border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
+            <thead class="bg-gray-100">
+                <tr>
+                    <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
+                        SN.
+                    </th>
 
-                @for (item of fields; track $index) {
-                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                    {{ item.label }}
-                      @if(item.sortable){
-                        <button  type="button" [aria-label]="item.label + 'Sort Ascending'" (click)="updateSortState(item.name, '1')"   >
-                            <lucide-angular [img]="arrowUp" color="#374151" [size]="18" class="my-icon" role="img" appIsItemActive [current]="item.name" [target]="sortState()" class="active-sort" direction="1"
-                                        aria-hidden="true"></lucide-angular>
-                        </button>
+                    @for (item of fields; track $index) {
+                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                        {{ item.label }}
+                        @if(item.sortable){
+                            <button  type="button" [aria-label]="item.label + 'Sort Ascending'" (click)="updateSortState(item.name, '1')"   >
+                                <lucide-angular [img]="arrowUp" color="#374151" [size]="18" class="my-icon" role="img" appIsItemActive [current]="item.name" [target]="sortState()" class="active-sort" direction="1"
+                                            aria-hidden="true"></lucide-angular>
+                            </button>
 
-                        <button  type="button" [aria-label]="item.label + 'Sort Descending'" (click)="updateSortState(item.name, '-1')">
-                             <lucide-angular [img]="arrowDown" color="#374151" [size]="18" class="my-icon" role="img"  appIsItemActive [current]="item.name" [target]="sortState()" class="active-sort"  direction="-1"
-                                        aria-hidden="true"></lucide-angular>
-                        </button>
-                     }
-                </th>
-                }
-
-                @if (actions.length > 0) {
-                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                    Actions
-                </th>
-                }
-            </tr>
-        </thead>
-
-        <tbody class="bg-white divide-y divide-gray-200">
-            @for (exp of expenses.data; let i = $index; track exp._id) {
-            <tr>
-                <td class="w-10 px-4 py-2">{{ (currentPage() * pageSize) + i + 1 }}</td>
-
-                @for (property of fields; track property.name) {
-                @let fieldName = property.name;
-
-                @if (property.type == 'date' ) {
-                <td class="px-4 py-2">{{ exp[fieldName] | date }}</td>
-
-                } @else if(property.type == 'curency'){
-
-                <td class="px-4 py-2">{{ exp[fieldName] | currency }}</td>
-
-                }@else {
-                <td class="px-4 py-2">{{ exp[fieldName] }}</td>
-                }
-                }
-                <td class="px-4 py-2 flex gap-2">
-                    @for (action of actions; track action.name) {
-
-                    <button type="button" [class]="action.class" (click)="action.function(exp)"
-                        [attr.aria-label]="action.label + ' for ' + exp.name">
-                        {{ action.label }}
-                    </button>
-
+                            <button  type="button" [aria-label]="item.label + 'Sort Descending'" (click)="updateSortState(item.name, '-1')">
+                                <lucide-angular [img]="arrowDown" color="#374151" [size]="18" class="my-icon" role="img"  appIsItemActive [current]="item.name" [target]="sortState()" class="active-sort"  direction="-1"
+                                            aria-hidden="true"></lucide-angular>
+                            </button>
+                        }
+                    </th>
                     }
-                </td>
-            </tr>
 
-            }
-        </tbody>
-    </table>
+                    @if (actions.length > 0) {
+                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                        Actions
+                    </th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+                @for (exp of expenses.data; let i = $index; track exp._id) {
+                <tr>
+                    <td class="w-10 px-4 py-1">{{ (currentPage() * pageSize) + i + 1 }}</td>
+
+                    @for (property of fields; track property.name) {
+                    @let fieldName = property.name;
+
+                    @if (property.type == 'date' ) {
+                    <td class="px-4 py-1">{{ exp[fieldName] | date }}</td>
+
+                    } @else if(property.type == 'curency'){
+
+                    <td class="px-4 py-1">{{ exp[fieldName] | currency }}</td>
+
+                    }@else {
+                    <td class="px-4 py-1">{{ exp[fieldName] }}</td>
+                    }
+                    }
+                    <td class="px-4 py-1 flex gap-2">
+                        @for (action of actions; track action.name) {
+
+                        <button type="button" [class]="action.class" (click)="action.function(exp)"
+                            [attr.aria-label]="action.label + ' for ' + exp.name">
+                            {{ action.label }}
+                        </button>
+
+                        }
+                    </td>
+                </tr>
+
+                }
+            </tbody>
+         </table>
+    </figure>
+    
     <app-pagination-component [totalItems]="expenses.totalItems" [currentPage]="currentPage()" [numbersPerPage]="20"
         (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
 </ng-template>
