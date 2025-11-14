@@ -46,6 +46,20 @@ export interface Expense {
     currency: string
 }
 
+
+export interface Income {
+    _id: string;
+    userId: string;
+    name: string;
+    amount: string;
+    currency: string;
+    date: string;
+    note: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
+
 export interface Item {
   category: { _id: string, name: string }
   name: string

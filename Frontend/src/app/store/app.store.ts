@@ -7,10 +7,13 @@ import { ExpensesEffects } from "./expenses/expenses.effects";
 import { provideStoreDevtools } from "@ngrx/store-devtools";
 import { environment } from "../../environments/environment";
 import { metaReducers } from "./clear-state.metareducer";
+import { incomeReducer, IncomeState } from "./income/income.reducer";
+import { IncomeEffects } from "./income/income.effect";
 
 export interface AppState {
   categories: CategoryState;
   expenses: ExpenseState;
+  incomes: IncomeState
 }
 
 
@@ -18,8 +21,9 @@ export const appStoreProviders = [
   provideStore<AppState>({
     categories: categoryReducer,
     expenses: expenseReducer,
+    incomes: incomeReducer
   }, { metaReducers }),
-  provideEffects([CategoryEffects, ExpensesEffects]),
+  provideEffects([CategoryEffects, ExpensesEffects, IncomeEffects]),
   provideStoreDevtools({
     maxAge: 25,
     logOnly: environment.production,
