@@ -1,0 +1,162 @@
+[
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2023-11-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "800",
+    "currency": "USD",
+    "date": "2023-10-15",
+    "note": "Website development"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Dividends",
+    "amount": "120",
+    "currency": "USD",
+    "date": "2023-09-20",
+    "note": "Stock dividends"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2023-08-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "450",
+    "currency": "USD",
+    "date": "2023-07-12",
+    "note": "UI design"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Bonus",
+    "amount": "600",
+    "currency": "USD",
+    "date": "2023-06-30",
+    "note": "Performance bonus"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2023-05-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "700",
+    "currency": "USD",
+    "date": "2023-04-18",
+    "note": "App development"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Dividends",
+    "amount": "150",
+    "currency": "USD",
+    "date": "2023-03-22",
+    "note": "Quarterly dividends"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2023-02-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "500",
+    "currency": "USD",
+    "date": "2023-01-10",
+    "note": "Logo design"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2022-12-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "650",
+    "currency": "USD",
+    "date": "2022-11-15",
+    "note": "Landing page"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Dividends",
+    "amount": "130",
+    "currency": "USD",
+    "date": "2022-10-20",
+    "note": "Stock dividends"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2022-09-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "400",
+    "currency": "USD",
+    "date": "2022-08-10",
+    "note": "Consulting work"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Bonus",
+    "amount": "550",
+    "currency": "USD",
+    "date": "2022-07-30",
+    "note": "Mid-year bonus"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Salary",
+    "amount": "2500",
+    "currency": "USD",
+    "date": "2022-06-01",
+    "note": "Monthly salary"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Freelance Project",
+    "amount": "750",
+    "currency": "USD",
+    "date": "2022-05-18",
+    "note": "Website redesign"
+  },
+  {
+    "userId": "6906b389d312b6d442652ebf",
+    "name": "Dividends",
+    "amount": "140",
+    "currency": "USD",
+    "date": "2022-04-22",
+    "note": "Quarterly dividends"
+  }
+]

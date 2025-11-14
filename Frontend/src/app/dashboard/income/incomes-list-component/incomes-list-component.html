@@ -1,1 +1,82 @@
-<p>incomes-list-component works!</p>
+<div class="p-4">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-semibold text-gray-800">Categories</h2>
+
+        <section class="flex items-center">
+            <button type="submit" (click)="handleAdd()"
+                class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                Add
+            </button>
+        </section>
+    </div>
+
+    <div class="overflow-x-auto text-sm">
+        <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
+            <thead class="bg-gray-100">
+                <tr>
+                    @for (item of fields; track $index) {
+                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                        {{ item.label }}
+                    </th>
+                    }
+
+                    @if (actions.length > 0) {
+                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                        Actions
+                    </th>
+                    }
+                </tr>
+            </thead>
+
+            <tbody class="bg-white divide-y divide-gray-200">
+                @for (inc of incomes$ | async; track inc._id) {
+                <tr>
+                    @for (property of fields; track property.name) {
+                    @let fieldName = property.name;
+                    @if (property.type == 'date') {
+                    <td class="px-4 py-2">{{ inc[fieldName] | date }}</td>
+                    }@else if(property.type == 'curency'){
+
+                    <td class="px-4 py-1">{{ inc[fieldName] | currency }}</td>
+
+                    } @else {
+                    <td class="px-4 py-2">{{ inc[fieldName] }}</td>
+                    }
+                    }
+
+
+                    <td class="px-4 py-2">
+                        @for (action of actions; track action.name) {
+
+                        <button type="button" [class]="action.class" (click)="action.function(inc._id)"
+                            [attr.aria-label]="action.label + ' for ' + inc.name">
+                            {{ action.label }}
+                        </button>
+
+                        }
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <app-overlay-component [visible]="overlayVisibility()" [template]="addItemOverlay">
+    <ng-container card-header>
+        <section class="flex justify-end mb-2">
+            <button class="cursor-pointer  border border-gray-300 rounded-md p-1 hover:border-blue-500"
+                (click)="handleClose()">
+                <lucide-angular [img]="cross" color="#374151" [size]="18" class="my-icon" role="img"
+                    aria-hidden="true"></lucide-angular>
+            </button>
+        </section>
+    </ng-container>
+</app-overlay-component>
+
+</div>
+
+
+<ng-template #addItemOverlay>
+     
+    <app-add-income></app-add-income>
+   
+</ng-template>

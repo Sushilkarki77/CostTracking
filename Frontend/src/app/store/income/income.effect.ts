@@ -16,7 +16,7 @@ export class IncomeEffects {
         this.actions$.pipe(
             ofType(IncomeActions.loadIncome),
             withLatestFrom(this.store.pipe(select(selectIncomeInitialized))),
-            filter(([_, loaded]) => !loaded),
+            // filter(([_, loaded]) => !loaded),
             map(() => IncomeActions.loadIncomeStarted())
         )
     );

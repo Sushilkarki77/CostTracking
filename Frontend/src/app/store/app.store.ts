@@ -13,7 +13,7 @@ import { IncomeEffects } from "./income/income.effect";
 export interface AppState {
   categories: CategoryState;
   expenses: ExpenseState;
-  incomes: IncomeState
+  income: IncomeState
 }
 
 
@@ -21,7 +21,7 @@ export const appStoreProviders = [
   provideStore<AppState>({
     categories: categoryReducer,
     expenses: expenseReducer,
-    incomes: incomeReducer
+    income: incomeReducer
   }, { metaReducers }),
   provideEffects([CategoryEffects, ExpensesEffects, IncomeEffects]),
   provideStoreDevtools({
