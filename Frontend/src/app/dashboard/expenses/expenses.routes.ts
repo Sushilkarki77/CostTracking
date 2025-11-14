@@ -1,11 +1,8 @@
-import { Route, Routes } from "@angular/router";
-import { List } from "./list/list"
-import { AddExpenses } from "./add-expenses/add-expenses";
-import { EditExpenses } from "./edit-expenses/edit-expenses";
-import {  unsavedChangesGuard } from "../../common/guards/unsaved-changes-guard";
+import {  Routes } from "@angular/router";
+import { unsavedChangesGuard } from "../../common/guards/unsaved-changes-guard";
 
 export const expensesRoutes: Routes = [
-    { path: '', component: List },
-    { path: 'add', canDeactivate:[unsavedChangesGuard], component: AddExpenses },
-    { path: 'edit/:id', canDeactivate:[unsavedChangesGuard], component: EditExpenses },
+    { path: '', loadComponent: () => import('./list/list').then(x => x.List) },
+    { path: 'add', canDeactivate: [unsavedChangesGuard], loadComponent: () => import('./add-expenses/add-expenses').then(x => x.AddExpenses) },
+    { path: 'edit/:id', canDeactivate: [unsavedChangesGuard], loadComponent: () => import('./edit-expenses/edit-expenses').then(x => x.EditExpenses) },
 ]
