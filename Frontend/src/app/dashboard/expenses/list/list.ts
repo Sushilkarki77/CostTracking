@@ -9,17 +9,9 @@ import { PaginationComponent } from '../../../common/components/pagination-compo
 import { OverlayComponent } from '../../../common/components/overlay-component/overlay-component';
 import { ExpenseDetails } from '../expense-details/expense-details';
 import { ExpensesFilter } from '../expenses-filter/expenses-filter';
-import { FilterState } from '../expenses.interfaces';
-import { ArrowDown, ArrowUp, CircleX, Cross, LucideAngularModule, X } from 'lucide-angular';
+import { Fields, FilterState, SortValues } from '../expenses.interfaces';
+import { ArrowDown, ArrowUp, LucideAngularModule, X } from 'lucide-angular';
 import { IsItemActive } from '../../../common/directives/is-item-active';
-
-type SortValues = '-1' | '1';
-const Fields: Field<ExpenseSummary>[] = [
-  { label: "Name", name: "name", type: "string" },
-  { label: "Created", name: "createdAt", type: "date", sortable: true },
-  { label: "Method", name: "paymentMethod", type: "string" },
-  { label: "Total", name: "total", type: "curency", sortable: true }
-]
 
 @Component({
   selector: 'app-list',
@@ -82,9 +74,6 @@ export class List {
       function: (exp: ExpenseSummary) => this.handleEdit(exp)
     }
   ]
-
-   
-
 
   handleDelete = (exp: ExpenseSummary) => {
     const confirmed = window.confirm('Are you sure you want to delete this expense?');
