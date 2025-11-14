@@ -1,7 +1,7 @@
 <div class="p-4">
     @let categories = categories$ | async;
     @if(categories){
-    <app-expense-form [categories]="categories" (formSubmitted)="handleFormSubmitted($event)">
+    <app-expense-form [categories]="categories" (formSubmitted)="handleFormSubmitted($event)" #formComponent>
         <ng-container title>
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-xl font-semibold text-gray-800">Add Expenses</h2>

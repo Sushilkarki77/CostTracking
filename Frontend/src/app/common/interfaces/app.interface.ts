@@ -1,3 +1,4 @@
+import { Observable } from "rxjs";
 
 
 export type Token = {
@@ -62,4 +63,8 @@ export interface Field<T> {
   label: string;
   type: string
   sortable?: boolean
+}
+
+export interface CanComponentDeactivate {
+  canDeactivate: () => boolean | Observable<boolean>;
 }

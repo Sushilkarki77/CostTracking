@@ -4,7 +4,7 @@
 
     @if(selectedItem && categories) {
     <app-expense-form [categories]="categories" [expenseItem]="selectedItem"
-        (formSubmitted)="handleFormSubmitted($event)">
+        (formSubmitted)="handleFormSubmitted($event)" #formComponent>
         <ng-container title>
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-xl font-semibold text-gray-800">Edit Expenses</h2>

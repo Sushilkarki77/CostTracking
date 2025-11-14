@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, map, switchMap, tap } from 'rxjs';
@@ -8,7 +8,7 @@ import { loadExpenses, updateExpense } from '../../../store/expenses/expenses.ac
 import { ExpenseForm } from '../../../common/components/expense-form/expense-form';
 import { selectAllCategories } from '../../../store/category/category.selectors';
 import { loadCategories } from '../../../store/category/category.actions';
-import { Expense } from '../../../common/interfaces/app.interface';
+import { CanComponentDeactivate, Expense } from '../../../common/interfaces/app.interface';
 
 @Component({
   selector: 'app-edit-expenses',
@@ -16,12 +16,25 @@ import { Expense } from '../../../common/interfaces/app.interface';
   templateUrl: './edit-expenses.html',
   styleUrl: './edit-expenses.scss',
 })
-export class EditExpenses {
+export class EditExpenses implements CanComponentDeactivate {
 
   store = inject(Store);
   route = inject(ActivatedRoute);
   _id = signal<string>('');
   private router = inject(Router);
+
+
+   @ViewChild('formComponent') form!: ExpenseForm;
+
+  canDeactivate(): boolean {
+    const formStatus = this.form.expenseForm.valid;
+    const formTouched = this.form.expenseForm.touched;
+    if (formTouched && !formStatus) {
+      return confirm('You have unsaved changes! Do you really want to leave?');
+    }
+    return true;
+  }
+
   selectedItem$ = this.route.paramMap.pipe(
     map(params => params.get('id')),
     filter((x): x is string => !!x && x !== ''),
