@@ -61,7 +61,7 @@ export class IncomeEffects {
         this.actions$.pipe(
             ofType(IncomeActions.deleteIncome),
             exhaustMap(action =>
-                this.incomeService.delete(action.id).pipe(
+                this.incomeService.delete(action._id).pipe(
                     tap(res => console.log('Delete response:', res)),
                     catchError(error => of(IncomeActions.loadIncomeFailure({ error })))
                 )

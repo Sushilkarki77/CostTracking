@@ -1,22 +1,47 @@
-<form class="flex flex-col gap-4 p-4 ">
+<form class="flex flex-col gap-4" [formGroup]="incomeForm" (ngSubmit)="submit()">
 
     <h2 class="text-xl font-semibold text-gray-800 mb-4">Add Income</h2>
+
 
     <div class="flex flex-col">
         <label for="incomeName" class="mb-1 font-medium text-gray-700">Income Name</label>
         <input id="incomeName" formControlName="name" type="text" class="input" placeholder="Enter income name" />
+
+        @if(incomeForm.controls['name'].touched && incomeForm.controls['name'].invalid){
+        <span class="text-red-500 text-sm">
+            Name is required (min 2 characters)
+        </span>
+        }
+
     </div>
 
+    
     <div class="flex flex-col">
         <label for="incomeAmount" class="mb-1 font-medium text-gray-700">Amount</label>
         <input id="incomeAmount" formControlName="amount" type="text" class="input" placeholder="Enter amount" />
+
+        @if(incomeForm.controls['amount'].touched && incomeForm.controls['amount'].invalid){
+        <span class="text-red-500 text-sm">
+            Amount must be a valid number
+        </span>
+        }
+
     </div>
 
+   
     <div class="flex flex-col">
         <label for="incomeDate" class="mb-1 font-medium text-gray-700">Date</label>
         <input id="incomeDate" formControlName="date" type="date" class="input" />
+
+        @if(incomeForm.controls['date'].touched && incomeForm.controls['date'].invalid){
+        <span class="text-red-500 text-sm">
+            Date is required
+        </span>
+        }
+
     </div>
 
+ 
     <div class="flex flex-col">
         <label for="incomeNote" class="mb-1 font-medium text-gray-700">Note</label>
         <input id="incomeNote" formControlName="note" type="text" class="input" placeholder="Optional note" />
@@ -24,7 +49,7 @@
 
     <button type="submit"
         class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-        Add
+        Submit
     </button>
 
 </form>

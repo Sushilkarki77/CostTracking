@@ -78,7 +78,7 @@ export class List {
   handleDelete = (exp: ExpenseSummary) => {
     const confirmed = window.confirm('Are you sure you want to delete this expense?');
     if (confirmed) {
-      this.store.dispatch(deleteExpense({ id: exp._id }));
+      this.store.dispatch(deleteExpense({ _id: exp._id }));
     }
   }
 

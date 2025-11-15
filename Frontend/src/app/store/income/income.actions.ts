@@ -6,7 +6,7 @@ export const loadIncome = createAction('[Income] Attempted');
 export const loadIncomeStarted = createAction('[Income] Load started');
 export const createIncome = createAction('[Income] create', props<{ income: Partial<Income> }>());
 export const addIncome = createAction('[Income] add', props<{ income: Income }>());
-export const deleteIncome = createAction('[Income] delete', props<{ id: string }>());
+export const deleteIncome = createAction('[Income] delete', props<{ _id: string }>());
 export const updateIncome = createAction('[Income] update', props<{ _id: string, income: Partial<Income> }>());
 export const updateIncomeSuccess = createAction('[Income] update success', props<{ _id: string, income: Income }>());
 

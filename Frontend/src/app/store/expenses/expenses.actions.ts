@@ -6,7 +6,7 @@ export const loadExpenses = createAction('[Expenses] Attempted');
 export const loadExpensesStarted = createAction('[Expenses] Load started');
 export const createExpense = createAction('[Expenses] create', props<{ expense: Partial<Expense> }>());
 export const addExpense = createAction('[Expenses] add', props<{ expense: Expense }>());
-export const deleteExpense = createAction('[Expenses] delete', props<{ id: string }>());
+export const deleteExpense = createAction('[Expenses] delete', props<{ _id: string }>());
 export const updateExpense = createAction('[Expenses] update', props<{ _id: string, expense: Partial<Expense> }>());
 export const updateExpenseSuccess = createAction('[Expenses] update success', props<{ _id: string, expense: Expense }>());
 

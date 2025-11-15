@@ -62,7 +62,7 @@ export class ExpensesEffects {
         this.actions$.pipe(
             ofType(ExpensesActions.deleteExpense),
             exhaustMap(action =>
-                this.expensesService.delete(action.id).pipe(
+                this.expensesService.delete(action._id).pipe(
                     tap(res => console.log('Delete response:', res)),
                     catchError(error => of(ExpensesActions.loadExpensesFailure({ error })))
                 )

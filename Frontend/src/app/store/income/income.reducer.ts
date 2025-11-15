@@ -24,9 +24,9 @@ export const incomeReducer = createReducer(
         ...state,
         list: state.list.map(x => x._id !== _id ? x : income)
     })),
-    on(IncomeActions.deleteIncome, (state, { id }) => ({
+    on(IncomeActions.deleteIncome, (state, { _id }) => ({
         ...state,
-        list: state.list.filter(x => x._id !== id)
+        list: state.list.filter(x => x._id !== _id)
     })),
     on(IncomeActions.loadIncomeFailure, (state, { error }) => ({ ...state, loading: false, error }))
 );
