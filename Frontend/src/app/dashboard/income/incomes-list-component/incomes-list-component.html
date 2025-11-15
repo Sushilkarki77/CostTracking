@@ -1,9 +1,8 @@
 <div class="p-4">
     <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-semibold text-gray-800">Categories</h2>
-
         <section class="flex items-center">
-            <button type="submit" (click)="handleAdd()"
+            <button type="button" (click)="handleAdd()"
                 class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
                 Add
             </button>
@@ -12,6 +11,7 @@
 
     <div class="overflow-x-auto text-sm">
         @let incomes = incomes$() | async;
+
         <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
             <thead class="bg-gray-100">
                 <tr>
@@ -19,9 +19,9 @@
                         SN.
                     </th>
 
-                    @for (item of fields; track $index) {
+                    @for (field of fields; track field.name) {
                     <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                        {{ item.label }}
+                        {{ field.label }}
                     </th>
                     }
 
@@ -34,69 +34,61 @@
             </thead>
 
             <tbody class="bg-white divide-y divide-gray-200">
-
-                @if(incomes){
+                @if (incomes) {
                 @for (inc of incomes.data; let i = $index; track inc._id) {
                 <tr>
                     <td class="w-10 px-4 py-1">{{ (currentPage() * pageSize()) + i + 1 }}</td>
-                    @for (property of fields; track property.name) {
-                    @let fieldName = property.name;
-                    @if (property.type == 'date') {
-                    <td class="px-4 py-2">{{ inc[fieldName] | date }}</td>
-                    }@else if(property.type == 'curency'){
 
-                    <td class="px-4 py-1">{{ inc[fieldName] | currency }}</td>
-
+                    @for (field of fields; track field.name) {
+                    @let name = field.name;
+                    @if (field.type === 'date') {
+                    <td class="px-4 py-2">{{ inc[name] | date }}</td>
+                    } @else if (field.type === 'currency') {
+                    <td class="px-4 py-1">{{ inc[name] | currency }}</td>
                     } @else {
-                    <td class="px-4 py-2">{{ inc[fieldName] }}</td>
+                    <td class="px-4 py-2">{{ inc[name] }}</td>
                     }
                     }
-
 
                     <td class="px-4 py-2">
                         @for (action of actions; track action.name) {
-
                         <button type="button" [class]="action.class" (click)="action.function(inc._id)"
                             [attr.aria-label]="action.label + ' for ' + inc.name">
                             {{ action.label }}
                         </button>
-
                         }
+                    </td>
                 </tr>
                 }
                 }
             </tbody>
         </table>
 
-        @if(incomes&& incomes?.totalItems){
-        <app-pagination-component [totalItems]="incomes.totalItems" [currentPage]="currentPage()" [numbersPerPage]="20"
-            (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
+        @if (incomes && incomes.totalItems) {
+        <app-pagination-component [totalItems]="incomes.totalItems" [currentPage]="currentPage()"
+            [numbersPerPage]="pageSize()" (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
         }
-
-
     </div>
 
-    <app-overlay-component [visible]="overlayVisibility()"
-        [template]="selectedItem() ? editItemOverlay : addItemOverlay">
+    <app-overlay-component [visible]="overlayState() !== null"
+        [template]="overlayState() === 'edit' ? editItemOverlay : addItemOverlay">
         <ng-container card-header>
             <section class="flex justify-end mb-2">
-                <button class="cursor-pointer  border border-gray-300 rounded-md p-1 hover:border-blue-500"
-                    (click)="handleCloseAdd()">
+                <button class="cursor-pointer border border-gray-300 rounded-md p-1 hover:border-blue-500"
+                    (click)="closeOverlay()">
                     <lucide-angular [img]="cross" color="#374151" [size]="18" class="my-icon" role="img"
                         aria-hidden="true"></lucide-angular>
                 </button>
             </section>
         </ng-container>
     </app-overlay-component>
-
-
 </div>
 
-
 <ng-template #addItemOverlay>
-    <app-add-income (formSubmitted)="addFormSubmitted($event)">Add Income</app-add-income>
+    <app-add-income (formSubmitted)="addFormSubmitted($event)" #addIncome></app-add-income>
 </ng-template>
+
 <ng-template #editItemOverlay>
-    <app-add-income (formSubmitted)="editFormSubmitted($event)"
-        [income]="incomeItemSelected$() | async">Edit Income</app-add-income>
+    <app-add-income (formSubmitted)="editFormSubmitted($event)" [income]="incomeItemSelected$() | async"
+        #editIncome></app-add-income>
 </ng-template>

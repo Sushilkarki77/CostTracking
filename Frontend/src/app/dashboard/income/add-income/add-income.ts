@@ -39,6 +39,12 @@ export class AddIncome {
       return;
     }
     this.formSubmitted.emit(this.incomeForm.value);
-    this.incomeForm.reset();
+    this.reset();
   }
+
+  reset = () =>  this.incomeForm.reset();
+
+  isValid = () => this.incomeForm.valid;
+
+  isTouched = () => this.incomeForm.touched;
 }
