@@ -1,6 +1,6 @@
 <div class="p-4">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-semibold text-gray-800">Categories</h2>
+        <h2 class="text-xl font-semibold text-gray-800">Incomes</h2>
         <section class="flex items-center">
             <button type="button" (click)="handleAdd()"
                 class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -9,64 +9,38 @@
         </section>
     </div>
 
-    <div class="overflow-x-auto text-sm">
-        @let incomes = incomes$() | async;
+    <div class="overflow-x-auto">
+        @if (error$ | async; as error) {
+            <div>{{ error | json }}</div>
 
-        <table class="min-w-full border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
-            <thead class="bg-gray-100">
-                <tr>
-                    <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
-                        SN.
-                    </th>
+        } @else {
 
-                    @for (field of fields; track field.name) {
-                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                        {{ field.label }}
-                    </th>
-                    }
+            @if (incomes$() | async; as incomes) {
+            @let loading = loading$ | async;
 
-                    @if (actions.length > 0) {
-                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                        Actions
-                    </th>
-                    }
-                </tr>
-            </thead>
+            @switch (loading) {
 
-            <tbody class="bg-white divide-y divide-gray-200">
-                @if (incomes) {
-                @for (inc of incomes.data; let i = $index; track inc._id) {
-                <tr>
-                    <td class="w-10 px-4 py-1">{{ (currentPage() * pageSize()) + i + 1 }}</td>
+                @case (false) {
+                @let totalCount = incomes.totalItems;
 
-                    @for (field of fields; track field.name) {
-                    @let name = field.name;
-                    @if (field.type === 'date') {
-                    <td class="px-4 py-2">{{ inc[name] | date }}</td>
-                    } @else if (field.type === 'currency') {
-                    <td class="px-4 py-1">{{ inc[name] | currency }}</td>
-                    } @else {
-                    <td class="px-4 py-2">{{ inc[name] }}</td>
-                    }
-                    }
+                <ng-container
+                    *ngTemplateOutlet="IncomeHeaderWithFilter; context: { totalCount }">
+                </ng-container>
 
-                    <td class="px-4 py-2">
-                        @for (action of actions; track action.name) {
-                        <button type="button" [class]="action.class" (click)="action.function(inc._id)"
-                            [attr.aria-label]="action.label + ' for ' + inc.name">
-                            {{ action.label }}
-                        </button>
-                        }
-                    </td>
-                </tr>
+                @if (totalCount === 0) {
+                    <h3 class="text-center">No Items</h3>
+                } @else {
+                    <ng-container
+                    *ngTemplateOutlet="IncomeList; context: { totalCount, incomes }">
+                    </ng-container>
                 }
                 }
-            </tbody>
-        </table>
 
-        @if (incomes && incomes.totalItems) {
-        <app-pagination-component [totalItems]="incomes.totalItems" [currentPage]="currentPage()"
-            [numbersPerPage]="pageSize()" (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
+                @case (true) {
+                Loading...
+                }
+            }
+            }
         }
     </div>
 
@@ -85,10 +59,88 @@
 </div>
 
 <ng-template #addItemOverlay>
-    <app-add-income (formSubmitted)="addFormSubmitted($event)" #addIncome></app-add-income>
+    <app-add-income (formSubmitted)="addFormSubmitted($event)" #addIncome>Add Income</app-add-income>
 </ng-template>
 
 <ng-template #editItemOverlay>
     <app-add-income (formSubmitted)="editFormSubmitted($event)" [income]="incomeItemSelected$() | async"
-        #editIncome></app-add-income>
+        #editIncome>Edit Income</app-add-income>
+</ng-template>
+
+
+<ng-template #IncomeHeaderWithFilter let-totalCount="totalCount">
+    <section class="flex flex-1 flex-wrap justify-between items-center gap-4 p-4 rounded-lg">
+        <app-income-filter class="flex-grow" (filterStateChanged)="filterChanged($event)"></app-income-filter>
+        <output class="flex justify-end">
+            Total: {{ totalCount }}
+        </output>
+    </section>
+</ng-template>
+
+<ng-template #IncomeList let-totalCount="totalCount" let-incomes="incomes">
+    <table class="min-w-full text-sm border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
+        <thead class="bg-gray-100">
+            <tr>
+                <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    SN.
+                </th>
+
+                @for (field of fields; track field.name) {
+                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    {{ field.label }}
+
+                     @if(field && field?.sortable){
+                            <button  type="button" [aria-label]="field.label + 'Sort Ascending'" (click)="updateSortState(field.name, '1')"   >
+                                <lucide-angular [img]="arrowUp" color="#374151" [size]="18" class="my-icon" role="img" appIsItemActive [current]="field.name" [target]="sortState()" class="active-sort" direction="1"
+                                            aria-hidden="true"></lucide-angular>
+                            </button>
+
+                            <button  type="button" [aria-label]="field.label + 'Sort Descending'" (click)="updateSortState(field.name, '-1')">
+                                <lucide-angular [img]="arrowDown" color="#374151" [size]="18" class="my-icon" role="img"  appIsItemActive [current]="field.name" [target]="sortState()" class="active-sort"  direction="-1"
+                                            aria-hidden="true"></lucide-angular>
+                            </button>
+                        }
+                </th>
+                }
+
+                @if (actions.length > 0) {
+                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    Actions
+                </th>
+                }
+            </tr>
+        </thead>
+
+        <tbody class="bg-white divide-y divide-gray-200">
+            @if (incomes) {
+            @for (inc of incomes.data; let i = $index; track inc._id) {
+            <tr>
+                <td class="w-10 px-4 py-1">{{ (currentPage() * pageSize()) + i + 1 }}</td>
+
+                @for (field of fields; track field.name) {
+                @let name = field.name;
+                @if (field.type === 'date') {
+                <td class="px-4 py-1">{{ inc[name] | date }}</td>
+                } @else if (field.type === 'currency') {
+                <td class="px-4 py-1">{{ inc[name] | currency }}</td>
+                } @else {
+                <td class="px-4 py-1">{{ inc[name] }}</td>
+                }
+                }
+
+                <td class="px-4 py-1">
+                    @for (action of actions; track action.name) {
+                    <button type="button" [class]="action.class" (click)="action.function(inc._id)"
+                        [attr.aria-label]="action.label + ' for ' + inc.name">
+                        {{ action.label }}
+                    </button>
+                    }
+                </td>
+            </tr>
+            }
+            }
+        </tbody>
+    </table>
+    <app-pagination-component [totalItems]="incomes.totalItems" [currentPage]="currentPage()"
+        [numbersPerPage]="pageSize()" (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
 </ng-template>
