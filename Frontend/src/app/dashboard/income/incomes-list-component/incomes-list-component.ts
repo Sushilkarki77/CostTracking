@@ -28,9 +28,13 @@ export class IncomesListComponent {
   protected currentPage = signal(0);
   protected pageSize = signal(10);
   protected incomes$ = computed(() => this.store.select(filteredIncome(this.currentPage(), this.pageSize())));
+
   protected overlayVisibility = signal<boolean>(false);
+
+  protected selectedItem = signal<string | null>(null);
+
   protected cross = X;
-  private selectedItem = signal<string | null>(null);
+
 
   incomeItemSelected$ = computed(() => {
     const selectedItem = this.selectedItem();
@@ -70,32 +74,36 @@ export class IncomesListComponent {
     }
   }
 
+  setCurrentPage = (page: number) => this.currentPage.set(page);
+
   handleEdit = (_id: string) => {
     this.overlayVisibility.update(x => !x);
     this.selectedItem.set(_id);
   }
 
-  handleAdd = () => this.overlayVisibility.update(prev => !prev)
+  handleAdd = () =>  this.toggleOverlayVisibility();
 
-  handleClose = () => this.overlayVisibility.update(prev => !prev)
+  handleCloseAdd = () => {
+    this.selectedItem.set(null);
+     this.toggleOverlayVisibility();
+  }
 
-  setCurrentPage = (page: number) => this.currentPage.set(page);
+  handleCloseEdit = () => {
+    this.selectedItem.set(null);
+     this.toggleOverlayVisibility();
+  }
 
-  formSubmitted = (income: Partial<Income>) => {
-    this.overlayVisibility.update(x => !x);
 
-    const selectedItem = this.selectedItem();
-
-    if (selectedItem) {
-      this.store.dispatch(
-        updateIncome({ _id: selectedItem, income })
-      );
-      this.selectedItem.set(null);
-    } else {
-      this.store.dispatch(
-        createIncome({ income })
-      );
-    }
+  addFormSubmitted = (income: Partial<Income>) => {
+    this.toggleOverlayVisibility();
+    this.store.dispatch(createIncome({ income }))
   };
 
+  editFormSubmitted = (income: Partial<Income>) => {
+    this.toggleOverlayVisibility();
+    const selectedItem = this.selectedItem();
+    if (selectedItem) this.store.dispatch(updateIncome({ _id: selectedItem, income }))
+  }
+
+  toggleOverlayVisibility = () => this.overlayVisibility.update(x => !x);
 }
