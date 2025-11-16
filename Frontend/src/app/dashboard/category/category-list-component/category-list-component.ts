@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { createCategory, deleteCategory, loadCategories } from '../../../store/category/category.actions';
 import { selectAllCategories, selectCategoryInitialized } from '../../../store/category/category.selectors';
 import { AsyncPipe, DatePipe } from '@angular/common';
-import { Category } from '../../../common/interfaces/app.interface';
+import { Category } from '../../../core/interfaces/app.interface';
 import { FormBuilder, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 
 interface Field {

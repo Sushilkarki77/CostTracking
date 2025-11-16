@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import * as IncomeActions from "./income.actions";
-import { Income } from "../../common/interfaces/app.interface";
+import { Income } from "../../core/interfaces/app.interface";
 
 export interface IncomeState {
     list: Income[];

@@ -1,4 +1,4 @@
-import { Field, ExpenseSummary } from "../../common/interfaces/app.interface";
+import { Field, ExpenseSummary } from "../../core/interfaces/app.interface";
 
 export type FilterState = Partial<{ name: string, startDate: string, endDate: string }>;
 

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { ArrowLeft } from 'lucide-angular';
 import {  LucideAngularModule } from 'lucide-angular/src/icons';
 import { HttpErrorResponse } from '@angular/common/http';
-import { AuthService } from '../../common/services/auth-service';
+import { AuthService } from '../../core/services/auth-service';
 
 @Component({
   selector: 'app-register',

@@ -6,7 +6,7 @@ import { LucideAngularModule, Plus } from 'lucide-angular/src/icons';
 import { ExpenseForm } from '../../../common/components/expense-form/expense-form';
 import { Store } from '@ngrx/store';
 import { selectAllCategories } from '../../../store/category/category.selectors';
-import { CanComponentDeactivate, Category, Expense } from '../../../common/interfaces/app.interface';
+import { CanComponentDeactivate, Category, Expense } from '../../../core/interfaces/app.interface';
 import { loadCategories } from '../../../store/category/category.actions';
 import { createExpense } from '../../../store/expenses/expenses.actions';
 import { Observable } from 'rxjs';

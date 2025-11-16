@@ -1,5 +1,5 @@
 import { Directive, effect, ElementRef, HostBinding, inject, input, Renderer2, SimpleChanges } from '@angular/core';
-import { ExpenseSummary } from '../interfaces/app.interface';
+import { ExpenseSummary } from '../../core/interfaces/app.interface';
 
 @Directive({
   selector: '[appIsItemActive]'

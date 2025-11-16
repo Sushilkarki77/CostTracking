@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 import { HttpErrorResponse } from "@angular/common/http";
-import { Income } from "../../common/interfaces/app.interface";
+import { Income } from "../../core/interfaces/app.interface";
 
 export const loadIncome = createAction('[Income] Attempted');
 export const loadIncomeStarted = createAction('[Income] Load started');

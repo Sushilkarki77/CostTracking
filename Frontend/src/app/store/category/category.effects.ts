@@ -4,7 +4,7 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as CategoryActions from './category.actions';
 import { catchError, concat, exhaustMap, filter, map, mergeMap, of, tap, withLatestFrom } from 'rxjs';
-import { CategoryService } from '../../common/services/category.service';
+import { CategoryService } from '../../core/services/category.service';
 import { select, Store } from '@ngrx/store';
 import { selectCategoryInitialized } from './category.selectors';
 

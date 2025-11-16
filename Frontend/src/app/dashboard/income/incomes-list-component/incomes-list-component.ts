@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { filteredIncome, selectIncomeError, selectIncomeItem, selectIncomeLoading } from '../../../store/income/incomeselectors';
 import { AsyncPipe, CommonModule, CurrencyPipe, DatePipe, JsonPipe } from '@angular/common';
 import { createIncome, deleteIncome, loadIncome, updateIncome } from '../../../store/income/income.actions';
-import { Income } from '../../../common/interfaces/app.interface';
+import { Income } from '../../../core/interfaces/app.interface';
 import { AddIncome } from '../add-income/add-income';
 import { OverlayComponent } from '../../../common/components/overlay-component/overlay-component';
 import { ArrowDown, ArrowUp, LucideAngularModule, X } from 'lucide-angular';

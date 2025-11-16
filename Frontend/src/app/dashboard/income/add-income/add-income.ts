@@ -1,6 +1,6 @@
 import { Component, effect, inject, input, output, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Income } from '../../../common/interfaces/app.interface';
+import { Income } from '../../../core/interfaces/app.interface';
 
 @Component({
   selector: 'app-add-income',

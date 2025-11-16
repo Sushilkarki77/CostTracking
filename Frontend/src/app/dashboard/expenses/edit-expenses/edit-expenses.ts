@@ -8,7 +8,7 @@ import { loadExpenses, updateExpense } from '../../../store/expenses/expenses.ac
 import { ExpenseForm } from '../../../common/components/expense-form/expense-form';
 import { selectAllCategories } from '../../../store/category/category.selectors';
 import { loadCategories } from '../../../store/category/category.actions';
-import { CanComponentDeactivate, Expense } from '../../../common/interfaces/app.interface';
+import { CanComponentDeactivate, Expense } from '../../../core/interfaces/app.interface';
 
 @Component({
   selector: 'app-edit-expenses',

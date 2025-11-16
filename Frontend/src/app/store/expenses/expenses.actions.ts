@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Expense } from "../../common/interfaces/app.interface";
+import { Expense } from "../../core/interfaces/app.interface";
 import { HttpErrorResponse } from "@angular/common/http";
 
 export const loadExpenses = createAction('[Expenses] Attempted');

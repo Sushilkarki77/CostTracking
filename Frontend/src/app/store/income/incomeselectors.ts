@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { IncomeState } from "./income.reducer";
-import { Income } from "../../common/interfaces/app.interface";
+import { Income } from "../../core/interfaces/app.interface";
 
 
 export const selectIncomeState = createFeatureSelector<IncomeState>('income');

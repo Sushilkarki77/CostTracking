@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { Expense } from "../../common/interfaces/app.interface";
+import { Expense } from "../../core/interfaces/app.interface";
 import * as ExpensesAction from "./expenses.actions";
 
 export interface ExpenseState {

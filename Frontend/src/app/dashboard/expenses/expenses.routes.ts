@@ -1,5 +1,5 @@
 import {  Routes } from "@angular/router";
-import { unsavedChangesGuard } from "../../common/guards/unsaved-changes-guard";
+import { unsavedChangesGuard } from "../../core/guards/unsaved-changes-guard";
 
 export const expensesRoutes: Routes = [
     { path: '', loadComponent: () => import('./list/list').then(x => x.List) },

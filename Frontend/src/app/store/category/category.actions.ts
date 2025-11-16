@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Category } from "../../common/interfaces/app.interface";
+import { Category } from "../../core/interfaces/app.interface";
 import { HttpErrorResponse } from "@angular/common/http";
 
 export const loadCategories = createAction('[Category] Load');

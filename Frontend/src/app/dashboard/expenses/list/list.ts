@@ -2,7 +2,7 @@ import { Component, computed, inject, signal, TemplateRef, ViewChild } from '@an
 import { Store } from '@ngrx/store';
 import { filteredExpensesSummary, selectExpenseError, selectExpenseItem, selectExpenseLoading } from '../../../store/expenses/expenses.selectors';
 import { deleteExpense, loadExpenses } from '../../../store/expenses/expenses.actions';
-import { ExpenseSummary, Field } from '../../../common/interfaces/app.interface';
+import { ExpenseSummary, Field } from '../../../core/interfaces/app.interface';
 import { AsyncPipe, CurrencyPipe, DatePipe, JsonPipe, NgTemplateOutlet } from '@angular/common';
 import { Router } from '@angular/router';
 import { PaginationComponent } from '../../../common/components/pagination-component/pagination-component';
