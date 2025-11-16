@@ -4,11 +4,11 @@ import { ExpenseSummary } from '../interfaces/app.interface';
 @Directive({
   selector: '[appIsItemActive]'
 })
-export class IsItemActive {
+export class IsItemActive<T> {
 
   current = input.required<string>();
   direction = input.required<string>();
-  target = input.required<Record<keyof ExpenseSummary, '-1' | '1'> | {}>();
+  target = input.required<Record<keyof T, '-1' | '1'> | {}>();
   class = input.required<string>();
   el = inject(ElementRef);
   renderer = inject(Renderer2);
