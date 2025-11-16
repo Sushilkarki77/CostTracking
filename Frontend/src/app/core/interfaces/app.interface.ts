@@ -68,6 +68,14 @@ export interface Item {
   _id?: string
 }
 
+export interface JwtPayload {
+  _id: string;
+  fullname: string;
+  email: string;
+  iat: number;
+  exp: number;
+}
+
 export type ExpenseSummary = Omit<Expense, 'items'> & { total: number };
 
 

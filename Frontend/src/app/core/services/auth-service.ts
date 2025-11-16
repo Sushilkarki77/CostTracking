@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { effect, inject, Injectable, signal } from '@angular/core';
+import { computed, effect, inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment.development';
 import { verifyToken } from '../app.utils';
-import { ResponseItem, TokenRes } from '../interfaces/app.interface';
+import { JwtPayload, ResponseItem, TokenRes } from '../interfaces/app.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -76,4 +76,22 @@ export class AuthService {
 
     return verifyToken(refreshToken);
   }
+
+  getUser = computed<JwtPayload>(() => {
+    const token = this.accessToken();
+
+    if (!token) return null;
+
+    const parts = token.split('.');
+    if (parts.length !== 3) return null;
+
+    const payload = parts[1];
+    const decoded = atob(payload.replace(/-/g, '+').replace(/_/g, '/'));
+    try {
+      return JSON.parse(decoded);
+    } catch (e) {
+      console.error('Invalid token payload');
+      return null;
+    }
+  })
 }

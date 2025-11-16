@@ -5,7 +5,7 @@
 
   <header class="mb-6 flex justify-end">
     <h3 class="font-bold text-gray-800">
-      Welcome, <span class="text-blue-600">John Doe</span>
+      Welcome, <span class="text-blue-600">{{authService.getUser().fullname}}</span>
     </h3>
   </header>
 
@@ -19,7 +19,7 @@
         <article class="analytics-card">
           <h4 class="text-gray-500 text-sm">Total Income</h4>
           <div class="flex justify-between items-center">
-            <p class="text-2xl font-semibold text-green-600">{{ totalIncome |currency:'USD':'symbol':'1.2-2' }}</p>
+            <p class="text-xl font-semibold text-green-600">{{ totalIncome |currency:'USD':'symbol':'1.2-2' }}</p>
             <lucide-angular [img]="wallet" color="#16a34a" size="28"></lucide-angular>
           </div>
         </article>
@@ -32,7 +32,7 @@
         <article class="analytics-card">
           <h4 class="text-gray-500 text-sm">Total Expenses</h4>
           <div class="flex justify-between items-center">
-            <p class="text-2xl font-semibold text-red-600">{{ totalExpense | currency:'USD':'symbol':'1.2-2' }}</p>
+            <p class="text-xl font-semibold text-red-600">{{ totalExpense | currency:'USD':'symbol':'1.2-2' }}</p>
             <lucide-angular [img]="receipt" color="#dc2626" size="28"></lucide-angular>
           </div>
         </article>
@@ -45,7 +45,7 @@
         <article class="analytics-card">
           <h4 class="text-gray-500 text-sm">Net Savings</h4>
           <div class="flex justify-between items-center">
-            <p class="text-2xl font-semibold text-blue-600">{{ (totalIncome - totalExpense) |
+            <p class="text-xl font-semibold text-blue-600">{{ (totalIncome - totalExpense) |
               currency:'USD':'symbol':'1.2-2' }}</p>
             <lucide-angular [img]="piggyBank" color="#2563eb" size="28"></lucide-angular>
           </div>
@@ -58,7 +58,7 @@
         <article class="analytics-card">
           <h4 class="text-gray-500 text-sm">Avg Daily Spend</h4>
           <div class="flex justify-between items-center">
-            <p class="text-2xl font-semibold text-yellow-600">{{ avarageDailyExpenses | currency:'USD':'symbol':'1.2-2'
+            <p class="text-xl font-semibold text-yellow-600">{{ avarageDailyExpenses | currency:'USD':'symbol':'1.2-2'
               }}</p>
             <lucide-angular [img]="activity" color="#ca8a04" size="28"></lucide-angular>
           </div>

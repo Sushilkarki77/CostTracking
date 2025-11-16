@@ -8,10 +8,11 @@ import {
   LucideAngularModule
 } from 'lucide-angular';
 import { loadExpenses } from '../../../store/expenses/expenses.actions';
-import { AsyncPipe, CurrencyPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { avarageDailyExpenses, totalExpenses } from '../../../store/expenses/expenses.selectors';
 import { totalIncome } from '../../../store/income/incomeselectors';
 import { loadIncome } from '../../../store/income/income.actions';
+import { AuthService } from '../../../core/services/auth-service';
 
 
 
@@ -26,6 +27,8 @@ import { loadIncome } from '../../../store/income/income.actions';
 export class Reports {
 
   store = inject(Store);
+
+  protected authService = inject(AuthService);
 
 
   totalExpense$ = this.store.select(totalExpenses);
