@@ -1,0 +1,7 @@
+@use "globals" as *;
+
+
+.demo-chart {
+  height: 400px;
+}
+

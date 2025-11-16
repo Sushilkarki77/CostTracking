@@ -12,6 +12,18 @@
   box-shadow: $shadow-heavy;
 }
 
+.analytics-card {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: $bg-card;
+  border: 1px solid $border-default;
+  box-shadow: $shadow-medium;
+}
+
 .input {
   padding: 0.5rem 0.75rem;
   border-radius: 0.375rem;
@@ -129,5 +141,6 @@ button{
   }
 }
 
-
-
+th, td {
+  white-space: nowrap;  
+}

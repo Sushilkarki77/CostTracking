@@ -57,3 +57,9 @@ export const selectIncomeError = createSelector(
   selectIncomeState,
   state => state.error
 );
+
+
+export const totalIncome = createSelector(
+  selectAllIncome,
+  state => state.reduce((acc, curr) => acc + +curr?.amount, 0)
+)

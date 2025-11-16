@@ -20,7 +20,9 @@
     "@ngrx/store": "^20.1.0",
     "@ngrx/store-devtools": "^20.1.0",
     "@tailwindcss/postcss": "^4.1.16",
+    "echarts": "^6.0.0",
     "lucide-angular": "^0.548.0",
+    "ngx-echarts": "^20.0.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

@@ -5,7 +5,7 @@
   height: 100%;
   width: 100%;
   font-family: sans-serif;
-  color: $text-primary;
+  color: $text-secondary;
   overflow: auto;
 
   dashboard-sidebar {
@@ -36,7 +36,7 @@
 
   .content-area {
     flex-grow: 1;
-    padding: 1rem;
+    // padding: 1rem;
     background: $bg-primary;
   }
 }

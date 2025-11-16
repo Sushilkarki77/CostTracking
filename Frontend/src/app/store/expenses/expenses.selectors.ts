@@ -32,7 +32,7 @@ export const filteredExpensesSummary = (page: number, pageSize: number, filterSt
       (filterState?.endDate ? new Date(filterState.endDate) >= new Date(x.date) : true)
     );
 
-  
+
     let sortedData = filteredData.sort((a, b) => {
       if (!sortState) return 0;
 
@@ -74,4 +74,29 @@ export const selectExpenseInitialized = createSelector(
 export const selectExpenseError = createSelector(
   selectExpenseState,
   state => state.error
-)
+);
+
+export const totalExpenses = createSelector(
+  selectExpensesSummary,
+  state => state.reduce((acc, curr) => acc + curr.total, 0)
+);
+
+export const avarageDailyExpenses = createSelector(
+  selectExpensesSummary,
+  totalExpenses,
+  (expenses, total) => {
+    if (!expenses.length) return 0;
+
+    const dates = expenses.filter(x => !!x.date).map(item => new Date(item.date).getTime());
+
+    const earliestDate = new Date(Math.min(...dates));
+    const latestDate = new Date(Math.max(...dates));
+
+    const diffTime = latestDate.getTime() - earliestDate.getTime();
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays === 0) return total;
+  
+    return total / diffDays;
+  }
+);
