@@ -9,7 +9,7 @@
     </h3>
   </header>
 
-  <section aria-labelledby="summary-title">
+  <section class="mb-2" aria-labelledby="summary-title">
     <h2 id="summary-title" class="sr-only">Financial Summary</h2>
 
     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
@@ -67,7 +67,40 @@
       }
 
 
+
+
     </ul>
   </section>
+
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <!-- Section 1 -->
+
+    @let formattedDataForCatChart = formattedDataForCatChart$ | async;
+   
+
+    @if(formattedDataForCatChart && pieChartVisibility()) {
+    <div class="analytics-card visualization">
+      <h4 class="text-gray-500 text-sm font-bold">Categorized Expenses</h4>
+      <figure class="w-full aspect-[20/12] ">
+
+
+        <div echarts [options]="formattedDataForCatChart" class="w-full h-full"></div>
+
+      </figure>
+    </div>
+    }
+
+    <!-- Section 2 -->
+    <div class="analytics-card visualization">
+      <h4 class="text-gray-500 text-sm font-bold">Monthly Expenses</h4>
+      <figure class="w-full aspect-[20/12] min-h-[300px]">
+        <div echarts [options]="lineChartOptions" class="w-full h-full"></div>
+      </figure>
+    </div>
+  </section>
+
+
+
+
 
 </section>

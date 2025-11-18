@@ -96,7 +96,30 @@ export const avarageDailyExpenses = createSelector(
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
     if (diffDays === 0) return total;
-  
+
     return total / diffDays;
   }
 );
+
+export const expensesByCategories = createSelector(
+  selectAllExpenses,
+  state => {
+    const items = state.flatMap(x => x.items);
+
+    const groupedMap = items.reduce<Map<string, { name: string; value: number }>>((acc, curr) => {
+      const catId = curr.category._id;
+
+      if (acc.has(catId)) {
+        acc.get(catId)!.value += curr.price;
+      } else {
+        acc.set(catId, { name: curr.category.name, value: curr.price });
+      }
+
+      return acc;
+    }, new Map());
+
+    // Convert Map values to array
+    return Array.from(groupedMap.values());
+  }
+);
+
