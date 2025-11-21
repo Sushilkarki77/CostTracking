@@ -1,1701 +1,5073 @@
 [
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 1",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 1",
-    "currency": "usd",
+    "name": "Fitness Gear Upgrade",
+    "date": "2024-11-03",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 1",
     "items": [
       {
-        "name": "Item 1",
-        "price": 10.0,
+        "name": "Phone Charger",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 2",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 2",
-    "currency": "usd",
-    "items": [
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 102,
+        "currency": "USD"
+      },
       {
-        "name": "Item 2",
-        "price": 10.5,
-        "category": {
-          "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 3",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 3",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 3",
-        "price": 11.0,
+        "name": "Movie Ticket",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 167,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 4",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 4",
-    "currency": "usd",
+    "name": "Monthly Transportation",
+    "date": "2024-11-09",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 2",
     "items": [
       {
-        "name": "Item 4",
-        "price": 11.5,
+        "name": "Energy Drink",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 5",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 5",
-    "currency": "usd",
-    "items": [
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 101,
+        "currency": "USD"
+      },
       {
-        "name": "Item 5",
-        "price": 12.0,
-        "category": {
-          "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 6",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 6",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 6",
-        "price": 12.5,
+        "name": "Flight Ticket",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 7",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 7",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 111,
+        "currency": "USD"
+      },
       {
-        "name": "Item 7",
-        "price": 13.0,
+        "name": "Board Game",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 8",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 8",
-    "currency": "usd",
-    "items": [
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 176,
+        "currency": "USD"
+      },
       {
-        "name": "Item 8",
-        "price": 13.5,
-        "category": {
-          "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 9",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 9",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 9",
-        "price": 14.0,
+        "name": "Bus Pass",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 10",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 10",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 11,
+        "currency": "USD"
+      },
       {
-        "name": "Item 10",
-        "price": 14.5,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 11",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 11",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 11",
-        "price": 15.0,
-        "category": {
-          "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 12",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 12",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 12",
-        "price": 15.5,
+        "name": "Running Shoes",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 163,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 13",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 13",
-    "currency": "usd",
+    "name": "Meal Prep Groceries",
+    "date": "2025-01-26",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 3",
     "items": [
       {
-        "name": "Item 13",
-        "price": 16.0,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 14",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 14",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 14",
-        "price": 16.5,
+        "name": "Coffee",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 15",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 15",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 85,
+        "currency": "USD"
+      },
       {
-        "name": "Item 15",
-        "price": 17.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 16",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 16",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 16",
-        "price": 17.5,
+        "name": "Pizza",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 181,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 54,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 17",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 17",
-    "currency": "usd",
+    "name": "Hotel Reservation",
+    "date": "2024-07-03",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 4",
     "items": [
       {
-        "name": "Item 17",
-        "price": 18.0,
+        "name": "Chocolate",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 88,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 88,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 18",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 18",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 31,
+        "currency": "USD"
+      },
       {
-        "name": "Item 18",
-        "price": 18.5,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 19",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 19",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 19",
-        "price": 19.0,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 20",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 20",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 20",
-        "price": 19.5,
+        "name": "Board Game",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 30,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 21",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 21",
-    "currency": "usd",
+    "name": "Meal Prep Groceries",
+    "date": "2023-09-18",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 5",
     "items": [
       {
-        "name": "Item 21",
-        "price": 20.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 22",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 22",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 22",
-        "price": 20.5,
+        "name": "Pizza",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 199,
+        "currency": "USD"
+      },
+      {
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 45,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 193,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 23",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 23",
-    "currency": "usd",
+    "name": "Online Course Purchase",
+    "date": "2024-01-09",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 6",
     "items": [
       {
-        "name": "Item 23",
-        "price": 21.0,
+        "name": "Bus Pass",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 62,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 24",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 24",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 68,
+        "currency": "USD"
+      },
       {
-        "name": "Item 24",
-        "price": 21.5,
+        "name": "Phone Charger",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 25",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 25",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 159,
+        "currency": "USD"
+      },
       {
-        "name": "Item 25",
-        "price": 22.0,
+        "name": "Burger",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 190,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 26",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 26",
-    "currency": "usd",
+    "name": "Gym Membership Renewal",
+    "date": "2025-05-24",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 7",
     "items": [
       {
-        "name": "Item 26",
-        "price": 22.5,
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 87,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 32,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 168,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 27",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 27",
-    "currency": "usd",
+    "name": "Vacation Booking",
+    "date": "2023-12-09",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 8",
     "items": [
       {
-        "name": "Item 27",
-        "price": 23.0,
+        "name": "Hotel Booking",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 31,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 86,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 125,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 28",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 28",
-    "currency": "usd",
+    "name": "Weekend Trip",
+    "date": "2024-06-23",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 9",
     "items": [
       {
-        "name": "Item 28",
-        "price": 23.5,
+        "name": "Online Course",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 74,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 119,
+        "currency": "USD"
+      },
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 114,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 29",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 29",
-    "currency": "usd",
+    "name": "Meal Prep Groceries",
+    "date": "2023-08-06",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 10",
     "items": [
       {
-        "name": "Item 29",
-        "price": 24.0,
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 84,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 88,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 15,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 162,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Birthday Gift Purchase",
+    "date": "2024-02-26",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 11",
+    "items": [
+      {
+        "name": "Pizza",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 30",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 30",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 19,
+        "currency": "USD"
+      },
       {
-        "name": "Item 30",
-        "price": 24.5,
+        "name": "Phone Charger",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 31",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 31",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 20,
+        "currency": "USD"
+      },
       {
-        "name": "Item 31",
-        "price": 25.0,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 32",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 32",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 32",
-        "price": 25.5,
+        "name": "Notebook",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 33",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 33",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 183,
+        "currency": "USD"
+      },
       {
-        "name": "Item 33",
-        "price": 26.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 34",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 34",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 34",
-        "price": 26.5,
+        "name": "Tennis Ball",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 130,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 35",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 35",
-    "currency": "usd",
+    "name": "Study Materials",
+    "date": "2025-09-06",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 12",
     "items": [
       {
-        "name": "Item 35",
-        "price": 27.0,
+        "name": "Bus Pass",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 131,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 116,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 33,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Adventure Gear",
+    "date": "2023-06-23",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 13",
+    "items": [
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 177,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 189,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 171,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 33,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 36",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 36",
-    "currency": "usd",
+    "name": "Birthday Gift Purchase",
+    "date": "2022-04-02",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 14",
     "items": [
       {
-        "name": "Item 36",
-        "price": 27.5,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 37",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 37",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 37",
-        "price": 28.0,
+        "name": "Popcorn",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 164,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 108,
+        "currency": "USD"
+      },
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 66,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 7,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 38",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 38",
-    "currency": "usd",
+    "name": "Healthy Food Grocery Run",
+    "date": "2023-09-19",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 15",
     "items": [
       {
-        "name": "Item 38",
-        "price": 28.5,
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 162,
+        "currency": "USD"
+      },
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 118,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 105,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Monthly Transportation",
+    "date": "2024-04-25",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 16",
+    "items": [
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 106,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 48,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 39",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 39",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 76,
+        "currency": "USD"
+      },
       {
-        "name": "Item 39",
-        "price": 29.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 40",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 40",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 40",
-        "price": 29.5,
+        "name": "Water Bottle",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 68,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 41",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 41",
-    "currency": "usd",
+    "name": "Vacation Booking",
+    "date": "2023-06-11",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 17",
     "items": [
       {
-        "name": "Item 41",
-        "price": 30.0,
+        "name": "Pizza",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 119,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 42",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 42",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 98,
+        "currency": "USD"
+      },
       {
-        "name": "Item 42",
-        "price": 30.5,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 43",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 43",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 43",
-        "price": 31.0,
+        "name": "Streaming Subscription",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 40,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 199,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 44",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 44",
-    "currency": "usd",
+    "name": "Sports Equipment Buy",
+    "date": "2022-10-02",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 18",
     "items": [
       {
-        "name": "Item 44",
-        "price": 31.5,
+        "name": "Backpack",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 81,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 171,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 26,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 126,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 166,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Dinner with Friends",
+    "date": "2023-09-11",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 19",
+    "items": [
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 193,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 48,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 45",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 45",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 66,
+        "currency": "USD"
+      },
       {
-        "name": "Item 45",
-        "price": 32.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 46",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 46",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 46",
-        "price": 32.5,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 47",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 47",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 47",
-        "price": 33.0,
+        "name": "Chocolate",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 48",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 48",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 22,
+        "currency": "USD"
+      },
       {
-        "name": "Item 48",
-        "price": 33.5,
+        "name": "Tennis Ball",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 190,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 49",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 49",
-    "currency": "usd",
+    "name": "Online Course Purchase",
+    "date": "2025-03-20",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 20",
     "items": [
       {
-        "name": "Item 49",
-        "price": 34.0,
+        "name": "Phone Charger",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 50",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 50",
-    "currency": "usd",
-    "items": [
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 70,
+        "currency": "USD"
+      },
       {
-        "name": "Item 50",
-        "price": 34.5,
+        "name": "Online Course",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 51",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 51",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 37,
+        "currency": "USD"
+      },
       {
-        "name": "Item 51",
-        "price": 35.0,
+        "name": "Notebook",
         "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 44,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 149,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 182,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 52",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 52",
-    "currency": "usd",
+    "name": "Tech Accessories Purchase",
+    "date": "2024-06-26",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 21",
     "items": [
       {
-        "name": "Item 52",
-        "price": 35.5,
+        "name": "Chocolate",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 109,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 56,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 156,
+        "currency": "USD"
+      },
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 118,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 53",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 53",
-    "currency": "usd",
+    "name": "Outdoor Adventure Gear",
+    "date": "2022-04-06",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 22",
     "items": [
       {
-        "name": "Item 53",
-        "price": 36.0,
+        "name": "Board Game",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 163,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 54",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 54",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 186,
+        "currency": "USD"
+      },
       {
-        "name": "Item 54",
-        "price": 36.5,
+        "name": "Streaming Subscription",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 55",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 55",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 125,
+        "currency": "USD"
+      },
       {
-        "name": "Item 55",
-        "price": 37.0,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 56",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 56",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 56",
-        "price": 37.5,
+        "name": "Online Course",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 57",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 57",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 103,
+        "currency": "USD"
+      },
       {
-        "name": "Item 57",
-        "price": 38.0,
+        "name": "Popcorn",
         "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 21,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 58",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 58",
-    "currency": "usd",
+    "name": "Books and Stationery",
+    "date": "2023-12-03",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 23",
     "items": [
       {
-        "name": "Item 58",
-        "price": 38.5,
+        "name": "Water Bottle",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 59",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 59",
-    "currency": "usd",
-    "items": [
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 131,
+        "currency": "USD"
+      },
       {
-        "name": "Item 59",
-        "price": 39.0,
+        "name": "USB Cable",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 60",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 60",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 60,
+        "currency": "USD"
+      },
       {
-        "name": "Item 60",
-        "price": 39.5,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 61",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 61",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 61",
-        "price": 40.0,
+        "name": "Backpack",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 184,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 62",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 62",
-    "currency": "usd",
+    "name": "Fast Food Lunch",
+    "date": "2024-02-21",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 24",
     "items": [
       {
-        "name": "Item 62",
-        "price": 40.5,
+        "name": "Bus Pass",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 153,
+        "currency": "USD"
+      },
+      {
+        "name": "Hotel Booking",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 63",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 63",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 133,
+        "currency": "USD"
+      },
       {
-        "name": "Item 63",
-        "price": 41.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 64",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 64",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 64",
-        "price": 41.5,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 65",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 65",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 65",
-        "price": 42.0,
+        "name": "Coffee",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 174,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 66",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 66",
-    "currency": "usd",
+    "name": "Fast Food Lunch",
+    "date": "2023-06-12",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 25",
     "items": [
       {
-        "name": "Item 66",
-        "price": 42.5,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 67",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 67",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 67",
-        "price": 43.0,
+        "name": "Gym Gloves",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 159,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 165,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 98,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 192,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 68",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 68",
-    "currency": "usd",
+    "name": "Study Materials",
+    "date": "2022-09-30",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 26",
     "items": [
       {
-        "name": "Item 68",
-        "price": 43.5,
+        "name": "Online Course",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 88,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 113,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 20,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 181,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 95,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 69",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 69",
-    "currency": "usd",
+    "name": "Meal Prep Groceries",
+    "date": "2023-10-03",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 27",
     "items": [
       {
-        "name": "Item 69",
-        "price": 44.0,
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 49,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 170,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 142,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 70",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 70",
-    "currency": "usd",
+    "name": "Meal Prep Groceries",
+    "date": "2024-04-17",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 28",
     "items": [
       {
-        "name": "Item 70",
-        "price": 44.5,
+        "name": "Movie Ticket",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 71",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 71",
-    "currency": "usd",
-    "items": [
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 34,
+        "currency": "USD"
+      },
       {
-        "name": "Item 71",
-        "price": 45.0,
+        "name": "Running Shoes",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 113,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 33,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 72",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 72",
-    "currency": "usd",
+    "name": "Online Course Purchase",
+    "date": "2024-06-21",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 29",
     "items": [
       {
-        "name": "Item 72",
-        "price": 45.5,
+        "name": "Yoga Mat",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 17,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 197,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 73",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 73",
-    "currency": "usd",
+    "name": "Study Materials",
+    "date": "2025-01-12",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 30",
     "items": [
       {
-        "name": "Item 73",
-        "price": 46.0,
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 92,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 101,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Streaming Subscription",
+    "date": "2023-12-12",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 31",
+    "items": [
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 58,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 156,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 121,
+        "currency": "USD"
+      },
+      {
+        "name": "Notebook",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 33,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 74",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 74",
-    "currency": "usd",
+    "name": "Monthly Transportation",
+    "date": "2024-06-04",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 32",
     "items": [
       {
-        "name": "Item 74",
-        "price": 46.5,
+        "name": "Popcorn",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 52,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 134,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 144,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 32,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 18,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Birthday Gift Purchase",
+    "date": "2025-03-27",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 33",
+    "items": [
+      {
+        "name": "Camera Battery",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 75",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 75",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 149,
+        "currency": "USD"
+      },
       {
-        "name": "Item 75",
-        "price": 47.0,
+        "name": "Flight Ticket",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 76",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 76",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 20,
+        "currency": "USD"
+      },
       {
-        "name": "Item 76",
-        "price": 47.5,
+        "name": "Burger",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 77",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 77",
-    "currency": "usd",
-    "items": [
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 80,
+        "currency": "USD"
+      },
       {
-        "name": "Item 77",
-        "price": 48.0,
+        "name": "Energy Drink",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 84,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 78",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 78",
-    "currency": "usd",
+    "name": "Local Travel Expense",
+    "date": "2024-09-14",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 34",
     "items": [
       {
-        "name": "Item 78",
-        "price": 48.5,
+        "name": "USB Cable",
         "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 79",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 79",
-    "currency": "usd",
-    "items": [
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 152,
+        "currency": "USD"
+      },
       {
-        "name": "Item 79",
-        "price": 49.0,
+        "name": "Phone Charger",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 146,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 110,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 80",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 80",
-    "currency": "usd",
+    "name": "Gym Membership Renewal",
+    "date": "2025-09-01",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 35",
     "items": [
       {
-        "name": "Item 80",
-        "price": 49.5,
+        "name": "Board Game",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 88,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 48,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 14,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 42,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 81",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 81",
-    "currency": "usd",
+    "name": "Vacation Booking",
+    "date": "2024-09-16",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 36",
     "items": [
       {
-        "name": "Item 81",
-        "price": 50.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 82",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 82",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 82",
-        "price": 50.5,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 83",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 83",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 83",
-        "price": 51.0,
+        "name": "Streaming Subscription",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 84",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 84",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 13,
+        "currency": "USD"
+      },
       {
-        "name": "Item 84",
-        "price": 51.5,
+        "name": "Backpack",
         "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 85",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 85",
-    "currency": "usd",
-    "items": [
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 42,
+        "currency": "USD"
+      },
       {
-        "name": "Item 85",
-        "price": 52.0,
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 21,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 84,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 35,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 86",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 86",
-    "currency": "usd",
+    "name": "Coffee Shop Visit",
+    "date": "2025-01-12",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 37",
     "items": [
       {
-        "name": "Item 86",
-        "price": 52.5,
+        "name": "Chocolate",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 187,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 87",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 87",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 23,
+        "currency": "USD"
+      },
       {
-        "name": "Item 87",
-        "price": 53.0,
+        "name": "Camera Battery",
         "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 88",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 88",
-    "currency": "usd",
-    "items": [
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 107,
+        "currency": "USD"
+      },
       {
-        "name": "Item 88",
-        "price": 53.5,
+        "name": "Phone Charger",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 56,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 154,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 89",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 89",
-    "currency": "usd",
+    "name": "Sports Equipment Buy",
+    "date": "2024-06-02",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 38",
     "items": [
       {
-        "name": "Item 89",
-        "price": 54.0,
+        "name": "Sandwich",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 90",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 90",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 72,
+        "currency": "USD"
+      },
       {
-        "name": "Item 90",
-        "price": 54.5,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 91",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 91",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 91",
-        "price": 55.0,
+        "name": "Textbook",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 111,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 92",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 92",
-    "currency": "usd",
+    "name": "Snacks and Drinks",
+    "date": "2024-07-23",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 39",
     "items": [
       {
-        "name": "Item 92",
-        "price": 55.5,
+        "name": "Chocolate",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 93",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 93",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 24,
+        "currency": "USD"
+      },
       {
-        "name": "Item 93",
-        "price": 56.0,
-        "category": {
-          "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 94",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 94",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 94",
-        "price": 56.5,
-        "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 95",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 95",
-    "currency": "usd",
-    "items": [
-      {
-        "name": "Item 95",
-        "price": 57.0,
+        "name": "Phone Charger",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 96",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 96",
-    "currency": "usd",
-    "items": [
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 175,
+        "currency": "USD"
+      },
       {
-        "name": "Item 96",
-        "price": 57.5,
+        "name": "Board Game",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
-      }
-    ]
-  },
-  {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 97",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 97",
-    "currency": "usd",
-    "items": [
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 20,
+        "currency": "USD"
+      },
       {
-        "name": "Item 97",
-        "price": 58.0,
+        "name": "Camera Battery",
         "category": {
-          "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 57,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 98",
-    "paymentMethod": "paypal",
-    "note": "Sample note for expense 98",
-    "currency": "usd",
+    "name": "Movie Night",
+    "date": "2024-07-23",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 40",
     "items": [
       {
-        "name": "Item 98",
-        "price": 58.5,
+        "name": "Pizza",
         "category": {
           "_id": "690fd58c56a6453e86e1f4fd",
-          "name": "Entertainment"
-        }
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 7,
+        "currency": "USD"
+      },
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 69,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 154,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 99",
-    "paymentMethod": "debit card",
-    "note": "Sample note for expense 99",
-    "currency": "usd",
+    "name": "Vacation Booking",
+    "date": "2022-10-06",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 41",
     "items": [
       {
-        "name": "Item 99",
-        "price": 59.0,
+        "name": "Board Game",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 187,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
         "category": {
           "_id": "690fd61156a6453e86e1f502",
-          "name": "Sports"
-        }
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 86,
+        "currency": "USD"
       }
     ]
   },
   {
-    "userId": "6906b389d312b6d442652ebf",
-    "name": "Sample Expense 100",
-    "paymentMethod": "credit card",
-    "note": "Sample note for expense 100",
-    "currency": "usd",
+    "name": "Gym Membership Renewal",
+    "date": "2022-04-06",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 42",
     "items": [
       {
-        "name": "Item 100",
-        "price": 59.5,
+        "name": "Phone Charger",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 83,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 90,
+        "currency": "USD"
+      },
+      {
+        "name": "Bus Pass",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 20,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Streaming Subscription",
+    "date": "2022-12-26",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 43",
+    "items": [
+      {
+        "name": "Popcorn",
         "category": {
           "_id": "69099452e012e3296930d1ed",
-          "name": "Education"
-        }
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 71,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 5,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 39,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 165,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Healthy Food Grocery Run",
+    "date": "2024-09-10",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 44",
+    "items": [
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 123,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 52,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fast Food Lunch",
+    "date": "2023-05-10",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 45",
+    "items": [
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 166,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 38,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 161,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 99,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Streaming Subscription",
+    "date": "2025-03-24",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 46",
+    "items": [
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 182,
+        "currency": "USD"
+      },
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 95,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 137,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Weekly Essentials Shopping",
+    "date": "2023-05-12",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 47",
+    "items": [
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 94,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 173,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 10,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fast Food Lunch",
+    "date": "2024-02-27",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 48",
+    "items": [
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 138,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 138,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 107,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Snacks and Drinks",
+    "date": "2023-06-08",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 49",
+    "items": [
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 164,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 17,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Grocery Shopping",
+    "date": "2023-07-05",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 50",
+    "items": [
+      {
+        "name": "Bus Pass",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 161,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 44,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 54,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 99,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 170,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Vacation Booking",
+    "date": "2025-10-30",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 51",
+    "items": [
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 52,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 158,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 53,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Monthly Transportation",
+    "date": "2024-12-12",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 52",
+    "items": [
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 146,
+        "currency": "USD"
+      },
+      {
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 148,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 196,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 126,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 145,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Healthy Food Grocery Run",
+    "date": "2024-08-26",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 53",
+    "items": [
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 163,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 5,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 75,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 145,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 59,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Meal Prep Groceries",
+    "date": "2023-01-28",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 54",
+    "items": [
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 175,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 56,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 104,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 177,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 15,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Birthday Gift Purchase",
+    "date": "2025-06-27",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 55",
+    "items": [
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 94,
+        "currency": "USD"
+      },
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 30,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 184,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Movie Night",
+    "date": "2025-07-23",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 56",
+    "items": [
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 153,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 137,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 38,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 163,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 192,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Grocery Shopping",
+    "date": "2024-07-09",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 57",
+    "items": [
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 71,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 108,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 172,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Casual Dining Out",
+    "date": "2025-09-15",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 58",
+    "items": [
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 158,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 29,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 31,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Dinner with Friends",
+    "date": "2023-12-20",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 59",
+    "items": [
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 37,
+        "currency": "USD"
+      },
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 131,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Meal Prep Groceries",
+    "date": "2024-03-09",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 60",
+    "items": [
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 36,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 37,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 168,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 196,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fast Food Lunch",
+    "date": "2024-09-16",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 61",
+    "items": [
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 116,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 115,
+        "currency": "USD"
+      },
+      {
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 5,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 58,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 28,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Hotel Reservation",
+    "date": "2025-10-19",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 62",
+    "items": [
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 79,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 61,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Gym Membership Renewal",
+    "date": "2023-11-07",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 63",
+    "items": [
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 197,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 59,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Streaming Subscription",
+    "date": "2023-09-29",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 64",
+    "items": [
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 173,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 33,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 8,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 98,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Books and Stationery",
+    "date": "2025-08-09",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 65",
+    "items": [
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 64,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 53,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Study Materials",
+    "date": "2025-06-21",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 66",
+    "items": [
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 91,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 184,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Online Course Purchase",
+    "date": "2023-02-19",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 67",
+    "items": [
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 26,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 16,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 165,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 132,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 131,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Tech Accessories Purchase",
+    "date": "2025-05-15",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 68",
+    "items": [
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 52,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 55,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 15,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Vacation Booking",
+    "date": "2024-06-01",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 69",
+    "items": [
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 173,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 128,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 122,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 200,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 127,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Gym Membership Renewal",
+    "date": "2025-06-02",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 70",
+    "items": [
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 149,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 192,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 88,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 54,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fast Food Lunch",
+    "date": "2023-07-02",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 71",
+    "items": [
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 27,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 46,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 79,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 31,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Online Course Purchase",
+    "date": "2024-02-01",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 72",
+    "items": [
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 109,
+        "currency": "USD"
+      },
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 148,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 41,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fitness Gear Upgrade",
+    "date": "2022-05-05",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 73",
+    "items": [
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 34,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 148,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 7,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 122,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 122,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Gym Membership Renewal",
+    "date": "2023-11-27",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 74",
+    "items": [
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 22,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 62,
+        "currency": "USD"
+      },
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 103,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 179,
+        "currency": "USD"
+      },
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 61,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fitness Gear Upgrade",
+    "date": "2024-01-31",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 75",
+    "items": [
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 42,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 192,
+        "currency": "USD"
+      },
+      {
+        "name": "Online Course",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 134,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Gym Membership Renewal",
+    "date": "2024-08-28",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 76",
+    "items": [
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 41,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 37,
+        "currency": "USD"
+      },
+      {
+        "name": "Bus Pass",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 162,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Grocery Shopping",
+    "date": "2023-01-02",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 77",
+    "items": [
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 14,
+        "currency": "USD"
+      },
+      {
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 54,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Weekly Essentials Shopping",
+    "date": "2024-12-23",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 78",
+    "items": [
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 119,
+        "currency": "USD"
+      },
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 117,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 45,
+        "currency": "USD"
+      },
+      {
+        "name": "Bus Pass",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 165,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 186,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Coffee Shop Visit",
+    "date": "2024-07-27",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 79",
+    "items": [
+      {
+        "name": "Textbook",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 114,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 118,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 136,
+        "currency": "USD"
+      },
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 27,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 181,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Sports Equipment Buy",
+    "date": "2025-01-09",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 80",
+    "items": [
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 187,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 119,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fitness Gear Upgrade",
+    "date": "2024-10-13",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 81",
+    "items": [
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 45,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 185,
+        "currency": "USD"
+      },
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 166,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Books and Stationery",
+    "date": "2024-06-16",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 82",
+    "items": [
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 63,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 143,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 144,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 121,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 87,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Coffee Shop Visit",
+    "date": "2025-03-01",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 83",
+    "items": [
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 33,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 146,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 173,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Movie Night",
+    "date": "2023-03-16",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 84",
+    "items": [
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 191,
+        "currency": "USD"
+      },
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 117,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fast Food Lunch",
+    "date": "2022-08-28",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 85",
+    "items": [
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 94,
+        "currency": "USD"
+      },
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 142,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 19,
+        "currency": "USD"
+      },
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 173,
+        "currency": "USD"
+      },
+      {
+        "name": "Flight Ticket",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 55,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Local Travel Expense",
+    "date": "2025-02-27",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 86",
+    "items": [
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 68,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 63,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 127,
+        "currency": "USD"
+      },
+      {
+        "name": "Sandwich",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 92,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 182,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Snacks and Drinks",
+    "date": "2023-02-03",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 87",
+    "items": [
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 153,
+        "currency": "USD"
+      },
+      {
+        "name": "Running Shoes",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 104,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 84,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Adventure Gear",
+    "date": "2024-03-19",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 88",
+    "items": [
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 175,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 21,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor Adventure Gear",
+    "date": "2025-08-04",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 89",
+    "items": [
+      {
+        "name": "Yoga Mat",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 155,
+        "currency": "USD"
+      },
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 157,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Sports Equipment Buy",
+    "date": "2024-06-30",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 90",
+    "items": [
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 182,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 191,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 70,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 132,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 83,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Weekend Trip",
+    "date": "2023-01-04",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 91",
+    "items": [
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 157,
+        "currency": "USD"
+      },
+      {
+        "name": "Burger",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 14,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 128,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Books and Stationery",
+    "date": "2025-07-27",
+    "paymentMethod": "PayPal",
+    "note": "Unique note for expense record 92",
+    "items": [
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 44,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 37,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Fast Food Lunch",
+    "date": "2025-08-22",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 93",
+    "items": [
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 168,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 187,
+        "currency": "USD"
+      },
+      {
+        "name": "Energy Drink",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 146,
+        "currency": "USD"
+      },
+      {
+        "name": "Camera Battery",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 170,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 196,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Weekly Essentials Shopping",
+    "date": "2025-04-23",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 94",
+    "items": [
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 179,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 162,
+        "currency": "USD"
+      },
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 31,
+        "currency": "USD"
+      },
+      {
+        "name": "Popcorn",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 9,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Gym Membership Renewal",
+    "date": "2023-10-03",
+    "paymentMethod": "debit-card",
+    "note": "Unique note for expense record 95",
+    "items": [
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 67,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 193,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 188,
+        "currency": "USD"
+      },
+      {
+        "name": "Pizza",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 164,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Coffee Shop Visit",
+    "date": "2022-12-11",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 96",
+    "items": [
+      {
+        "name": "Movie Ticket",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 8,
+        "currency": "USD"
+      },
+      {
+        "name": "Coffee",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 46,
+        "currency": "USD"
+      },
+      {
+        "name": "Water Bottle",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 167,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Casual Dining Out",
+    "date": "2025-10-05",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 97",
+    "items": [
+      {
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 181,
+        "currency": "USD"
+      },
+      {
+        "name": "Streaming Subscription",
+        "category": {
+          "_id": "69099452e012e3296930d1ed",
+          "name": "Education",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-04T05:51:14.200Z",
+          "updatedAt": "2025-11-04T05:51:14.200Z"
+        },
+        "price": 83,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Movie Night",
+    "date": "2022-08-04",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 98",
+    "items": [
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 42,
+        "currency": "USD"
+      },
+      {
+        "name": "Phone Charger",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 90,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Meal Prep Groceries",
+    "date": "2024-12-28",
+    "paymentMethod": "cash",
+    "note": "Unique note for expense record 99",
+    "items": [
+      {
+        "name": "Chocolate",
+        "category": {
+          "_id": "690fd61156a6453e86e1f502",
+          "name": "Sports",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:45:21.727Z",
+          "updatedAt": "2025-11-08T23:45:21.727Z"
+        },
+        "price": 6,
+        "currency": "USD"
+      },
+      {
+        "name": "Gym Gloves",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 106,
+        "currency": "USD"
+      },
+      {
+        "name": "Hotel Booking",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 160,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Movie Night",
+    "date": "2023-01-10",
+    "paymentMethod": "credit-card",
+    "note": "Unique note for expense record 100",
+    "items": [
+      {
+        "name": "Backpack",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 115,
+        "currency": "USD"
+      },
+      {
+        "name": "Board Game",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 65,
+        "currency": "USD"
+      },
+      {
+        "name": "USB Cable",
+        "category": {
+          "_id": "6912b64f08becfc10541a080",
+          "name": "Food",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-11T04:06:39.465Z",
+          "updatedAt": "2025-11-11T04:06:39.465Z"
+        },
+        "price": 39,
+        "currency": "USD"
+      },
+      {
+        "name": "Tennis Ball",
+        "category": {
+          "_id": "690fd58c56a6453e86e1f4fd",
+          "name": "Entertainment",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-08T23:43:08.258Z",
+          "updatedAt": "2025-11-08T23:43:08.258Z"
+        },
+        "price": 9,
+        "currency": "USD"
+      },
+      {
+        "name": "Notebook",
+        "category": {
+          "_id": "69115527cd359a84f48771c1",
+          "name": "Travel",
+          "userId": "6906b389d312b6d442652ebf",
+          "createdAt": "2025-11-10T02:59:51.698Z",
+          "updatedAt": "2025-11-10T02:59:51.698Z"
+        },
+        "price": 11,
+        "currency": "USD"
       }
     ]
   }

@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { IncomeState } from "./income.reducer";
 import { Income } from "../../core/interfaces/app.interface";
+import { convertToMonthNames, getMonthYear, getPast12MonthsMap } from "../../core/app.utils";
 
 
 export const selectIncomeState = createFeatureSelector<IncomeState>('income');
@@ -63,3 +64,24 @@ export const totalIncome = createSelector(
   selectAllIncome,
   state => state.reduce((acc, curr) => acc + +curr?.amount, 0)
 )
+
+
+export const getPast12MonthsIncome = createSelector(
+  selectAllIncome,
+  (state): [Map<string, number>, Array<string>] => {
+    const [monthsMap, monthsArr] = getPast12MonthsMap();
+    const past12MonthsIncomes = state.filter(x => new Date(x.date) > new Date(monthsArr[0]));
+
+    past12MonthsIncomes.forEach(x => {
+      const formattedDate = getMonthYear(new Date(x.date));
+      monthsMap.set(formattedDate, (monthsMap.get(formattedDate) || 0) + +x.amount)
+    });
+
+
+    return [monthsMap, convertToMonthNames(monthsArr)];
+  }
+)
+
+
+
+

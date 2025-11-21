@@ -2,6 +2,7 @@ import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { ExpenseState } from "./expenses.reducer";
 import { Expense, ExpenseSummary } from "../../core/interfaces/app.interface";
 import { FilterState } from "../../dashboard/expenses/expenses.interfaces";
+import { convertToMonthNames, getMonthYear, getPast12MonthsMap } from "../../core/app.utils";
 
 export const selectExpenseState = createFeatureSelector<ExpenseState>('expenses');
 
@@ -81,7 +82,7 @@ export const totalExpenses = createSelector(
   state => state.reduce((acc, curr) => acc + curr.total, 0)
 );
 
-export const avarageDailyExpenses = createSelector(
+export const averageDailyExpenses = createSelector(
   selectExpensesSummary,
   totalExpenses,
   (expenses, total) => {
@@ -122,4 +123,21 @@ export const expensesByCategories = createSelector(
     return Array.from(groupedMap.values());
   }
 );
+
+export const getPast12MonthsExpense = createSelector(
+  selectExpensesSummary,
+  (state): [Map<string, number>, Array<string>] => {
+    const [monthsMap, monthsArr] = getPast12MonthsMap();
+    const past12MonthsExpenses = state.filter(x => new Date(x.date) > new Date(monthsArr[0]));
+
+    past12MonthsExpenses.forEach(x => {
+      const formattedDate = getMonthYear(new Date(x.date));
+      monthsMap.set(formattedDate, (monthsMap.get(formattedDate) || 0) + +x.total)
+    });
+
+
+    return [monthsMap, convertToMonthNames(monthsArr)];
+  }
+)
+
 

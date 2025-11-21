@@ -7,7 +7,7 @@ export type SortValues = '-1' | '1';
 
 export const Fields: Field<ExpenseSummary>[] = [
   { label: "Name", name: "name", type: "string" },
-  { label: "Created", name: "createdAt", type: "date", sortable: true },
+  { label: "Date", name: "date", type: "date", sortable: true },
   { label: "Method", name: "paymentMethod", type: "string" },
   { label: "Total", name: "total", type: "curency", sortable: true }
 ]

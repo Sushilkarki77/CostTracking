@@ -1,7 +1,7 @@
 <section class="p-4 bg-gray-50">
   @let totalIncome = totalIncome$ | async;
   @let totalExpense = totalExpense$ | async;
-  @let avarageDailyExpenses = avarageDailyExpenses$ | async;
+  @let averageDailyExpenses = averageDailyExpenses$ | async;
 
   <header class="mb-6 flex justify-end">
     <h3 class="font-bold text-gray-800">
@@ -53,12 +53,12 @@
       </li>
       }
 
-      @if(avarageDailyExpenses) {
+      @if(averageDailyExpenses) {
       <li>
         <article class="analytics-card">
           <h4 class="text-gray-500 text-sm">Avg Daily Spend</h4>
           <div class="flex justify-between items-center">
-            <p class="text-xl font-semibold text-yellow-600">{{ avarageDailyExpenses | currency:'USD':'symbol':'1.2-2'
+            <p class="text-xl font-semibold text-yellow-600">{{ averageDailyExpenses | currency:'USD':'symbol':'1.2-2'
               }}</p>
             <lucide-angular [img]="activity" color="#ca8a04" size="28"></lucide-angular>
           </div>
@@ -76,7 +76,7 @@
     <!-- Section 1 -->
 
     @let formattedDataForCatChart = formattedDataForCatChart$ | async;
-   
+
 
     @if(formattedDataForCatChart && pieChartVisibility()) {
     <div class="analytics-card visualization">
@@ -94,7 +94,7 @@
     <div class="analytics-card visualization">
       <h4 class="text-gray-500 text-sm font-bold">Monthly Expenses</h4>
       <figure class="w-full aspect-[20/12] min-h-[300px]">
-        <div echarts [options]="lineChartOptions" class="w-full h-full"></div>
+        <div echarts [options]="lineChartOptions$()" class="w-full h-full"></div>
       </figure>
     </div>
   </section>

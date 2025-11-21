@@ -34,7 +34,7 @@ export const updateExpense: RequestHandler<{ id: string }, ResponseItem<ExpDocum
 
         if (!updatedItem) throw new ErrorWithStatus("Item does not exist", 404);
 
-        res.status(200).json({ message: "Expense deleted successfully", data: { ...updatedItem } });
+        res.status(200).json({ message: "Expense updated successfully", data: { ...updatedItem } });
     } catch (error) {
         next(error);
     }
@@ -48,7 +48,7 @@ export const deleteExpense: RequestHandler<{ id: string }, ResponseItem<{ delete
         const user = req.user;
         const { id } = req.params;
         const deletedItem: ExpDocument | null = await deleteExp(id, user._id);
-        if (!deletedItem) res.status(404).json({ message: "Item does not exist" });
+        if (!deletedItem) throw new ErrorWithStatus("Item does not exist", 404);
         res.status(200).json({ message: "Expense deleted successfully", data: { deletedItem } });
     } catch (error) {
         next(error);
