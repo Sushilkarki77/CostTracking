@@ -15,6 +15,8 @@ export class PaginationComponent {
   currentPage = input.required<number>();
   numbersPerPage = input.required<number>();
 
+  maximumNumberOfVisiblePages = input<number>(6);
+
   setCurrentPage = output<number>();
 
   pages = computed(() => {

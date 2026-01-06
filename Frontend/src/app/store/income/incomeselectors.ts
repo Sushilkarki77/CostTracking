@@ -11,6 +11,8 @@ export const selectAllIncome = createSelector(
   state => state.list
 );
 
+
+
 export const filteredIncome = (page: number, pageSize: number, filterState?: { name?: string; startDate?: string; endDate?: string; }, sortState?: Record<keyof Income, '1' | '-1'> | {}) => createSelector(
   selectAllIncome,
   (state): { totalItems: number; data: Income[] } => {

@@ -1,0 +1,12 @@
+@if(error()) {
+<div>{{error | json}}</div>
+} @else {
+@if(loading()) {
+Loading...
+} @else {
+
+        <div echarts [options]="lineChartOptions$()" class="w-full h-full"></div>
+   
+}
+
+}
