@@ -1,21 +1,33 @@
-service: express-lambda-app
-
-frameworkVersion: '4'
+service: costtracking-api
 
 provider:
   name: aws
   runtime: nodejs18.x
   region: us-east-1
 
-  environment:
-    MONGO_URI: ${env:MONGO_URI}
-    SECRET_KEY: ${env:SECRET_KEY}
-    SECRET_KEY_REFRESH: ${env:SECRET_KEY_REFRESH}
+  httpApi:
+    cors:
+      allowedOrigins:
+        - "*"
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+      allowCredentials: false
 
 functions:
   api:
-    handler: dist.handler.handler
+    handler: dist/serverless.handler
     events:
+      - httpApi:
+          path: /
+          method: ANY
       - httpApi:
           path: /{proxy+}
           method: ANY
