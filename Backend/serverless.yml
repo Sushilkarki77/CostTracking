@@ -1,0 +1,29 @@
+service: express-lambda-app
+
+frameworkVersion: '4'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+  environment:
+    MONGO_URI: ${env:MONGO_URI}
+    SECRET_KEY: ${env:SECRET_KEY}
+    SECRET_KEY_REFRESH: ${env:SECRET_KEY_REFRESH}
+
+functions:
+  api:
+    handler: dist.handler.handler
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: ANY
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3000   # You can change the port if needed
+    lambdaPort: 3002 # Optional, for lambda invoke endpoint
