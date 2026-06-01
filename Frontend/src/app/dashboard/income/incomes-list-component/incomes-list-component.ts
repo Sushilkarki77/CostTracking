@@ -6,7 +6,7 @@ import { createIncome, deleteIncome, loadIncome, updateIncome } from '../../../s
 import { Income } from '../../../core/interfaces/app.interface';
 import { AddIncome } from '../add-income/add-income';
 import { OverlayComponent } from '../../../common/components/overlay-component/overlay-component';
-import { ArrowDown, ArrowUp, LucideAngularModule, X } from 'lucide-angular';
+import { ArrowDown, ArrowUp, LucideAngularModule, Wallet, X } from 'lucide-angular';
 import { PaginationComponent } from '../../../common/components/pagination-component/pagination-component';
 import { IncomeFIlter } from '../income-filter/income-filter';
 import { FilterState } from '../income.interface';
@@ -50,6 +50,7 @@ export class IncomesListComponent {
   protected cross = X;
   protected arrowUp = ArrowUp;
   protected arrowDown = ArrowDown;
+  protected wallet = Wallet;
 
   protected incomes$ = computed(() =>
     this.store.select(filteredIncome(this.currentPage(), this.pageSize(), this.filterState(), this.sortState()))

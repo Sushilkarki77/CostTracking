@@ -10,7 +10,7 @@ import { OverlayComponent } from '../../../common/components/overlay-component/o
 import { ExpenseDetails } from '../expense-details/expense-details';
 import { ExpensesFilter } from '../expenses-filter/expenses-filter';
 import { Fields, FilterState, SortValues } from '../expenses.interfaces';
-import { ArrowDown, ArrowUp, LucideAngularModule, X } from 'lucide-angular';
+import { ArrowDown, ArrowUp, LucideAngularModule, Receipt, X } from 'lucide-angular';
 import { IsItemActive } from '../../../common/directives/is-item-active';
 
 @Component({
@@ -30,6 +30,7 @@ export class List {
   protected arrowUp = ArrowUp;
   protected arrowDown = ArrowDown;
   protected cross = X;
+  protected receipt = Receipt;
 
   fields: Field<ExpenseSummary>[] = Fields;
   fieldNames: Omit<(keyof ExpenseSummary)[], 'items'> = this.fields.map(x => x.name);
@@ -90,6 +91,8 @@ export class List {
   handleEdit = (exp: ExpenseSummary) => this.router.navigate([`/dashboard/expenses/edit/${exp._id}`]);
 
   handleAddExpense = () => this.router.navigate(['/dashboard/expenses/add']);
+
+  handleImportExpenses = () => this.router.navigate(['/dashboard/expenses/import']);
 
   setCurrentPage = (page: number) => this.currentPage.set(page);
 

@@ -25,21 +25,48 @@ import { MonthlyExpenses } from '../monthly-expenses/monthly-expenses';
 
 echarts.use([BarChart, GridComponent, CanvasRenderer, PieChart, LegendComponent, TooltipComponent, LineChart]);
 
+const chartPalette = [
+  '#6366F1', // indigo (brand)
+  '#10B981', // emerald
+  '#F59E0B', // amber
+  '#EF4444', // red
+  '#0EA5E9', // sky
+  '#8B5CF6', // violet
+  '#EC4899', // pink
+  '#14B8A6', // teal
+];
+
 const chartOptions: EChartsOption = {
-  color: [
-
-    "#EF4444",
-    "#2563EB",
-    "#B7791F",
-    "#10B981",
-    "#059669",
-    "#F87171",
-    "#D69E2E",
-    "#CBD5E1"
-  ],
-
+  color: chartPalette,
+  textStyle: {
+    fontFamily: 'Inter, system-ui, sans-serif',
+  },
+  tooltip: {
+    trigger: 'item',
+    backgroundColor: '#ffffff',
+    borderColor: '#e5e7eb',
+    borderWidth: 1,
+    padding: [8, 12],
+    textStyle: { color: '#111827', fontSize: 12 },
+    extraCssText: 'box-shadow: 0 8px 24px rgba(16,24,40,0.12); border-radius: 8px;',
+    formatter: (params: any) => {
+      const value = Number(params.value).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const percent = Number(params.percent).toFixed(2);
+      return `${params.name}<br/>$${value} (${percent}%)`;
+    },
+  },
   legend: {
-    bottom: 0
+    type: 'scroll',
+    orient: 'vertical',
+    right: 8,
+    top: 'middle',
+    icon: 'circle',
+    itemWidth: 8,
+    itemHeight: 8,
+    itemGap: 10,
+    textStyle: { color: '#6b7280', fontSize: 12 },
+    pageIconColor: '#6366F1',
+    pageTextStyle: { color: '#6b7280' },
   },
   series: [
 
@@ -48,20 +75,32 @@ const chartOptions: EChartsOption = {
 const seriesOption: PieSeriesOption = {
   name: 'Expenses',
   type: 'pie',
-  radius: '50%',
+  radius: ['45%', '72%'],
+  center: ['32%', '50%'],
+  avoidLabelOverlap: true,
+  itemStyle: {
+    borderColor: '#ffffff',
+    borderWidth: 2,
+    borderRadius: 6,
+  },
   data: [
   ],
   emphasis: {
+    label: {
+      show: false,
+    },
     itemStyle: {
-      shadowBlur: 5,
+      shadowBlur: 12,
       shadowOffsetX: 0,
-      shadowColor: '0 4px 6px rgba(0, 0, 0, 0.1)'
+      shadowColor: 'rgba(16, 24, 40, 0.18)',
     }
   },
   label: {
-    show: true,
-    formatter: '{b}: {d}%'
-  }
+    show: false,
+  },
+  labelLine: {
+    show: false,
+  },
 }
 
 

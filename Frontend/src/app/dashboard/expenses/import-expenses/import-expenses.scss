@@ -1,0 +1,130 @@
+.upload-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px dashed #cbd5e1;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+    margin-bottom: 1rem;
+
+    &__hint {
+        font-size: 0.85rem;
+        color: #475569;
+        margin: 0;
+
+        code {
+            background: #e2e8f0;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+
+        label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+    }
+
+    &__file {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        color: #334155;
+        margin: 0;
+    }
+}
+
+.summary-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    &--ok {
+        background: #dcfce7;
+        color: #166534;
+    }
+
+    &--error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+}
+
+.alert {
+    padding: 0.6rem 0.9rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+
+    &--error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+}
+
+.row--invalid {
+    background: #fef2f2;
+}
+
+.issues-cell ul {
+    margin: 0;
+    padding-left: 1rem;
+    font-size: 0.78rem;
+    color: #991b1b;
+}
+
+.import-result {
+    padding: 1.25rem;
+    border: 1px solid #bbf7d0;
+    border-radius: 0.5rem;
+    background: #f0fdf4;
+
+    &__title {
+        font-weight: 600;
+        color: #166534;
+        margin: 0 0 0.25rem;
+    }
+
+    &__subtitle {
+        color: #15803d;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

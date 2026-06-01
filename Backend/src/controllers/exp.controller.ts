@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 import { ErrorWithStatus, ResponseItem } from "../types/interfaces";
-import { ExpDocument, findExplistByuserId, createExp, deleteExp, updateExp } from "../models/exp.model";
+import { ExpDocument, findExplistByuserId, createExp, deleteExp, updateExp, createManyExp } from "../models/exp.model";
+import { findAllCategories } from "../models/category.model";
 
 
 export const getExpenseListByUserId: RequestHandler<unknown, ResponseItem<ExpDocument[]>> = async (req, res, next) => {
@@ -19,6 +20,34 @@ export const createExpense: RequestHandler<unknown, ResponseItem<ExpDocument>, O
         const expObj = req.body;
         const createdItem: ExpDocument = await createExp({ ...expObj, userId: user._id });
         res.status(200).json({ data: createdItem });
+    } catch (error) {
+        next(error);
+    }
+};
+
+export const createBulkExpenses: RequestHandler<unknown, ResponseItem<{ insertedCount: number, inserted: ExpDocument[] }>, { expenses: Omit<ExpDocument, 'userId'>[] }> = async (req, res, next) => {
+    try {
+        const user = req.user;
+        const { expenses } = req.body;
+
+        const categories = await findAllCategories(user._id);
+        const validCategoryIds = new Set(categories.map(c => String((c as unknown as { _id: unknown })._id)));
+
+        const hasUnknownCategory = expenses.some(exp =>
+            (exp.items ?? []).some(item => !item.category?._id || !validCategoryIds.has(item.category._id))
+        );
+
+        if (hasUnknownCategory) {
+            throw new ErrorWithStatus("One or more expenses reference a category that does not exist", 400);
+        }
+
+        const docs = expenses.map(exp => ({ ...exp, userId: user._id })) as ExpDocument[];
+        const inserted: ExpDocument[] = await createManyExp(docs);
+
+        res.status(200).json({
+            message: "Expenses imported successfully",
+            data: { insertedCount: inserted.length, inserted }
+        });
     } catch (error) {
         next(error);
     }

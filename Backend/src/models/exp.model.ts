@@ -37,6 +37,10 @@ export const seedExp = async (exps: ExpDocument[]): Promise<ExpDocument[]> => {
     return await ExpModel.insertMany(exps)
 };
 
+export const createManyExp = async (exps: ExpDocument[]): Promise<ExpDocument[]> => {
+    return await ExpModel.insertMany(exps, { ordered: false });
+};
+
 export const updateExp = async (userId: string, _id: string, exp: ExpDocument): Promise<ExpDocument | null> => {
     return await ExpModel.findOneAndUpdate({ userId, _id }, { $set: exp }, {new: true, lean: true});
 };

@@ -9,6 +9,8 @@ export const addExpense = createAction('[Expenses] add', props<{ expense: Expens
 export const deleteExpense = createAction('[Expenses] delete', props<{ _id: string }>());
 export const updateExpense = createAction('[Expenses] update', props<{ _id: string, expense: Partial<Expense> }>());
 export const updateExpenseSuccess = createAction('[Expenses] update success', props<{ _id: string, expense: Expense }>());
+export const bulkImportExpenses = createAction('[Expenses] bulk import', props<{ expenses: Partial<Expense>[] }>());
+export const importExpensesSuccess = createAction('[Expenses] bulk import success', props<{ expenses: Expense[] }>());
 
 export const loadExpensesSuccess = createAction(
     '[Expenses] Load Success',

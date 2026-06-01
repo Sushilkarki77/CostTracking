@@ -17,6 +17,12 @@ export class ExpensesService {
         return this.httpClient.post<ResponseItem<Expense>>(this.API_URL, expense).pipe(map(res => res.data));
     }
 
+    addBulk(expenses: Partial<Expense>[]): Observable<Expense[]> {
+        return this.httpClient
+            .post<ResponseItem<{ insertedCount: number, inserted: Expense[] }>>(`${this.API_URL}/bulk`, { expenses })
+            .pipe(map(res => res.data.inserted));
+    }
+
     update(id: string, expense: Partial<Expense>): Observable<Expense> {
         return this.httpClient.put<ResponseItem<Expense>>(`${this.API_URL}/${id}`, expense).pipe(map(res => res.data));
     }

@@ -1,0 +1,122 @@
+<div class="p-4">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-semibold text-gray-900">Import expenses from CSV</h2>
+        <button type="button" (click)="handleBack()" class="btn-outlined btn-sm">
+            Back to list
+        </button>
+    </div>
+
+    @if (summary(); as result) {
+        <div class="import-result">
+            <p class="import-result__title">Import started</p>
+            <p class="import-result__subtitle">
+                {{ result.imported }} expense{{ result.imported === 1 ? '' : 's' }} sent for import.
+            </p>
+            <div class="flex gap-2 mt-3">
+                <button type="button" (click)="handleBack()" class="btn-primary btn-sm">View expenses</button>
+                <button type="button" (click)="summary.set(null)" class="btn-outlined btn-sm">Import more</button>
+            </div>
+        </div>
+    } @else {
+
+        <section class="upload-panel">
+            <div class="upload-panel__info">
+                <p class="upload-panel__hint">
+                    Each row becomes one expense with a single item. Required columns:
+                    <code>date, name, paymentMethod, category, itemName, price</code>.
+                    Optional: <code>note, currency</code> (defaults to USD).
+                </p>
+                <p class="upload-panel__hint">
+                    Accepted payment methods: <code>{{ paymentMethods.join(', ') }}</code>.
+                    Categories must already exist.
+                </p>
+            </div>
+
+            <div class="upload-panel__actions">
+                <label class="btn-primary btn-sm cursor-pointer">
+                    <lucide-angular [img]="upload" [size]="16" aria-hidden="true"></lucide-angular>
+                    Choose CSV
+                    <input type="file" accept=".csv,text/csv" class="sr-only" (change)="onFileSelected($event)" />
+                </label>
+
+                <button type="button" (click)="downloadTemplate()" class="btn-outlined btn-sm">
+                    <lucide-angular [img]="download" [size]="16" aria-hidden="true"></lucide-angular>
+                    Download template
+                </button>
+            </div>
+
+            @if (fileName()) {
+                <p class="upload-panel__file">
+                    <lucide-angular [img]="fileIcon" [size]="16" aria-hidden="true"></lucide-angular>
+                    {{ fileName() }}
+                </p>
+            }
+        </section>
+
+        @if (parseError()) {
+            <div class="alert alert--error">Could not parse file: {{ parseError() }}</div>
+        }
+
+        @if (hasRows()) {
+            <div class="summary-bar">
+                <span class="badge badge--ok">{{ validRows().length }} valid</span>
+                <span class="badge badge--error">{{ invalidRows().length }} invalid</span>
+
+                <button
+                    type="button"
+                    class="btn-primary btn-sm ml-auto"
+                    [disabled]="validRows().length === 0"
+                    (click)="handleImport()">
+                    Import {{ validRows().length }} valid row{{ validRows().length === 1 ? '' : 's' }}
+                </button>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Row</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Method</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Issues</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (row of rows(); track row.rowNumber) {
+                        <tr [class.row--invalid]="row.errors.length > 0">
+                            <td>{{ row.rowNumber }}</td>
+                            <td>
+                                @if (row.errors.length === 0) {
+                                    <span class="badge badge--ok">Valid</span>
+                                } @else {
+                                    <span class="badge badge--error">Invalid</span>
+                                }
+                            </td>
+                            <td>{{ row.raw['date'] }}</td>
+                            <td>{{ row.raw['name'] }}</td>
+                            <td>{{ row.raw['paymentMethod'] }}</td>
+                            <td>{{ row.raw['category'] }}</td>
+                            <td>{{ row.raw['itemName'] }}</td>
+                            <td>{{ row.raw['price'] }}</td>
+                            <td class="issues-cell">
+                                @if (row.errors.length > 0) {
+                                    <ul>
+                                        @for (err of row.errors; track err) {
+                                            <li>{{ err }}</li>
+                                        }
+                                    </ul>
+                                }
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+</div>

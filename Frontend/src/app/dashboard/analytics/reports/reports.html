@@ -7,7 +7,7 @@
 
   <header class="mb-6 flex justify-end">
     <h3 class="font-bold text-gray-800">
-      Welcome, <span class="text-blue-600">{{authService.getUser().fullname}}</span>
+      Welcome, <span class="text-indigo-600">{{authService.getUser().fullname}}</span>
     </h3>
   </header>
 
@@ -59,11 +59,11 @@
              @if(incomeLoading && expensesLoading){
                  <div class="text-center">Loading...</div>
              } @else {
-               <p class="text-xl font-semibold text-blue-600">{{ ((totalIncome || 0) - (totalExpense || 0)) |
+               <p class="text-xl font-semibold text-indigo-600">{{ ((totalIncome || 0) - (totalExpense || 0)) |
               currency:'USD':'symbol':'1.2-2' }}</p>
                 
              }
-            <lucide-angular [img]="piggyBank" color="#2563eb" size="28"></lucide-angular>
+            <lucide-angular [img]="piggyBank" color="#4f46e5" size="28"></lucide-angular>
           </div>
         </article>
       </li>

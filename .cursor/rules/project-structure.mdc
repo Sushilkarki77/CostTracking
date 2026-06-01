@@ -26,7 +26,7 @@ TypeScript + Express 5 + Mongoose (MongoDB). Runnable as a standalone server or 
 - **Routing**: `src/routes/app.routes.ts` mounts feature routers, then `routNotFound` +
   `errorHandler` from `src/handlers/exception.handler.ts`. API base paths:
   - `/api/auth` — register, login, refresh-token (`auth.routes.ts`)
-  - `/api/exp` — expenses CRUD (`exp.routes.ts`)
+  - `/api/exp` — expenses CRUD + `POST /bulk` bulk-create (`exp.routes.ts`)
   - `/api/cat` — categories CRUD (`category.routes.ts`)
   - `/api/income` — income CRUD (`income.routes.ts`)
 - **Layers**: `routes/` → `controllers/` → `models/` (Mongoose schemas + data-access fns).
@@ -58,8 +58,8 @@ NgRx state, Tailwind v4, lucide-angular icons, ECharts (`ngx-echarts`) for chart
     (lazy `expenses.routes.ts`), `analytics` (reports), `income`; default → `analytics`.
 - **Folders** under `src/app/`:
   - `auth/` — `login`, `register`, route guards.
-  - `dashboard/` — feature areas: `layout/` (sidebar, header), `expenses/` (list, add, edit,
-    details, filter), `income/`, `category/`, `analytics/` (reports, monthly-expenses).
+ - `dashboard/` — feature areas: `layout/` (sidebar, header), `expenses/` (list, add, edit,
+ details, filter, import — bulk CSV), `income/`, `category/`, `analytics/` (reports, monthly-expenses).
   - `core/` — `services/` (auth, expenses, income, category HTTP services),
     `interceptors/` (auth, retry, auth-error), `guards/` (unsaved-changes), `interfaces/`,
     `app.utils.ts` (app initializer, token verify).

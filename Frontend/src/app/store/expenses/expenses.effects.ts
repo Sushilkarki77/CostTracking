@@ -46,6 +46,18 @@ export class ExpensesEffects {
         )
     )
 
+    bulkImportExpenses$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ExpensesActions.bulkImportExpenses),
+            exhaustMap(action =>
+                this.expensesService.addBulk(action.expenses).pipe(
+                    map(expenses => ExpensesActions.importExpensesSuccess({ expenses })),
+                    catchError(error => of(ExpensesActions.loadExpensesFailure({ error })))
+                )
+            )
+        )
+    )
+
      updateExpense$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ExpensesActions.updateExpense),

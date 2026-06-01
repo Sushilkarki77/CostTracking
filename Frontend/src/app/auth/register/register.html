@@ -1,5 +1,9 @@
 <section class="card">
-    <form aria-label="Login Form" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+    <div class="auth-brand">
+        <h1 class="auth-brand__title">Create your account</h1>
+        <p class="auth-brand__subtitle">Start tracking your expenses and income</p>
+    </div>
+    <form aria-label="Register Form" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
 
 
         <div class="mb-1 flex flex-col gap-2">
@@ -83,8 +87,8 @@
             }
         </div>
 
-        <button type="submit" class="btn-primary w-full">
-            Submit
+        <button type="submit" class="btn-primary w-full mt-2">
+            Create account
         </button>
     </form>
 

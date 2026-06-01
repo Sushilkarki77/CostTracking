@@ -1,11 +1,13 @@
 <div class="p-4">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-semibold text-gray-800">Expenses</h2>
+        <h2 class="text-xl font-semibold text-gray-900">Expenses</h2>
 
-        <div>
-            <button type="submit" (click)="handleAddExpense()"
-                class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                Add
+        <div class="flex gap-2">
+            <button type="button" (click)="handleImportExpenses()" class="btn-outlined btn-sm">
+                Import CSV
+            </button>
+            <button type="button" (click)="handleAddExpense()" class="btn-primary btn-sm">
+                Add expense
             </button>
         </div>
 
@@ -31,7 +33,16 @@
                 </ng-container>
 
                 @if (totalCount === 0) {
-                    <h3 class="text-center">No Items</h3>
+                    <div class="empty-state">
+                        <div class="empty-state__icon">
+                            <lucide-angular [img]="receipt" [size]="22" role="img" aria-hidden="true"></lucide-angular>
+                        </div>
+                        <p class="empty-state__title">No expenses yet</p>
+                        <p class="empty-state__subtitle">Start tracking your spending by adding your first expense.</p>
+                        <button type="button" (click)="handleAddExpense()" class="btn-primary btn-sm mt-2">
+                            Add expense
+                        </button>
+                    </div>
                 } @else {
                     <ng-container
                     *ngTemplateOutlet="ExpenseList; context: { totalCount, expenses }">
@@ -40,7 +51,10 @@
                 }
 
                 @case (true) {
-                Loading...
+                <div class="spinner-wrap">
+                    <span class="spinner" role="status" aria-label="Loading"></span>
+                    <span>Loading expenses…</span>
+                </div>
                 }
             }
             }
@@ -71,16 +85,16 @@
 </ng-template>
 
 <ng-template #ExpenseList let-totalCount="totalCount" let-expenses="expenses">
-    <figure>
-         <table class="min-w-full text-sm border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
-            <thead class="bg-gray-100">
+    <figure class="table-card m-0">
+         <table class="data-table">
+            <thead>
                 <tr>
-                    <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    <th scope="col" class="w-10">
                         SN.
                     </th>
 
                     @for (item of fields; track $index) {
-                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    <th scope="col">
                         {{ item.label }}
                         @if(item.sortable){
                             <button  type="button" [aria-label]="item.label + 'Sort Ascending'" (click)="updateSortState(item.name, '1')"   >
@@ -97,33 +111,34 @@
                     }
 
                     @if (actions.length > 0) {
-                    <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    <th scope="col">
                         Actions
                     </th>
                     }
                 </tr>
             </thead>
 
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody>
                 @for (exp of expenses.data; let i = $index; track exp._id) {
                 <tr>
-                    <td class="w-10 px-4 py-1">{{ (currentPage() * pageSize) + i + 1 }}</td>
+                    <td class="w-10">{{ (currentPage() * pageSize) + i + 1 }}</td>
 
                     @for (property of fields; track property.name) {
                     @let fieldName = property.name;
 
                     @if (property.type == 'date' ) {
-                    <td class="px-4 py-1">{{ exp[fieldName] | date }}</td>
+                    <td>{{ exp[fieldName] | date }}</td>
 
                     } @else if(property.type == 'curency'){
 
-                    <td class="px-4 py-1">{{ exp[fieldName] | currency }}</td>
+                    <td>{{ exp[fieldName] | currency }}</td>
 
                     }@else {
-                    <td class="px-4 py-1">{{ exp[fieldName] }}</td>
+                    <td>{{ exp[fieldName] }}</td>
                     }
                     }
-                    <td class="px-4 py-1 flex gap-2">
+                    <td>
+                      <div class="flex gap-2 items-center">
                         @for (action of actions; track action.name) {
 
                         <button type="button" [class]="action.class" (click)="action.function(exp)"
@@ -132,6 +147,7 @@
                         </button>
 
                         }
+                      </div>
                     </td>
                 </tr>
 

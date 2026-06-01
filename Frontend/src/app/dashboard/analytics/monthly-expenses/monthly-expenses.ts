@@ -50,39 +50,75 @@ export class MonthlyExpenses {
   lineChartOptions$ = computed(() => {
     const lineChartOptions: EChartsOption = {
       color: ['#EF4444', '#10B981'],
+      textStyle: {
+        fontFamily: 'Inter, system-ui, sans-serif',
+      },
+      grid: {
+        top: 24,
+        left: 12,
+        right: 16,
+        bottom: 40,
+        containLabel: true,
+      },
       tooltip: {
-        trigger: 'axis'
+        trigger: 'axis',
+        backgroundColor: '#ffffff',
+        borderColor: '#e5e7eb',
+        borderWidth: 1,
+        padding: [8, 12],
+        textStyle: { color: '#111827', fontSize: 12 },
+        extraCssText: 'box-shadow: 0 8px 24px rgba(16,24,40,0.12); border-radius: 8px;',
+        formatter: (params: any) => {
+          const rows = params.map((p: any) => {
+            const value = Number(p.value).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            return `${p.marker} ${p.seriesName}: $${value}`;
+          });
+          return `${params[0].axisValue}<br/>${rows.join('<br/>')}`;
+        },
       },
       legend: {
         bottom: 0,
         left: 'center',
+        icon: 'circle',
+        itemWidth: 8,
+        itemHeight: 8,
         textStyle: {
-          fontSize: 10,
-          color: '#374151'
+          fontSize: 11,
+          color: '#6b7280'
         },
         data: ['Expenses', 'Incomes']
       },
       xAxis: {
         type: 'category',
         data: this.months(),
-        name: 'Month',
-        axisLabel: { fontSize: 12 }
-
+        boundaryGap: false,
+        axisLine: { lineStyle: { color: '#e5e7eb' } },
+        axisTick: { show: false },
+        axisLabel: { fontSize: 11, color: '#6b7280' }
       },
       yAxis: {
         type: 'value',
         name: 'Amount ($)',
-        axisLabel: { fontSize: 12 }
+        nameTextStyle: { color: '#9ca3af', fontSize: 11 },
+        axisLabel: { fontSize: 11, color: '#6b7280' },
+        splitLine: { lineStyle: { color: '#f3f4f6' } }
       },
       series: [
         {
           name: 'Expenses',
           type: 'line',
           smooth: true,
+          symbol: 'circle',
+          symbolSize: 6,
+          showSymbol: false,
           data: this.expenses(),
+          lineStyle: { width: 2.5 },
+          areaStyle: { color: 'rgba(239, 68, 68, 0.08)' },
           label: {
             show: true,
-            formatter: '${c}'
+            color: '#6b7280',
+            fontSize: 10,
+            formatter: (p: any) => '$' + Number(p.value).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
           },
           itemStyle: {
             color: '#EF4444'
@@ -92,10 +128,17 @@ export class MonthlyExpenses {
           name: 'Incomes',
           type: 'line',
           smooth: true,
+          symbol: 'circle',
+          symbolSize: 6,
+          showSymbol: false,
           data: this.incomes(),
+          lineStyle: { width: 2.5 },
+          areaStyle: { color: 'rgba(16, 185, 129, 0.08)' },
           label: {
             show: true,
-            formatter: '${c}'
+            color: '#6b7280',
+            fontSize: 10,
+            formatter: (p: any) => '$' + Number(p.value).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
           },
           itemStyle: {
             color: '#10B981'

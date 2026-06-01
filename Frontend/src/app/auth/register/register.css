@@ -1,6 +1,35 @@
-:host{
+:host {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    padding: 1.5rem;
+    background-color: var(--app-bg);
+    background-image:
+        radial-gradient(60rem 60rem at 110% -10%, rgba(99, 102, 241, 0.10), transparent 60%),
+        radial-gradient(50rem 50rem at -10% 110%, rgba(16, 185, 129, 0.08), transparent 60%);
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-brand__title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.auth-brand__subtitle {
+    font-size: 0.825rem;
+    color: var(--text-muted);
 }

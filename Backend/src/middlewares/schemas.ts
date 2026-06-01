@@ -43,6 +43,32 @@ export const expSchema = z.object({
 });
 
 
+export const bulkExpSchema = z.object({
+  expenses: z
+    .array(
+      z.object({
+        name: z.string(),
+        paymentMethod: z.string(),
+        date: z.string(),
+        note: z.string().optional(),
+
+        items: z.array(
+          z.object({
+            currency: z.string(),
+            name: z.string(),
+            price: z.number(),
+            category: z.object({
+              name: z.string(),
+              _id: z.string()
+            }),
+          })
+        )
+      })
+    )
+    .min(1, "At least one expense is required")
+});
+
+
 export const incomeSchema = z.object({
     name: z.string(),
     amount: z.string(),

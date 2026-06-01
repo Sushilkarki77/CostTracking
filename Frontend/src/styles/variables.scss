@@ -13,17 +13,17 @@ $gray-700: #374151;
 $gray-800: #1f2937;
 $gray-900: #111827;
 
-// Primary / Brand
-$primary-50: #eff6ff;
-$primary-100: #dbeafe;
-$primary-200: #bfdbfe;
-$primary-300: #93c5fd;
-$primary-400: #60a5fa;
-$primary-500: #3b82f6;
-$primary-600: #2563eb;
-$primary-700: #1d4ed8;
-$primary-800: #1e40af;
-$primary-900: #1e3a8a;
+// Primary / Brand (indigo)
+$primary-50: #eef2ff;
+$primary-100: #e0e7ff;
+$primary-200: #c7d2fe;
+$primary-300: #a5b4fc;
+$primary-400: #818cf8;
+$primary-500: #6366f1;
+$primary-600: #4f46e5;
+$primary-700: #4338ca;
+$primary-800: #3730a3;
+$primary-900: #312e81;
 
 // Success
 $success-50: #ecfdf5;
@@ -44,30 +44,31 @@ $danger-500: #ef4444;
 $danger-700: #b91c1c;
 
 // Info / Accent
-$info-50: #eff6ff;
-$info-100: #dbeafe;
-$info-500: #3b82f6;
-$info-700: #1d4ed8;
+$info-50: #eef2ff;
+$info-100: #e0e7ff;
+$info-500: #6366f1;
+$info-700: #4338ca;
 
-
+// Near-white app surface
+$app-bg: #fafafb;
 
 // Backgrounds
-$bg-primary: $gray-50;
-$bg-active: $gray-50; // Main background
-$bg-sidebar: $gray-100;
-$bg-sidebar-hover: $gray-200;
-$bg-header: $gray-200; // Header background
+$bg-primary: $app-bg;
+$bg-active: $app-bg; // Main background
+$bg-sidebar: $white;
+$bg-sidebar-hover: $gray-100;
+$bg-header: $white; // Header background
 $bg-card: $white; // Cards or panels
-$bg-body: $gray-100; // Cards or panels
+$bg-body: $app-bg; // Cards or panels
 
 // Text
 $text-primary: $gray-900; // Main text
 $text-secondary: $gray-700; // Secondary text
 $text-muted: $gray-500; // Muted captions
 
-// Borders / Dividers
-$border-default: $gray-300;
-$border-muted: $gray-200;
+// Borders / Dividers (softer)
+$border-default: $gray-200;
+$border-muted: $gray-100;
 $border-danger: $danger-500;
 
 // Buttons / Actions
@@ -86,10 +87,21 @@ $alert-danger-text: $danger-700;
 $alert-info-bg: $info-50;
 $alert-info-text: $info-700;
 
-// Shadows
-$shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
-$shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
-$shadow-heavy: 0 10px 15px rgba(0, 0, 0, 0.15);
+// Shadows — layered, low-opacity (cool gray base)
+$shadow-soft: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+$shadow-medium: 0 4px 8px -2px rgba(16, 24, 40, 0.08), 0 2px 4px -2px rgba(16, 24, 40, 0.04);
+$shadow-lg: 0 12px 24px -6px rgba(16, 24, 40, 0.10), 0 4px 8px -4px rgba(16, 24, 40, 0.06);
+// Backwards-compatible aliases (existing references)
+$shadow-light: $shadow-soft;
+$shadow-heavy: $shadow-lg;
+
+// Radius scale
+$radius-sm: 0.5rem;
+$radius: 0.75rem;
+$radius-lg: 1rem;
+
+// Typography
+$font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
 
 :root {
@@ -119,9 +131,25 @@ $shadow-heavy: 0 10px 15px rgba(0, 0, 0, 0.15);
 
   --btn-primary-text: #{$btn-primary-text};
 
-  // --shadow-medium: #{$shadow-medium};
-  // --shadow-heavy: #{$shadow-heavy};
+  // Surfaces & text
+  --app-bg: #{$app-bg};
+  --bg-card: #{$bg-card};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-muted: #{$text-muted};
+  --border-default: #{$border-default};
+  --border-muted: #{$border-muted};
 
+  // Typography
+  --font-sans: #{$font-sans};
 
+  // Radius scale
+  --radius-sm: #{$radius-sm};
+  --radius: #{$radius};
+  --radius-lg: #{$radius-lg};
 
+  // Shadows
+  --shadow-soft: #{$shadow-soft};
+  --shadow-medium: #{$shadow-medium};
+  --shadow-lg: #{$shadow-lg};
 }

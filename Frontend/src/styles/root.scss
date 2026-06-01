@@ -7,6 +7,15 @@
 
 html, body {
   height: 100%;
-  
+  margin: 0;
+
   background-color: $bg-primary;
+  font-family: $font-sans;
+  color: $text-primary;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }

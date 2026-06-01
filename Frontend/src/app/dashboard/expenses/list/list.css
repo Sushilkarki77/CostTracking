@@ -2,7 +2,7 @@
 
 
 .active-sort {
- stroke :#3b82f6;
+ stroke :#4f46e5;
  position: relative;
  width: 100%
 }
@@ -13,7 +13,7 @@
   display: block;            
   width: 15px;              
   height: 2px;                
-  background-color: #3b82f6;
+  background-color: #4f46e5;
   margin-top: 2px;           
 }
 

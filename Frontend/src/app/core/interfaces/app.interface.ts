@@ -64,6 +64,7 @@ export interface Item {
   category: { _id: string, name: string }
   name: string
   price: number
+  currency?: string
 
   _id?: string
 }

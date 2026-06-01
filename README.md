@@ -12,6 +12,7 @@ Built with **Angular 21**, **Node.js**, **Express 5**, and **MongoDB**.
 
 - JWT authentication (register / login) with access + refresh tokens
 - Add, edit, and delete expense and income records
+- Bulk-import expenses from a CSV file (preview, per-row validation, one-shot import)
 - Multi-item, multi-currency expenses with per-item categories
 - User-defined categories for organizing spending
 - Analytics dashboard and reports (charts via ECharts)
@@ -143,6 +144,7 @@ shape `{ message, data }`.
 ### Expenses — `/api/exp`
 - `GET /` – List the current user's expenses
 - `POST /` – Create an expense
+- `POST /bulk` – Bulk-create expenses (`{ expenses: [...] }`); returns `{ insertedCount, inserted }`
 - `PUT /:id` – Update an expense
 - `DELETE /:id` – Delete an expense
 
@@ -157,6 +159,28 @@ shape `{ message, data }`.
 - `POST /` – Create an income record
 - `PUT /:id` – Update an income record
 - `DELETE /:id` – Delete an income record
+
+---
+
+## Bulk CSV Import
+
+Expenses can be imported in bulk from the **Expenses → Import CSV** page
+(`/dashboard/expenses/import`). Each row becomes one expense with a single line item.
+
+| Column | Required | Notes |
+|--------|----------|-------|
+| `date` | yes | e.g. `2026-05-31` |
+| `name` | yes | Expense name |
+| `paymentMethod` | yes | One of `cash`, `debit-card`, `credit-card`, `PayPal` |
+| `note` | no | Optional description |
+| `category` | yes | Must match an existing category name (case-insensitive) |
+| `itemName` | yes | Line item name |
+| `price` | yes | Numeric |
+| `currency` | no | Defaults to `USD` |
+
+The import page parses the file, validates every row, and shows a preview marking valid and
+invalid rows (with reasons). Only valid rows are submitted, in a single request to
+`POST /api/exp/bulk`. A downloadable CSV template is available from the same page.
 
 ---
 

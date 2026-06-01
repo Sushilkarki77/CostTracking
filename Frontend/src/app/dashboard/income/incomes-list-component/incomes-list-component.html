@@ -1,10 +1,9 @@
 <div class="p-4">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-semibold text-gray-800">Incomes</h2>
+        <h2 class="text-xl font-semibold text-gray-900">Incomes</h2>
         <section class="flex items-center">
-            <button type="button" (click)="handleAdd()"
-                class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                Add
+            <button type="button" (click)="handleAdd()" class="btn-primary btn-sm">
+                Add income
             </button>
         </section>
     </div>
@@ -28,7 +27,16 @@
                 </ng-container>
 
                 @if (totalCount === 0) {
-                    <h3 class="text-center">No Items</h3>
+                    <div class="empty-state">
+                        <div class="empty-state__icon">
+                            <lucide-angular [img]="wallet" [size]="22" role="img" aria-hidden="true"></lucide-angular>
+                        </div>
+                        <p class="empty-state__title">No income yet</p>
+                        <p class="empty-state__subtitle">Record your earnings to see them reflected in your reports.</p>
+                        <button type="button" (click)="handleAdd()" class="btn-primary btn-sm mt-2">
+                            Add income
+                        </button>
+                    </div>
                 } @else {
                     <ng-container
                     *ngTemplateOutlet="IncomeList; context: { totalCount, incomes }">
@@ -37,7 +45,10 @@
                 }
 
                 @case (true) {
-                Loading...
+                <div class="spinner-wrap">
+                    <span class="spinner" role="status" aria-label="Loading"></span>
+                    <span>Loading income…</span>
+                </div>
                 }
             }
             }
@@ -78,15 +89,16 @@
 </ng-template>
 
 <ng-template #IncomeList let-totalCount="totalCount" let-incomes="incomes">
-    <table class="min-w-full text-sm border border-gray-200 divide-y divide-gray-200 rounded-lg shadow-sm">
-        <thead class="bg-gray-100">
+    <figure class="table-card m-0">
+    <table class="data-table">
+        <thead>
             <tr>
-                <th scope="col" class="w-10 px-4 py-2 text-left text-sm font-medium text-gray-700">
+                <th scope="col" class="w-10">
                     SN.
                 </th>
 
                 @for (field of fields; track field.name) {
-                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                <th scope="col">
                     {{ field.label }}
 
                      @if(field && field?.sortable){
@@ -104,43 +116,46 @@
                 }
 
                 @if (actions.length > 0) {
-                <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                <th scope="col">
                     Actions
                 </th>
                 }
             </tr>
         </thead>
 
-        <tbody class="bg-white divide-y divide-gray-200">
+        <tbody>
             @if (incomes) {
             @for (inc of incomes.data; let i = $index; track inc._id) {
             <tr>
-                <td class="w-10 px-4 py-1">{{ (currentPage() * pageSize()) + i + 1 }}</td>
+                <td class="w-10">{{ (currentPage() * pageSize()) + i + 1 }}</td>
 
                 @for (field of fields; track field.name) {
                 @let name = field.name;
                 @if (field.type === 'date') {
-                <td class="px-4 py-1">{{ inc[name] | date }}</td>
+                <td>{{ inc[name] | date }}</td>
                 } @else if (field.type === 'currency') {
-                <td class="px-4 py-1">{{ inc[name] | currency }}</td>
+                <td>{{ inc[name] | currency }}</td>
                 } @else {
-                <td class="px-4 py-1">{{ inc[name] }}</td>
+                <td>{{ inc[name] }}</td>
                 }
                 }
 
-                <td class="px-4 py-1">
+                <td>
+                  <div class="flex gap-2 items-center">
                     @for (action of actions; track action.name) {
                     <button type="button" [class]="action.class" (click)="action.function(inc._id)"
                         [attr.aria-label]="action.label + ' for ' + inc.name">
                         {{ action.label }}
                     </button>
                     }
+                  </div>
                 </td>
             </tr>
             }
             }
         </tbody>
     </table>
+    </figure>
     <app-pagination-component [totalItems]="incomes.totalItems" [currentPage]="currentPage()"
         [numbersPerPage]="pageSize()" (setCurrentPage)="setCurrentPage($event)"></app-pagination-component>
 </ng-template>
