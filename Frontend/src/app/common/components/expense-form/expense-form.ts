@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, effect, inject, input, output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Plus, Minus, LucideAngularModule } from 'lucide-angular';
@@ -28,7 +28,7 @@ interface ExpenseFormModel {
 
 @Component({
   selector: 'app-expense-form',
-  imports: [ReactiveFormsModule, LucideAngularModule, CommonModule],
+  imports: [ReactiveFormsModule, LucideAngularModule],
   templateUrl: './expense-form.html',
   styleUrl: './expense-form.scss',
 })

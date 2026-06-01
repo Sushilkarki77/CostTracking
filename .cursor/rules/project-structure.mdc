@@ -1,0 +1,85 @@
+---
+description: Overall architecture and structure of the CostTracking monorepo (Angular frontend + Express/MongoDB backend)
+alwaysApply: true
+---
+
+# CostTracking — Project Overview
+
+A full-stack **personal expense & income tracking** app. Multi-user: each user logs in,
+defines spending categories, records expenses (multi-item, multi-currency) and income, and
+views analytics/reports of monthly spending.
+
+The repo is a monorepo with two independent projects:
+
+- `Frontend/` — Angular 21 SPA
+- `Backend/` — Node.js + Express 5 REST API on MongoDB
+
+---
+
+## Backend (`Backend/`)
+
+TypeScript + Express 5 + Mongoose (MongoDB). Runnable as a standalone server or serverless.
+
+- **Entry**: `src/server.ts` (listens on `PORT`) → `src/app.ts` (Express app: cors, morgan,
+  json, mounts router) → `src/serverless.ts` (serverless-http wrapper for deploy).
+- **DB**: `src/config/db.config.ts` connects via `MONGO_URI`.
+- **Routing**: `src/routes/app.routes.ts` mounts feature routers, then `routNotFound` +
+  `errorHandler` from `src/handlers/exception.handler.ts`. API base paths:
+  - `/api/auth` — register, login, refresh-token (`auth.routes.ts`)
+  - `/api/exp` — expenses CRUD (`exp.routes.ts`)
+  - `/api/cat` — categories CRUD (`category.routes.ts`)
+  - `/api/income` — income CRUD (`income.routes.ts`)
+- **Layers**: `routes/` → `controllers/` → `models/` (Mongoose schemas + data-access fns).
+  - `middlewares/` — `auth.middleware.ts` (`authenticateToken` JWT guard),
+    `validator.middlewares.ts` (`validateRequest`), `schemas.ts` (zod schemas).
+  - `models/` — `user`, `exp` (expense w/ embedded `items[]`), `income`, `category`;
+    plus `*.seed.ts` seed helpers. All domain data is scoped by `userId`.
+  - `types/` — shared interfaces (`ResponseItem`, `ErrorWithStatus`, `TokenPayload`, etc.).
+- **Auth**: JWT access token (1h) + refresh token (1d), passwords hashed with bcrypt in a
+  `user.model` pre-save hook. Secrets from `SECRET_KEY` / `SECRET_KEY_REFRESH`.
+- **Scripts**: `npm run dev` (tsx watch), `npm run build` (tsc), `npm run deploy` (serverless).
+
+### Standard API response shape
+Controllers return `{ message: string, data: T }` (`ResponseItem<T>`); errors flow through
+`next(new ErrorWithStatus(msg, status))` to the central `errorHandler`.
+
+---
+
+## Frontend (`Frontend/`)
+
+Angular 21 standalone app: zoneless change detection, signals, new control-flow syntax,
+NgRx state, Tailwind v4, lucide-angular icons, ECharts (`ngx-echarts`) for charts.
+
+- **Bootstrap**: `src/main.ts` → `src/app/app.ts` → `app.config.ts` (providers: router with
+  view transitions, HttpClient + interceptors, app initializer, NgRx store/effects/devtools).
+- **Routing** (`app.routes.ts`): lazy-loaded `auth` (guarded by `isLoggedOutGuard`) and
+  `dashboard` (guarded by `isLoggedInGuard`); wildcard → `dashboard`.
+  - `dashboard-routes.ts`: shell `Dashboard` component with children `category`, `expenses`
+    (lazy `expenses.routes.ts`), `analytics` (reports), `income`; default → `analytics`.
+- **Folders** under `src/app/`:
+  - `auth/` — `login`, `register`, route guards.
+  - `dashboard/` — feature areas: `layout/` (sidebar, header), `expenses/` (list, add, edit,
+    details, filter), `income/`, `category/`, `analytics/` (reports, monthly-expenses).
+  - `core/` — `services/` (auth, expenses, income, category HTTP services),
+    `interceptors/` (auth, retry, auth-error), `guards/` (unsaved-changes), `interfaces/`,
+    `app.utils.ts` (app initializer, token verify).
+  - `common/` — reusable `components/` (expense-form, pagination, overlay) and `directives/`.
+  - `store/` — NgRx slices for `expenses`, `income`, `category` (each: actions, reducer,
+    effects, selectors). Root wiring in `store/app.store.ts` (`AppState`), plus
+    `clear-state.metareducer.ts` which resets state on `logoutAction`.
+- **Auth on the client**: `core/services/auth-service.ts` holds access/refresh tokens in
+  signals, mirrors them to `localStorage` via effects, decodes the JWT for the current user,
+  and drives login/logout/refresh. Interceptors attach the token and handle 401/refresh + retry.
+- **Config**: API base URL in `src/environments/environment*.ts` (`API_URL`).
+- **Scripts**: `npm run start` (ng serve), `npm run build` (prod), `npm test` (karma/jasmine).
+
+---
+
+## Conventions
+
+- Backend domain queries are always filtered by `userId`; keep that constraint when adding endpoints.
+- Frontend feature data flows through NgRx (actions → effects call `core/services` → reducers);
+  prefer selectors over reading state directly in components.
+- Each new domain entity typically needs: a Mongoose model + data-access fns, a controller, a
+  router mounted in `app.routes.ts`, a zod schema, and a matching frontend service + store slice.
+- Components are standalone; co-locate `*.ts`, template (`.html`), styles (`.scss`/`.css`), and `*.spec.ts`.

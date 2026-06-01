@@ -1,125 +1,176 @@
 # Cost Tracking Application
 
-A full-stack web application to track and manage your incomes and expenses, built with **Node.js**, **Express**, **MongoDB**, and **Angular**.
+A full-stack, multi-user app to track and manage your **income and expenses**. Users sign in,
+define spending categories, record expenses (multi-item, multi-currency) and income, and view
+analytics of their monthly spending.
+
+Built with **Angular 21**, **Node.js**, **Express 5**, and **MongoDB**.
 
 ---
 
 ## Features
 
-* Add, edit, and delete income and expense records
-* Categorize transactions for better tracking
-* View analytics and dashboards to monitor spending habits
-* Responsive Angular frontend with smooth UX
-* RESTful Express API with MongoDB backend
-* Paginated and searchable transaction lists
+- JWT authentication (register / login) with access + refresh tokens
+- Add, edit, and delete expense and income records
+- Multi-item, multi-currency expenses with per-item categories
+- User-defined categories for organizing spending
+- Analytics dashboard and reports (charts via ECharts)
+- Paginated, filterable transaction lists
+- Responsive UI styled with Tailwind CSS v4
 
 ---
 
 ## Tech Stack
 
-* **Frontend:** Angular
-* **Backend:** Node.js, Express
-* **Database:** MongoDB
-* **Styling:** Tailwind CSS / Angular Material (if used)
+| Layer    | Technology |
+|----------|------------|
+| Frontend | Angular 21 (standalone, zoneless, signals), NgRx, Tailwind CSS v4, ECharts, lucide-angular |
+| Backend  | Node.js, Express 5, TypeScript, Mongoose |
+| Database | MongoDB |
+| Auth     | JWT (access + refresh), bcrypt |
+| Deploy   | Serverless (`serverless-http`) |
+
+---
+
+## Project Structure
+
+```
+CostTracking/
+├── Backend/                  # Express + Mongoose REST API (TypeScript)
+│   └── src/
+│       ├── config/           # DB connection
+│       ├── controllers/      # Route handlers (auth, exp, category, income)
+│       ├── handlers/         # Not-found + central error handler
+│       ├── middlewares/      # auth guard, zod validation, schemas
+│       ├── models/           # Mongoose schemas + data-access fns (+ seeds)
+│       ├── routes/           # Feature routers mounted under /api
+│       ├── types/            # Shared interfaces
+│       ├── app.ts            # Express app setup
+│       ├── server.ts         # Local server entry
+│       └── serverless.ts     # Serverless handler
+│
+├── Frontend/                 # Angular 21 SPA
+│   └── src/app/
+│       ├── auth/             # login, register, route guards
+│       ├── core/             # services, HTTP interceptors, guards, utils
+│       ├── common/           # reusable components & directives
+│       ├── dashboard/        # expenses, income, category, analytics, layout
+│       └── store/            # NgRx slices (expenses, income, category)
+│
+└── README.md
+```
 
 ---
 
 ## Prerequisites
 
-* Node.js v18+
-* MongoDB (local or cloud)
-* Angular CLI
+- Node.js v18+
+- MongoDB (local or cloud)
+- Angular CLI (`npm i -g @angular/cli`)
 
 ---
 
 ## Getting Started
 
-### Clone the repository
+### Clone
 
 ```bash
-git clone [<repository-url>](https://github.com/Sushilkarki77/CostTracking)
-cd cost-tracking-app
+git clone https://github.com/Sushilkarki77/CostTracking
+cd CostTracking
 ```
 
-### Backend Setup
+### Backend
 
 ```bash
-cd backend
+cd Backend
 npm install
 ```
 
-Create a `.env` file:
+Create a `.env` file in `Backend/`:
 
 ```env
 PORT=3000
 MONGO_URI=<your-mongodb-connection-string>
+SECRET_KEY=<jwt-access-token-secret>
+SECRET_KEY_REFRESH=<jwt-refresh-token-secret>
 ```
 
-Start the backend server:
+Run the API (watch mode):
 
 ```bash
 npm run dev
 ```
 
-Server will run on `http://localhost:3000`.
+API runs at `http://localhost:3000`.
 
-### Frontend Setup
+### Frontend
 
 ```bash
-cd frontend
+cd Frontend
 npm install
 ```
 
-Update `environment.ts` with the API URL:
+Set the API base URL in `src/environments/environment.development.ts`
+(note the trailing slash — services append paths like `auth/`, `exp`, etc.):
 
 ```ts
 export const environment = {
+  API_URL: 'http://localhost:3000/api/',
   production: false,
-  apiUrl: 'http://localhost:3000/api'
 };
 ```
 
-Run the Angular app:
+Run the app:
 
 ```bash
-ng serve
+npm start
 ```
 
-Frontend will run on `http://localhost:4200`.
+Frontend runs at `http://localhost:4200`.
 
 ---
 
 ## API Endpoints
 
-* `GET /api/expenses` – Fetch all expenses
-* `POST /api/expenses` – Add a new expense
-* `PUT /api/expenses/:id` – Update an expense
-* `DELETE /api/expenses/:id` – Delete an expense
-* `GET /api/incomes` – Fetch all incomes
-* `POST /api/incomes` – Add a new income
+All non-auth routes require an `Authorization: Bearer <accessToken>` header. Responses use the
+shape `{ message, data }`.
+
+### Auth — `/api/auth`
+- `POST /register` – Create a user
+- `POST /login` – Log in, returns access + refresh tokens
+- `POST /refresh-token` – Exchange a refresh token for a new access token
+
+### Expenses — `/api/exp`
+- `GET /` – List the current user's expenses
+- `POST /` – Create an expense
+- `PUT /:id` – Update an expense
+- `DELETE /:id` – Delete an expense
+
+### Categories — `/api/cat`
+- `GET /` – List categories
+- `POST /` – Create a category
+- `PUT /:id` – Update a category
+- `DELETE /:id` – Delete a category
+
+### Income — `/api/income`
+- `GET /` – List income records
+- `POST /` – Create an income record
+- `PUT /:id` – Update an income record
+- `DELETE /:id` – Delete an income record
 
 ---
 
-## Folder Structure
+## Scripts
 
-```
-cost-tracking-app/
-│
-├── backend/          # Node.js & Express backend
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   └── server.js
-│
-├── frontend/         # Angular frontend
-│   ├── src/app/
-│   │   ├── components/
-│   │   ├── services/
-│   │   └── pages/
-│   └── angular.json
-│
-└── README.md
-```
+### Backend
+- `npm run dev` – Run with tsx watch
+- `npm run build` – Compile TypeScript (`tsc`)
+- `npm run deploy` – Build and deploy via Serverless
+
+### Frontend
+- `npm start` – Dev server (`ng serve`)
+- `npm run build` – Production build
+- `npm test` – Unit tests (Karma/Jasmine)
 
 ---
 
