@@ -14,7 +14,7 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 20
     commands:
       - cd Frontend
       # npm install (not ci): the committed package-lock.json is out of sync on
