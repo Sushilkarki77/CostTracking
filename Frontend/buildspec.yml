@@ -17,7 +17,9 @@ phases:
       nodejs: 18
     commands:
       - cd Frontend
-      - npm ci
+      # npm install (not ci): the committed package-lock.json is out of sync on
+      # platform-specific @emnapi/* native deps, which makes strict `npm ci` abort.
+      - npm install --no-audit --no-fund
 
   build:
     commands:

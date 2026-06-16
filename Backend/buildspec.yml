@@ -19,7 +19,10 @@ phases:
       nodejs: 18
     commands:
       - cd Backend
-      - npm ci
+      # --legacy-peer-deps: serverless-dotenv-plugin@6 declares a peer of
+      # serverless<=3 but the project pins serverless@4 (the plugin is unused
+      # in serverless.yml). This lets the clean install proceed.
+      - npm ci --legacy-peer-deps
       - npm install -g serverless@3
 
   build:
