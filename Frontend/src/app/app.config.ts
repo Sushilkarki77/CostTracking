@@ -9,7 +9,7 @@ import { authInterceptor } from './core/interceptors/auth-interceptor';
 import { retryInterceptor } from './core/interceptors/retry-interceptor-interceptor';
 import { authErrorInterceptor } from './core/interceptors/auth-error-interceptor-interceptor';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 
 
 export const appConfig: ApplicationConfig = {

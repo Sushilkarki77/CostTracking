@@ -3,7 +3,7 @@ import { computed, effect, inject, Injectable, signal } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { verifyToken } from '../app.utils';
 import { JwtPayload, ResponseItem, TokenRes } from '../interfaces/app.interface';
 
