@@ -3,7 +3,15 @@ service: costtracking-api
 provider:
   name: aws
   runtime: nodejs18.x
-  region: us-east-1
+  region: ${opt:region, 'us-east-1'}
+  stage: ${opt:stage, 'prod'}
+
+  # Injected into the Lambda runtime. In CI these come from SSM Parameter Store
+  # (see infra/pipeline.yml). Locally, dotenv still loads them from .env.
+  environment:
+    MONGO_URI: ${env:MONGO_URI, ''}
+    SECRET_KEY: ${env:SECRET_KEY, ''}
+    SECRET_KEY_REFRESH: ${env:SECRET_KEY_REFRESH, ''}
 
   httpApi:
     cors:

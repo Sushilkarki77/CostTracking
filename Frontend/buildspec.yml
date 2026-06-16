@@ -1,0 +1,35 @@
+version: 0.2
+
+# CodeBuild buildspec for the frontend.
+# Builds the Angular app (production) and deploys the static bundle to S3,
+# then invalidates the CloudFront distribution so the new build goes live.
+#
+# Expected environment variables (wired up in infra/pipeline.yml):
+#   FRONTEND_BUCKET            -> S3 bucket that backs the CloudFront distribution
+#   CLOUDFRONT_DISTRIBUTION_ID -> distribution to invalidate after upload
+
+env:
+  shell: bash
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - cd Frontend
+      - npm ci
+
+  build:
+    commands:
+      - echo "Building Angular production bundle..."
+      - npm run build
+
+  post_build:
+    commands:
+      # @angular/build:application outputs to dist/Frontend/browser
+      - echo "Syncing build to s3://${FRONTEND_BUCKET}..."
+      # Long-cache hashed assets, but never cache index.html so new deploys are picked up.
+      - aws s3 sync dist/Frontend/browser "s3://${FRONTEND_BUCKET}" --delete --exclude "index.html" --cache-control "public,max-age=31536000,immutable"
+      - aws s3 cp dist/Frontend/browser/index.html "s3://${FRONTEND_BUCKET}/index.html" --cache-control "no-cache,no-store,must-revalidate"
+      - echo "Invalidating CloudFront ${CLOUDFRONT_DISTRIBUTION_ID}..."
+      - aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" --paths "/*"

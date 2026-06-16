@@ -1,0 +1,33 @@
+version: 0.2
+
+# CodeBuild buildspec for the backend.
+# Builds the TypeScript app and deploys it to AWS Lambda via the Serverless Framework.
+#
+# Expected environment variables (wired up in infra/pipeline.yml):
+#   STAGE                -> deployment stage (e.g. prod)
+#   AWS_REGION           -> target region (provided by CodeBuild automatically)
+#   MONGO_URI            -> from SSM Parameter Store (SecureString)
+#   SECRET_KEY           -> from SSM Parameter Store (SecureString)
+#   SECRET_KEY_REFRESH   -> from SSM Parameter Store (SecureString)
+
+env:
+  shell: bash
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - cd Backend
+      - npm ci
+      - npm install -g serverless@3
+
+  build:
+    commands:
+      - echo "Building TypeScript..."
+      - npm run build
+
+  post_build:
+    commands:
+      - echo "Deploying backend to stage ${STAGE} in ${AWS_REGION}..."
+      - serverless deploy --stage "${STAGE}" --region "${AWS_REGION}"
