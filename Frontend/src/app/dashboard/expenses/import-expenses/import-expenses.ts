@@ -9,7 +9,7 @@ import { loadCategories } from '../../../store/category/category.actions';
 import { bulkImportExpenses } from '../../../store/expenses/expenses.actions';
 import { Category, Expense } from '../../../core/interfaces/app.interface';
 
-const PAYMENT_METHODS = ['credit-card', 'cash', 'debit-card', 'PayPal'];
+const PAYMENT_METHODS = ['credit-card', 'cash', 'debit-card', 'PayPal', 'other'];
 const DEFAULT_CURRENCY = 'USD';
 
 const TEMPLATE_HEADERS = ['date', 'name', 'paymentMethod', 'note', 'category', 'itemName', 'price', 'currency'];

@@ -9,6 +9,7 @@ const paymentOptions = [
   { name: 'Cash', value: 'cash' },
   { name: 'Debit Card', value: 'debit-card' },
   { name: 'PayPal', value: 'PayPal' },
+  { name: 'Other', value: 'other' },
 ]
 
 const Currencies = ['USD'];
